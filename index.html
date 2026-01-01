@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yasmin Adele Majeed</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-color: #ffffff;
             --text-color: #1a1a1a;
-            --accent-color: #666;
+            --accent-green: #8FBC8F; /* Your Sea Green */
             --font-serif: 'Crimson Pro', serif;
-            --font-sans: 'Inter', sans-serif;
+            --font-sans: 'Barlow', sans-serif; /* Updated to Barlow */
         }
 
         body {
@@ -29,10 +29,10 @@
         nav {
             padding: 60px 20px 40px 20px;
             text-align: center;
-            background: var(--bg-color);
         }
 
         .site-title {
+            font-family: var(--font-sans);
             font-size: 1.6rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
@@ -47,23 +47,35 @@
             font-family: var(--font-sans);
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--accent-color);
+            color: #999; /* Keeps nav subtle */
             margin: 0 18px;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #000;
+            color: var(--accent-green);
         }
 
-        /* Main Content */
+        /* Main Content Links */
+        main a {
+            color: var(--accent-green);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        main a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        /* Main Content Structure */
         main {
-            max-width: 700px; /* Narrower for better readability */
+            max-width: 700px;
             margin: 0 auto;
             padding: 0 25px 100px 25px;
         }
@@ -83,7 +95,7 @@
 
         .photo-credit {
             font-family: var(--font-sans);
-            font-size: 0.6rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: #aaa;
@@ -95,7 +107,7 @@
             font-size: 1.4rem;
             margin-bottom: 40px;
             font-style: italic;
-            border-left: 1px solid #eee;
+            border-left: 2px solid var(--accent-green);
             padding-left: 20px;
         }
 
@@ -107,17 +119,33 @@
 
         .pronunciation {
             font-family: var(--font-sans);
-            font-size: 0.8rem;
-            color: var(--accent-color);
+            font-size: 0.85rem;
+            color: #888;
             margin-bottom: 50px;
         }
 
+        .contact-box {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #f0f0f0;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            line-height: 2;
+        }
+
+        .contact-box strong {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            display: inline-block;
+            width: 150px;
+        }
 
         footer {
             padding: 60px;
             text-align: center;
             font-family: var(--font-sans);
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             color: #ccc;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -125,20 +153,8 @@
 
         @media (max-width: 600px) {
             .nav-links a { display: inline-block; margin: 5px 10px; }
-    
+            .contact-box strong { display: block; width: auto; }
         }
-
-        /* Only links within the main content area */
-main a {
-    color: #8FBC8F;
-    text-decoration: none;
-    border-bottom: 1px solid #f0f0f0; /* Subtle underline */
-}
-
-main a:hover {
-    border-bottom-color: #8FBC8F;
-}
-        
     </style>
 </head>
 <body>
