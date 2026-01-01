@@ -16,6 +16,7 @@
             --text-color: #1a1a1a;
             --accent: #d14c36; /* Burnt Sienna Red */
             --font-main: 'Barlow', sans-serif;
+            --font-header: 'Bodoni Moda', serif; /* High-contrast serif */
         }
 
         body {
@@ -29,27 +30,30 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
+     /* Navigation */
         nav {
             padding: 80px 20px 60px 20px;
             text-align: center;
         }
 
         .site-title {
-            font-size: 1.4rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
+            font-family: var(--font-header);
+            font-size: 2.2rem; /* Made larger for impact */
+            letter-spacing: -0.02em; /* Tighter spacing for serif look */
+            text-transform: none; /* Serifs often look better in Title Case */
             text-decoration: none;
             color: var(--text-color);
             display: block;
-            margin-bottom: 30px;
-            font-weight: 400;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-style: italic; /* Adding italic gives it that luxury Boldonse feel */
         }
 
         .nav-links {
             text-transform: uppercase;
             letter-spacing: 0.15em;
             font-size: 0.75rem;
+            font-weight: 500; /* Bolded the menu as requested */
         }
 
         .nav-links a {
@@ -193,7 +197,7 @@
     <main class="content-wrapper">
         
         <div class="photo-side">
-            <img src="headshot.jpg" alt="Yasmin Adele Majeed" class="hero-image">
+            <img src="Yasmin Adele Majeed_photo credit_ day studio (1).jpeg" alt="Yasmin Adele Majeed" class="hero-image">
             <span class="photo-credit">Photo Credit: Day</span>
         </div>
 
