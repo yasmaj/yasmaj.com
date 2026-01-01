@@ -12,7 +12,7 @@
         :root {
             --bg-color: #FEF9E7;
             --text-color: #1a1a1a;
-            --accent-green: #8FBC8F; /* Dark Sea Green */
+            --accent-green: #d14c36;
             --font-main: 'Barlow', sans-serif;
         }
 
@@ -50,27 +50,29 @@
             font-size: 0.75rem;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #aaa; 
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
+       .nav-links a {
+    text-decoration: none;
+    color: var(--accent-red); /* Updated to Red */
+    margin: 0 15px;
+    transition: opacity 0.3s;
+    font-weight: 400; /* Slightly bolder for readability */
+}
 
-        .nav-links a:hover {
-            color: var(--accent-green);
-        }
+.nav-links a:hover {
+    opacity: 0.6;
+}
 
         /* Global Link Color */
-        a {
-            color: var(--accent-green);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
+      a {
+    color: var(--accent-red);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
 
-        a:hover {
-            opacity: 0.6;
-        }
+a:hover {
+    opacity: 0.6;
+    text-decoration: underline; /* Optional: adds a classic touch on hover */
+}
 
         /* Main Content */
         main {
