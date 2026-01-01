@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAS MAJ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&family=Inter:wght@300&display=swap" rel="stylesheet">
+    <title>Yasmin Adele Majeed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-color: #ffffff;
             --text-color: #1a1a1a;
-            --accent-color: #666666;
-            --font-main: 'Crimson Pro', serif;
-            --font-nav: 'Inter', sans-serif;
+            --accent-color: #666;
+            --font-serif: 'Crimson Pro', serif;
+            --font-sans: 'Inter', sans-serif;
         }
 
         body {
@@ -20,43 +20,40 @@
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: var(--font-main);
-            line-height: 1.6;
+            font-family: var(--font-serif);
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
         /* Navigation */
         nav {
-            padding: 40px 20px;
+            padding: 60px 20px 40px 20px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            background: rgba(255,255,255,0.9);
-            z-index: 1000;
+            background: var(--bg-color);
         }
 
         .site-title {
-            font-size: 1.8rem;
-            letter-spacing: 0.2em;
+            font-size: 1.6rem;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--text-color);
             display: block;
-            margin-bottom: 20px;
-            font-weight: 300;
+            margin-bottom: 25px;
+            font-weight: 400;
         }
 
         .nav-links {
-            font-family: var(--font-nav);
+            font-family: var(--font-sans);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            font-size: 0.7rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--accent-color);
-            margin: 0 15px;
+            margin: 0 18px;
             transition: color 0.3s;
         }
 
@@ -66,65 +63,138 @@
 
         /* Main Content */
         main {
-            max-width: 800px;
+            max-width: 700px; /* Narrower for better readability */
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 25px 100px 25px;
+        }
+
+        .hero-image-container {
+            margin: 20px auto 60px auto;
             text-align: center;
         }
 
         .hero-image {
             width: 100%;
-            max-width: 500px; /* Editorial style portrait size */
+            max-width: 450px;
             height: auto;
-            margin: 40px auto;
             display: block;
-            filter: grayscale(20%); /* Optional: gives a softer look */
+            margin: 0 auto;
         }
 
-        .intro-text {
-            font-size: 1.3rem;
-            max-width: 600px;
-            margin: 40px auto;
-            font-weight: 300;
-            font-style: italic;
-            color: #333;
-        }
-
-        .content-section {
-            margin-top: 80px;
-            text-align: left;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 40px;
-        }
-
-        h2 {
-            font-family: var(--font-nav);
-            font-size: 0.8rem;
+        .photo-credit {
+            font-family: var(--font-sans);
+            font-size: 0.6rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.05em;
+            color: #aaa;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .announcement {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            font-style: italic;
+            border-left: 1px solid #eee;
+            padding-left: 20px;
+        }
+
+        .bio {
+            font-size: 1.15rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .pronunciation {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
             color: var(--accent-color);
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #f0f0f0;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            line-height: 2;
+        }
+
+        .contact-box strong {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            display: inline-block;
+            width: 140px;
+        }
+
+        .contact-box a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .contact-box a:hover {
+            border-bottom-color: #000;
         }
 
         footer {
-            margin-top: 100px;
-            padding: 40px;
-            font-family: var(--font-nav);
-            font-size: 0.7rem;
-            letter-spacing: 0.1em;
-            color: #ccc;
+            padding: 60px;
             text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            color: #ccc;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 600px) {
-            .site-title { font-size: 1.4rem; }
-            .nav-links a { display: block; margin: 10px 0; }
+            .nav-links a { display: inline-block; margin: 5px 10px; }
+            .contact-box strong { display: block; width: auto; margin-top: 10px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="/" class="site-title">YASMAJ</a>
+        <a href="/" class="site-title">Yasmin Adele Majeed</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="#writing">Writing</a>
+            <a href="#events">Events</a>
+            <a href="mailto:yasminmajeed@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Yasmin Adele Majeed" class="hero-image">
+            <span class="photo-credit">Photo Credit: Day</span>
+        </div>
+
+        <div class="announcement">
+            Yasmin Adele Majeed’s debut novel, <em>Side Streams</em>, is forthcoming from Little, Brown.
+        </div>
+
+        <div class="bio">
+            Her fiction appears in <em>Narrative, Guernica, Joyland, American Short Fiction, Best Debut Short Stories,</em> and <em>The Best American Short Stories</em>. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from <em>Tin House, Kundiman, Kweli,</em> the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She lives in New York.
+        </div>
+
+        <div class="pronunciation">
+            Pronounced: YAHS-meen, like so ✩
+        </div>
+
+        <div class="contact-box">
+            <div><strong>Contact</strong> <a href="mailto:yasminmajeed@gmail.com">yasminmajeed@gmail.com</a></div>
+            <div><strong>Literary Agent</strong> Danielle Bukowski, Sterling Lord Literistic, <a href="mailto:danielle@sll.com">danielle@sll.com</a></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Yasmin Adele Majeed
+    </footer>
+
+</body>
+</html>
