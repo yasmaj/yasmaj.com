@@ -10,7 +10,7 @@
         :root {
             --bg-color: #FEF9E7;
             --text-color: #1a1a1a;
-            --accent-green: #8FBC8F;
+            --accent: #d14c36;
             --font-main: 'Barlow', sans-serif;
         }
 
@@ -43,14 +43,21 @@
             font-size: 0.75rem;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #aaa;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
+       .nav-links a {
+    text-decoration: none;
+    color: var(--accent); /* This makes the menu Burnt Sienna */
+    margin: 0 15px;
+    font-weight: 400;
+}
 
-        .nav-links a:hover { color: var(--accent-green); }
+      a {
+    color: var(--accent); 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
         main { max-width: 650px; margin: 0 auto; padding: 0 25px 100px 25px; }
 
