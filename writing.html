@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing — Yasmin Adele Majeed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #666;
+            --font-serif: 'Crimson Pro', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-serif);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 60px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 1.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.7rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-color);
+            margin: 0 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: #000; }
+
+        /* Main Content */
+        main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 25px 100px 25px;
+        }
+
+        .section-header {
+            font-size: 1.4rem;
+            margin: 60px 0 30px 0;
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        .work-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .work-item {
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            font-weight: 300;
+        }
+
+        .work-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: all 0.2s;
+        }
+
+        .work-item a:hover {
+            border-bottom-color: var(--text-color);
+        }
+
+        .work-item em {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .award-note {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-color);
+            display: block;
+            margin-top: 4px;
+        }
+
+        footer {
+            padding: 60px;
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            color: #ccc;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links a { display: inline-block; margin: 5px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="writing.html">Writing</a>
+            <a href="events.html">Events</a>
+            <a href="mailto:yasminmajeed@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        
+        <div class="section-header">౨ৎ Fiction</div>
+        <ul class="work-list">
+            <li class="work-item"><a href="#">Chicken</a>, <em>Guernica</em></li>
+            <li class="work-item">
+                <a href="#">The Clean-Out</a>, <em>Narrative</em>
+                <span class="award-note">→ included in The Best American Short Stories 2025</span>
+            </li>
+            <li class="work-item"><a href="#">Maria del Rosario Says Hello</a>, <em>Dirt</em></li>
+            <li class="work-item"><a href="#">Reyaz</a>, <em>The Michigan Quarterly Review (Online)</em></li>
+            <li class="work-item"><a href="#">Audition</a>, <em>Joyland</em></li>
+            <li class="work-item"><a href="#">Tunnels</a>, <em>Joyland</em></li>
+            <li class="work-item">
+                <a href="#">Tombs</a>, <em>American Short Fiction</em>
+                <span class="award-note">→ winner of the American Short(er) Fiction Prize 2023</span>
+            </li>
+            <li class="work-item">
+                <a href="#">A Wedding in Multan, 1978</a>, <em>The Asian American Literary Review</em>
+                <span class="award-note">→ included in Best Debut Short Stories 2022</span>
+            </li>
+        </ul>
+
+        <div class="section-header">౨ৎ Nonfiction</div>
+        <ul class="work-list">
+            <li class="work-item"><a href="#">Laddermania</a>, <em>Dirt</em></li>
+            <li class="work-item"><a href="#">Author Interviews</a>, <em>Electric Literature</em></li>
+            <li class="work-item"><a href="#">Ghosts of Sugarland: A Journey of Loss</a>, <em>The New York Review of Books (Online)</em></li>
+            <li class="work-item"><a href="#">The Encounter</a>, <em>unbag</em></li>
+        </ul>
+
+        <div class="section-header">౨ৎ Interviews</div>
+        <ul class="work-list">
+            <li class="work-item"><a href="#">PEN America</a></li>
+            <li class="work-item"><a href="#">Debutiful</a></li>
+        </ul>
+
+    </main>
+
+    <footer>
+        &copy; 2024 Yasmin Adele Majeed
+    </footer>
+
+</body>
+</html>
