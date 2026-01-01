@@ -4,142 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events — Yasmin Adele Majeed</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <style>
         :root {
             --bg-color: #ffffff;
             --text-color: #1a1a1a;
-            --accent-color: #666;
-            --font-serif: 'Crimson Pro', serif;
-            --font-sans: 'Barlow', sans-serif;
+            --accent-green: #8FBC8F;
+            --font-main: 'Barlow', sans-serif;
         }
 
         body {
             margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: var(--font-serif);
+            font-family: var(--font-main);
             line-height: 1.8;
+            font-weight: 300;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
-        nav {
-            padding: 60px 20px 40px 20px;
-            text-align: center;
-        }
-
+        nav { padding: 80px 20px 60px 20px; text-align: center; }
+        
         .site-title {
-            font-size: 1.6rem;
-            letter-spacing: 0.15em;
+            font-size: 1.4rem;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--text-color);
             display: block;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: 400;
         }
 
         .nav-links {
-            font-family: var(--font-sans);
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--accent-color);
-            margin: 0 18px;
+            color: #aaa;
+            margin: 0 15px;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover { color: #000; }
+        .nav-links a:hover { color: var(--accent-green); }
 
-        /* Main Content */
-        main {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 0 25px 100px 25px;
-        }
+        main { max-width: 650px; margin: 0 auto; padding: 0 25px 100px 25px; }
 
         .section-header {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin: 60px 0 30px 0;
             font-weight: 400;
-            color: var(--text-color);
-            text-align: left;
+            letter-spacing: 0.1em;
         }
 
         .year-divider {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             letter-spacing: 0.2em;
-            color: #ccc;
+            color: #ddd;
             margin: 50px 0 20px 0;
-            text-align: left;
-            border-bottom: 1px solid #f9f9f9;
-            padding-bottom: 5px;
+            text-transform: uppercase;
         }
 
-        .event-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .event-list { list-style: none; padding: 0; margin: 0; }
 
-        .event-item {
-            margin-bottom: 35px;
-        }
+        .event-item { margin-bottom: 35px; }
 
         .event-date {
-            font-family: var(--font-sans);
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--accent-color);
+            color: #999;
             display: block;
-            margin-bottom: 5px;
         }
 
         .event-detail {
-            font-size: 1.15rem;
-            font-weight: 300;
+            font-size: 1.1rem;
             display: block;
         }
 
+        .event-detail a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
         .event-location {
-            font-family: var(--font-serif);
             font-style: italic;
-            color: var(--accent-color);
-            font-size: 1.05rem;
+            color: #888;
+            font-size: 1rem;
         }
 
-        footer {
-            padding: 60px;
-            text-align: center;
-            font-family: var(--font-sans);
-            font-size: 0.65rem;
-            color: #ccc;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 600px) {
-            .nav-links a { display: inline-block; margin: 5px 10px; }
-        }
-
-        /* Only links within the main content area */
-main a {
-    color: #8FBC8F;
-    text-decoration: none;
-    border-bottom: 1px solid #f0f0f0; /* Subtle underline */
-}
-
-main a:hover {
-    border-bottom-color: #8FBC8F;
-}
-        
+        footer { text-align: center; padding-bottom: 80px; font-size: 0.65rem; color: #ddd; letter-spacing: 0.2em; text-transform: uppercase; }
     </style>
 </head>
 <body>
