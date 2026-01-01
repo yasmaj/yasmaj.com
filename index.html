@@ -1,3 +1,10 @@
+To have your headshot sit elegantly next to your text (the "Lia Rusli" or classic editorial look), we need to use a Flexbox layout. This will place the image on one side and the bio on the other, but automatically stack them on top of each other when viewed on a phone.
+
+Here is the updated Master Code for your index.html.
+
+The Master Index Template
+HTML
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yasmin Adele Majeed</title>
     <meta name="description" content="Yasmin Adele Majeed is a writer based in New York. Her debut novel, Side Streams, is forthcoming from Little, Brown.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%238FBC8F%22>౨ৎ</text></svg>">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
+    
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #FEF9E7;
+            --bg-color: #FEF9E7; /* Butter Yellow */
             --text-color: #1a1a1a;
-            --accent-green: #d14c36;
+            --accent: #d14c36; /* Burnt Sienna */
             --font-main: 'Barlow', sans-serif;
         }
 
@@ -23,7 +32,7 @@
             color: var(--text-color);
             font-family: var(--font-main);
             line-height: 1.8;
-            font-weight: 300; /* Lighter weight like liarus.li */
+            font-weight: 300;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -35,7 +44,7 @@
 
         .site-title {
             font-size: 1.4rem;
-            letter-spacing: 0.3em; /* Extra wide spacing */
+            letter-spacing: 0.3em;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--text-color);
@@ -50,69 +59,70 @@
             font-size: 0.75rem;
         }
 
-       .nav-links a {
-    text-decoration: none;
-    color: var(--accent-red); /* Updated to Red */
-    margin: 0 15px;
-    transition: opacity 0.3s;
-    font-weight: 400; /* Slightly bolder for readability */
-}
-
-.nav-links a:hover {
-    opacity: 0.6;
-}
-
-        /* Global Link Color */
-      a {
-    color: var(--accent-red);
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-a:hover {
-    opacity: 0.6;
-    text-decoration: underline; /* Optional: adds a classic touch on hover */
-}
-
-        /* Main Content */
-        main {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 0 25px 100px 25px;
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            margin: 0 15px;
+            transition: opacity 0.3s;
+            font-weight: 400;
         }
 
-        .hero-image-container {
-            margin-bottom: 60px;
-            text-align: center;
+        .nav-links a:hover { opacity: 0.6; }
+
+        /* Side-by-Side Container */
+        .content-wrapper {
+            max-width: 900px; /* Wider for side-by-side */
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start; /* Aligns top of photo with top of text */
+            gap: 60px; /* Space between photo and text */
+            padding: 0 40px 100px 40px;
+        }
+
+        /* Left Side: Photo */
+        .photo-side {
+            flex: 1; /* Takes up equal space */
+            max-width: 400px;
         }
 
         .hero-image {
             width: 100%;
-            max-width: 500px;
             height: auto;
-            filter: grayscale(10%); /* Subtle artistic touch */
+            display: block;
         }
 
         .photo-credit {
             font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #ccc;
+            color: #999;
             margin-top: 15px;
             display: block;
         }
 
+        /* Right Side: Text */
+        .text-side {
+            flex: 1.2; /* Text side is slightly wider */
+        }
+
         .announcement {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            letter-spacing: 0.02em;
-            color: #444;
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.5;
         }
 
         .bio {
             font-size: 1.05rem;
             margin-bottom: 40px;
         }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
 
         .pronunciation {
             font-size: 0.8rem;
@@ -121,11 +131,10 @@ a:hover {
         }
 
         .contact-box {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid #f2f2f2;
+            padding-top: 30px;
+            border-top: 1px solid #e0dbca;
             font-size: 0.85rem;
-            line-height: 2.2;
+            line-height: 2;
         }
 
         .contact-box strong {
@@ -134,57 +143,69 @@ a:hover {
             font-weight: 500;
             color: #888;
             display: inline-block;
-            width: 160px;
+            width: 150px;
         }
 
         footer {
             padding-bottom: 80px;
             text-align: center;
             font-size: 0.65rem;
-            color: #ddd;
+            color: #ccc;
             letter-spacing: 0.2em;
             text-transform: uppercase;
         }
 
-        @media (max-width: 600px) {
-            .nav-links a { display: block; margin: 15px 0; }
-            .contact-box strong { display: block; width: auto; margin-bottom: 2px; }
+        /* Responsive: Stacks on mobile */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+                text-align: left;
+                padding: 0 25px 60px 25px;
+            }
+            .photo-side {
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+            .contact-box strong {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="/" class="site-title">Yasmin Adele Majeed</a>
+        <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="writing.html">Writing</a>
             <a href="events.html">Events</a>
-    
         </div>
     </nav>
 
-    <main>
-        <div class="hero-image-container">
-            <img src="Yasmin Adele Majeed_photo credit_ day studio (1).jpeg" alt="Yasmin Adele Majeed" class="hero-image">
-            <span class="photo-credit">Photo Credit: <a href="https://www.dayday.studio/" target="_blank">Day</a></span>
+    <main class="content-wrapper">
+        
+        <div class="photo-side">
+            <img src="headshot.jpg" alt="Yasmin Adele Majeed" class="hero-image">
+            <span class="photo-credit">Photo Credit: Day</span>
         </div>
 
-    
-
-        <div class="bio">
-                       Yasmin Adele Majeed’s debut novel, <em><a href="https://www.instagram.com/p/DQ_9NJdDW7m/?img_index=1" target="_blank">Side Streams</a></em>, is forthcoming from Little, Brown. Her fiction appears in <em>Narrative, Guernica, Joyland, American Short Fiction, Best Debut Short Stories,</em> and <em>The Best American Short Stories</em>. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from Tin House, Kundiman, Kweli, the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She lives in New York.
-        </div>
-
-
-        <div class="contact-box">
-            <div><strong>Contact</strong> <a href="mailto:yasminmajeed@gmail.com">yasminmajeed@gmail.com</a></div>
-            <div><strong>Literary Agent</strong> Danielle Bukowski, Sterling Lord Literistic, <a href="mailto:danielle@sll.com">danielle@sll.com</a></div>
-        </div>
-    </main>
-
-    <footer>
+        <div class="text-side">
       
-    </footer>
+
+            <div class="bio">
+                             Yasmin Adele Majeed’s debut novel, <strong>Side Streams</strong>, is forthcoming from Little, Brown. Her fiction appears in Narrative, Guernica, Joyland, American Short Fiction, Best Debut Short Stories, and The Best American Short Stories. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from Tin House, Kundiman, Kweli, the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She lives in New York.
+            </div>
+
+      
+            <div class="contact-box">
+                <div><strong>Contact</strong> <a href="mailto:yasminmajeed@gmail.com">yasminmajeed@gmail.com</a></div>
+                <div><strong>Literary Agent</strong> Danielle Bukowski, Sterling Lord Literistic, <a href="mailto:danielle@sll.com">danielle@sll.com</a></div>
+            </div>
+        </div>
+
+    </main>
 
 </body>
 </html>
