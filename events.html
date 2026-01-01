@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events — Yasmin Adele Majeed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #666;
+            --font-serif: 'Crimson Pro', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-serif);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 60px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 1.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.7rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-color);
+            margin: 0 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: #000; }
+
+        /* Main Content */
+        main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 25px 100px 25px;
+        }
+
+        .section-header {
+            font-size: 1.4rem;
+            margin: 60px 0 30px 0;
+            font-weight: 400;
+            color: var(--text-color);
+        }
+
+        .event-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .event-item {
+            margin-bottom: 35px;
+        }
+
+        .event-date {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .event-detail {
+            font-size: 1.15rem;
+            font-weight: 300;
+            display: block;
+        }
+
+        .event-detail a {
+            color: var(--text-color);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+
+        .event-detail a:hover {
+            border-bottom-color: #000;
+        }
+
+        .event-location {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--accent-color);
+            font-size: 1.05rem;
+        }
+
+        footer {
+            padding: 60px;
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            color: #ccc;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links a { display: inline-block; margin: 5px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="writing.html">Writing</a>
+            <a href="events.html">Events</a>
+            <a href="mailto:yasminmajeed@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        
+        <div class="section-header">౨ৎ Upcoming</div>
+        <ul class="event-list">
+            <li class="event-item">
+                <span class="event-date">To be announced</span>
+                <span class="event-detail">Readings and events for <em>Side Streams</em> will be posted here.</span>
+            </li>
+        </ul>
+
+        <div class="section-header">౨ৎ Past</div>
+        <ul class="event-list">
+            <li class="event-item">
+                <span class="event-date">Example Date</span>
+                <span class="event-detail"><a href="#">Reading with Venue Name</a></span>
+                <span class="event-location">New York, NY</span>
+            </li>
+        </ul>
+
+    </main>
+
+</body>
+</html>
