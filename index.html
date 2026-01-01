@@ -1,1 +1,130 @@
-<h1>Yas Maj</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAS MAJ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&family=Inter:wght@300&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #666666;
+            --font-main: 'Crimson Pro', serif;
+            --font-nav: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 40px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.9);
+            z-index: 1000;
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .nav-links {
+            font-family: var(--font-nav);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-color);
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px; /* Editorial style portrait size */
+            height: auto;
+            margin: 40px auto;
+            display: block;
+            filter: grayscale(20%); /* Optional: gives a softer look */
+        }
+
+        .intro-text {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 40px auto;
+            font-weight: 300;
+            font-style: italic;
+            color: #333;
+        }
+
+        .content-section {
+            margin-top: 80px;
+            text-align: left;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 40px;
+        }
+
+        h2 {
+            font-family: var(--font-nav);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 40px;
+            font-family: var(--font-nav);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: #ccc;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .site-title { font-size: 1.4rem; }
+            .nav-links a { display: block; margin: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="site-title">YASMAJ</a>
