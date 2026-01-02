@@ -28,9 +28,12 @@
         }
 
         /* Unified Header & Menu */
-        nav { padding: 80px 20px 60px 20px; text-align: center; }
-        
-     .site-title {
+       nav { 
+    padding: 80px 20px 60px 20px; 
+    text-align: center; 
+}
+
+.site-title {
     font-size: 1.8rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -38,22 +41,29 @@
     color: var(--text-color);
     display: block;
     margin-bottom: 25px;
-    font-weight: 700 !important; /* Added !important to force the boldest weight */
-    -webkit-font-smoothing: antialiased;
+    font-weight: 700 !important; /* Force Bold */
 }
 
 .nav-links {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 1rem;
-    font-weight: 700 !important; /* Added !important to match the boldest weight */
+    font-weight: 700 !important; /* Force Bold */
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--accent);
     margin: 0 20px;
-    transition: opacity 0.3s;
+}
+
+/* Mobile Sync */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.1em;
+        font-weight: 700 !important;
+    }
 }
 
         /* Content Layout */
