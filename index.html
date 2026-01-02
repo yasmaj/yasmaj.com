@@ -189,7 +189,37 @@
                 margin-bottom: 4px;
             }
         }
+.flower-jar-container {
+    text-align: center;
+    margin-top: 40px;
+    font-family: var(--font-main);
+}
 
+#jar {
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+#jar:active {
+    transform: scale(0.9) rotate(-10deg);
+}
+
+#jar-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin-top: 5px;
+}
+
+#flower-count {
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-top: 5px;
+    font-weight: 700;
+}
        
     </style>
 </head>
@@ -236,8 +266,45 @@
                 </div>
             </div>
         </div>
+        <div class="flower-jar-container">
+    <div id="jar" onclick="addFlower()">🍯</div>
+    <div id="jar-label">Click to leave a flower</div>
+    <div id="flower-count">0 flowers collected</div>
+</div>
     </main>
 <script>
+
+    let count = 0;
+function addFlower() {
+    count++;
+    document.getElementById('flower-count').innerText = count + " flowers collected";
+    
+    // Create the blooming flower
+    const bloom = document.createElement('div');
+    bloom.innerHTML = '౨ৎ';
+    bloom.style.position = 'fixed';
+    bloom.style.bottom = '100px'; 
+    bloom.style.left = '50%';
+    bloom.style.transform = 'translateX(-50%)';
+    bloom.style.color = '#d14c36';
+    bloom.style.fontSize = '2rem';
+    bloom.style.pointerEvents = 'none';
+    bloom.style.zIndex = '1000';
+    
+    document.body.appendChild(bloom);
+    
+    // Animation: Fly up and fade out
+    bloom.animate([
+        { bottom: '100px', opacity: 1, transform: 'translateX(-50%) scale(1)' },
+        { bottom: '400px', opacity: 0, transform: `translateX(${(Math.random() - 0.5) * 200}px) scale(2) rotate(20deg)` }
+    ], {
+        duration: 2000,
+        easing: 'ease-out'
+    });
+
+    setTimeout(() => bloom.remove(), 2000);
+}
+    
 document.addEventListener('mousemove', function(e) {
   const sparkle = document.createElement('span');
   sparkle.innerHTML = '✧'; // You can change this to ౨ৎ or ✨
