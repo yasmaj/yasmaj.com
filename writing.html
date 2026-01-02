@@ -88,11 +88,17 @@
             text-transform: uppercase; 
         }
 
-        @media (max-width: 768px) {
-            .site-title { font-size: 1.5rem; letter-spacing: 0.1em; }
-            .nav-links { font-size: 0.9rem; }
-            .nav-links a { display: inline-block; margin: 5px 10px; }
-        }
+       @media (max-width: 768px) {
+    .site-title {
+        font-size: 1.5rem;
+        letter-spacing: 0.1em; /* Tighter for mobile */
+        font-weight: 700 !important;
+    }
+    .nav-links {
+        font-size: 0.95rem;
+        font-weight: 700 !important;
+    }
+}
     </style>
 </head>
 <body>
