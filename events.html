@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events — Yasmin Adele Majeed</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%238FBC8F%22>౨ৎ</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
+    
     <style>
+        /* Exact same Variables as Index */
         :root {
             --bg-color: #FEF9E7;
             --text-color: #1a1a1a;
@@ -21,90 +24,79 @@
             font-family: var(--font-main);
             line-height: 1.8;
             font-weight: 300;
-            -webkit-font-smoothing: antialiased;
         }
 
         nav { padding: 80px 20px 60px 20px; text-align: center; }
-        
+
         .site-title {
-            font-size: 1.4rem;
-            letter-spacing: 0.3em;
+            font-size: 1.8rem;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
             text-decoration: none;
             color: var(--text-color);
             display: block;
-            margin-bottom: 30px;
-            font-weight: 400;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
 
         .nav-links {
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            font-size: 1rem;
+            font-weight: 700;
         }
 
-       .nav-links a {
-    text-decoration: none;
-    color: var(--accent); /* This makes the menu Burnt Sienna */
-    margin: 0 15px;
-    font-weight: 400;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            margin: 0 20px;
+        }
 
-      a {
-    color: var(--accent); 
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-        main { max-width: 650px; margin: 0 auto; padding: 0 25px 100px 25px; }
+        main { max-width: 800px; margin: 0 auto; padding: 0 25px 100px 25px; }
 
         .section-header {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin: 60px 0 30px 0;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-        }
-
-        .year-divider {
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: #ddd;
-            margin: 50px 0 20px 0;
+            font-weight: 700;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
+            color: #444;
+            border-bottom: 1px solid #e0dbca;
+            padding-bottom: 10px;
         }
 
-        .event-list { list-style: none; padding: 0; margin: 0; }
-
-        .event-item { margin-bottom: 35px; }
+        .event-item {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 40px;
+        }
 
         .event-date {
-            font-size: 0.75rem;
+            font-weight: 700; /* Bold date */
+            min-width: 140px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #999;
+            letter-spacing: 0.05em;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .event-details strong {
             display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
 
-        .event-detail {
-            font-size: 1.1rem;
-            display: block;
-        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-        .event-detail a {
-            color: var(--accent-green);
-            text-decoration: none;
-        }
+        footer { text-align: center; padding: 60px 0; font-size: 0.65rem; color: #bbb; letter-spacing: 0.2em; text-transform: uppercase; }
 
-        .event-location {
-            font-style: italic;
-            color: #888;
-            font-size: 1rem;
+        @media (max-width: 768px) {
+            .site-title { font-size: 1.5rem; letter-spacing: 0.1em; }
+            .nav-links { font-size: 0.9rem; }
+            .event-item { flex-direction: column; gap: 5px; }
         }
-
-        footer { text-align: center; padding-bottom: 80px; font-size: 0.65rem; color: #ddd; letter-spacing: 0.2em; text-transform: uppercase; }
     </style>
 </head>
 <body>
