@@ -90,6 +90,26 @@
     color: var(--accent);
     font-size: 1.4rem;
 }
+/* Custom Highlight Color */
+::selection {
+    background-color: #B9D9EB; /* Baby Blue */
+    color: #1a1a1a;           /* Dark text for readability */
+}
+
+/* For Safari/Firefox support */
+::-moz-selection {
+    background-color: #B9D9EB;
+    color: #1a1a1a;
+}
+        /* Story Title Styling */
+.work-item strong {
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.work-item a:hover strong {
+    color: #7fb3d5; /* Subtle blue shift on hover to match highlight */
+}
 
         .work-list { list-style: none; padding: 0; margin: 0; }
         .work-item { margin-bottom: 20px; font-size: 1.1rem; }
