@@ -1,13 +1,13 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Writing — Yasmin Adele Majeed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing — Yasmin Adele Majeed</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-color: #FEF9E7;
@@ -26,44 +26,39 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Unified Header & Menu */
-       nav { 
-    padding: 80px 20px 60px 20px; 
-    text-align: center; 
-}
+        /* Unified Header & Menu - EXACT Match for Index */
+        nav { 
+            padding: 80px 20px 60px 20px; 
+            text-align: center; 
+        }
 
-.site-title {
-    font-size: 1.8rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--text-color);
-    display: block;
-    margin-bottom: 25px;
-    font-weight: 700 !important; /* Force Bold */
-}
+        .site-title {
+            font-size: 1.8rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 25px;
+            font-weight: 700 !important;
+            line-height: 1.2;
+        }
 
-.nav-links {
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 1rem;
-    font-weight: 700 !important; /* Force Bold */
-}
+        .nav-links {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 1rem;
+            font-weight: 700 !important;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--accent);
-    margin: 0 20px;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            margin: 0 20px;
+            transition: opacity 0.3s;
+        }
 
-/* Mobile Sync */
-@media (max-width: 768px) {
-    .site-title {
-        font-size: 1.5rem;
-        letter-spacing: 0.1em;
-        font-weight: 700 !important;
-    }
-}
+        .nav-links a:hover { opacity: 0.6; }
 
         /* Content Layout */
         main { 
@@ -74,7 +69,7 @@
 
         .section-header {
             font-size: 1rem;
-            margin: 60px 0 20px 0;
+            margin: 60px 0 25px 0;
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
@@ -84,7 +79,15 @@
         }
 
         .work-list { list-style: none; padding: 0; margin: 0; }
-        .work-item { margin-bottom: 15px; font-size: 1.1rem; }
+        .work-item { margin-bottom: 20px; font-size: 1.1rem; }
+        
+        .award-note {
+            display: block;
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 4px;
+            font-style: italic;
+        }
         
         /* Hyperlinks */
         a { color: var(--accent); text-decoration: none; font-weight: 400; }
@@ -99,17 +102,26 @@
             text-transform: uppercase; 
         }
 
-       @media (max-width: 768px) {
-    .site-title {
-        font-size: 1.5rem;
-        letter-spacing: 0.1em; /* Tighter for mobile */
-        font-weight: 700 !important;
-    }
-    .nav-links {
-        font-size: 0.95rem;
-        font-weight: 700 !important;
-    }
-}
+        /* Unified Mobile Adjustments */
+        @media (max-width: 768px) {
+            .site-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+                font-weight: 700 !important;
+                margin-bottom: 20px;
+            }
+            .nav-links {
+                font-size: 0.95rem;
+                font-weight: 700 !important;
+            }
+            .nav-links a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+            main {
+                padding-bottom: 60px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,46 +131,45 @@
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="writing.html">Writing</a>
-        </div>
+            </div>
     </nav>
 
     <main>
-        
-        <div class="section-header">౨ৎ Fiction</div>
+        <div class="section-header">Fiction</div>
         <ul class="work-list">
-            <li class="work-item"><a href="https://www.guernicamag.com/chicken/" target="_blank"><strong>Chicken</strong></a>, <em>Guernica</em></li>
+            <li class="work-item">
+                <a href="https://www.guernicamag.com/chicken/" target="_blank"><strong>Chicken</strong></a>, <em>Guernica</em>
+            </li>
             <li class="work-item">
                 <a href="https://www.narrativemagazine.com/issues/fall-2024/fiction/clean-out-yasmin-adele-majeed" target="_blank"><strong>The Clean-Out</strong></a>, <em>Narrative</em>
-                <span class="award-note">→ included in <a href="https://www.harpercollins.com/products/the-best-american-short-stories-2025-celeste-ngnicole-a-lamy?variant=43710166532130&utm_source=aps&utm_medium=plp&utm_campaign=aps" target="_blank">The Best American Short Stories 2025</a></span>
+                <span class="award-note">→ included in <a href="https://www.harpercollins.com/products/the-best-american-short-stories-2025-celeste-ngnicole-a-lamy?variant=43710166532130" target="_blank">The Best American Short Stories 2025</a></span>
             </li>
             <li class="work-item"><a href="https://dirt.fyi/article/2024/10/maria-del-rosario-says-hello" target="_blank"><strong>Maria del Rosario Says Hello</strong></a>, <em>Dirt</em></li>
-            <li class="work-item"><a href="https://sites.lsa.umich.edu/mixtape/2024/06/22/reyaz/" target="_blank"><strong>Reyaz</strong></a>, <em>The Michigan Quarterly Review (Online)</em></li>
+            <li class="work-item"><a href="https://sites.lsa.umich.edu/mixtape/2024/06/22/reyaz/" target="_blank"><strong>Reyaz</strong></a>, <em>MQR Online</em></li>
             <li class="work-item"><a href="https://joylandmagazine.com/fiction/audition/" target="_blank"><strong>Audition</strong></a>, <em>Joyland</em></li>
             <li class="work-item"><a href="https://joylandmagazine.com/fiction/tunnels/" target="_blank"><strong>Tunnels</strong></a>, <em>Joyland</em></li>
             <li class="work-item">
                 <a href="https://americanshortfiction.org/issue-78/" target="_blank"><strong>Tombs</strong></a>, <em>American Short Fiction</em>
-                <span class="award-note">→ winner of <a href="https://americanshortfiction.org/the-2023-american-shorter-fiction-prize-winners/" target="_blank">the American Short(er) Fiction Prize 2023</a></span>
+                <span class="award-note">→ winner of the American Short(er) Fiction Prize 2023</span>
             </li>
             <li class="work-item">
-                <a href="https://www.aalrmag.org/shop/p/vol11" target="_blank"><strong>A Wedding in Multan, 1978</strong></a>, <em>The Asian American Literary Review</em>
-                <span class="award-note">→ included in <a href="https://books.catapult.co/books/best-debut-short-stories-2022/" target="_blank">Best Debut Short Stories 2022</a></span>
+                <a href="https://www.aalrmag.org/shop/p/vol11" target="_blank"><strong>A Wedding in Multan, 1978</strong></a>, <em>AALR</em>
+                <span class="award-note">→ included in Best Debut Short Stories 2022</span>
             </li>
         </ul>
 
-        <div class="section-header">౨ৎ Nonfiction</div>
+        <div class="section-header">Nonfiction</div>
         <ul class="work-list">
             <li class="work-item"><a href="https://dirt.fyi/article/2025/03/laddermania" target="_blank"><strong>Laddermania</strong></a>, <em>Dirt</em></li>
             <li class="work-item"><a href="https://electricliterature.com/el-author/yasmin-adele-majeed/" target="_blank"><strong>Author Interviews</strong></a>, <em>Electric Literature</em></li>
-            <li class="work-item"><a href="https://www.nybooks.com/online/2020/06/17/ghosts-of-sugar-land-a-journey-of-loss/" target="_blank"><strong>Ghosts of Sugarland: A Journey of Loss</strong></a>, <em>The New York Review of Books (Online)</em></li>
-            <li class="work-item"><a href="https://unbag.net/reverie/the-encounter/" target="_blank"><strong>The Encounter</strong></a>, <em>unbag</em></li>
+            <li class="work-item"><a href="https://www.nybooks.com/online/2020/06/17/ghosts-of-sugar-land-a-journey-of-loss/" target="_blank"><strong>Ghosts of Sugarland</strong></a>, <em>NYRB Online</em></li>
         </ul>
 
-        <div class="section-header">౨ৎ Interviews</div>
+        <div class="section-header">Interviews</div>
         <ul class="work-list">
-            <li class="work-item"><a href="https://pen.org/an-interview-with-pen-robert-j-dau-prize-winner-yasmin-majeed/" target="_blank"><strong>PEN America</strong></li>
+            <li class="work-item"><a href="https://pen.org/an-interview-with-pen-robert-j-dau-prize-winner-yasmin-majeed/" target="_blank"><strong>PEN America</strong></a></li>
             <li class="work-item"><a href="https://debutiful.net/2022/09/27/meet-7-writers-collected-in-the-pen-america-best-debut-short-story-collection-2022-anthology/" target="_blank"><strong>Debutiful</strong></a></li>
         </ul>
-
     </main>
 
 
