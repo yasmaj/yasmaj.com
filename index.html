@@ -8,14 +8,13 @@
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
     
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FEF9E7; /* Butter Yellow */
+            --bg-color: #FEF9E7; 
             --text-color: #1a1a1a;
-            --accent: #d14c36; /* Burnt Sienna Red */
+            --accent: #d14c36; 
             --font-main: 'Barlow', sans-serif;
-       
         }
 
         body {
@@ -29,65 +28,54 @@
             -webkit-font-smoothing: antialiased;
         }
 
-     /* Navigation */
-      nav { 
-    padding: 80px 20px 30px 20px; /* Reduced bottom padding from 60px to 30px */
-    text-align: center; 
-}
-
-        .section-header {
-    font-size: 1rem;
-    margin: 20px 0 20px 0; /* Reduced top margin from 60px to 20px */
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #444; 
-    border-bottom: 1px solid #e0dbca;
-    padding-bottom: 8px;
-}
-
-        .site-title {
-            font-family: var(--font-serif);
-            font-size: 3.2rem; /* Big and bold */
-            font-weight: 700;
-            font-style: regular; /* Makes it feel like an author's brand */
-            letter-spacing: -0.01em;
-            text-decoration: none !important; /* Removes standard underline */
-    border: none !important;
-            color: var(--text-color);
-            display: block;
-            margin-bottom: 20px;
+        /* Navigation */
+        nav { 
+            padding: 80px 20px 30px 20px; 
+            text-align: center; 
         }
 
-   .nav-links {
-    text-transform: uppercase;
-    letter-spacing: 0.2em; /* Increased spacing for a high-end look */
-    font-size: 1rem;       /* Increased from 0.8rem */
-    font-weight: 700;      /* Set to Bold */
-}
+        .site-title {
+            font-size: 1.8rem; /* Synced with Writing page */
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            border: none !important;
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 25px;
+            font-weight: 700 !important;
+            line-height: 1.2;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--accent);
-    margin: 0 20px;        /* Slightly more space between links */
-    transition: opacity 0.3s;
-}
+        .nav-links {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 1rem;
+            font-weight: 700 !important;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            margin: 0 20px;
+            transition: opacity 0.3s;
+        }
 
         .nav-links a:hover { opacity: 0.6; }
 
         /* Side-by-Side Container */
         .content-wrapper {
-            max-width: 940px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             align-items: flex-start;
             gap: 60px;
-            padding: 0 40px 100px 40px;
+            padding: 40px 40px 100px 40px;
         }
 
         .photo-side {
             flex: 1;
-            max-width: 400px;
+            max-width: 420px;
         }
 
         .hero-image {
@@ -95,18 +83,19 @@
             height: auto;
             display: block;
         }
-.photo-credit {
-    font-size: 0.8rem;        /* Increased from 0.6rem */
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #666;              /* Darkened from #999 for better contrast */
-    margin-top: 15px;
-    display: block;
-    font-weight: 500;         /* Added weight */
-}
+
+        .photo-credit {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            margin-top: 15px;
+            display: block;
+            font-weight: 500;
+        }
 
         .text-side {
-            flex: 1.3;
+            flex: 1.2;
         }
 
         .announcement {
@@ -129,88 +118,54 @@
 
         a:hover { opacity: 0.7; text-decoration: underline; }
 
-        .pronunciation {
-            font-size: 0.8rem;
-            color: #999;
-            margin-bottom: 60px;
-        }
-
-        /* Contact Box Fix */
+        /* Contact Box Styling */
         .contact-box {
             padding-top: 30px;
             border-top: 1px solid #e0dbca;
-            font-size: 0.85rem;
-            line-height: 1.8;
+            font-size: 0.95rem;
         }
 
         .contact-row {
             display: flex;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
-      .contact-box strong {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 600;         /* Bolder weight */
-    color: #444;              /* Darker for legibility */
-    width: 160px;             /* Slightly wider to accommodate larger font */
-    flex-shrink: 0;
-    font-size: 0.95rem;       /* Increased size */
-}
-
-/* Optional: Make the actual contact info (emails) match the size */
-.contact-info {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-        footer {
-            padding-bottom: 80px;
-            text-align: center;
-            font-size: 0.65rem;
-            color: #ccc;
-            letter-spacing: 0.2em;
+        .contact-box strong {
             text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            color: #444;
+            width: 160px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
         }
 
-        /* Responsive: Stacks on mobile */
-
+        /* Responsive Mobile Layout */
         @media (max-width: 768px) {
-    nav {
-        padding: 50px 20px 20px 20px; /* Even tighter for mobile screens */
-    }
-    
-    .section-header {
-        margin: 15px 0 15px 0; /* Minimal gap for mobile */
-    }
-}
-     
-    .site-title {
-        font-size: 1.6rem;    /* Slightly smaller for mobile */
-        letter-spacing: 0.1em; /* Reduced from 0.25em */
-        margin-bottom: 15px;
-        line-height: 1.2;
-    }
-    
-    .content-wrapper {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 25px 60px 25px;
-        gap: 20px;
-    }
+            nav {
+                padding: 50px 20px 20px 20px;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 25px 60px 25px;
+                gap: 30px;
+            }
+
             .photo-side {
-                margin-bottom: 0px;
                 max-width: 100%;
             }
-           .announcement {
-        margin-top: 10px; /* Brings text closer to the image caption */
-        font-size: 1.2rem;
-    }
-          
+
             .contact-row {
                 flex-direction: column;
-                margin-bottom: 15px;
             }
+
             .contact-box strong {
                 margin-bottom: 4px;
             }
@@ -228,7 +183,6 @@
     </nav>
 
     <main class="content-wrapper">
-        
         <div class="photo-side">
             <img src="Yasmin Adele Majeed_photo credit_ day studio (1).jpeg" alt="Yasmin Adele Majeed" class="hero-image">
             <span class="photo-credit">Photo Credit: <a href="https://www.dayday.studio" target="_blank">Day</a></span>
@@ -242,8 +196,6 @@
             <div class="bio">
                 Her fiction appears in <em>Narrative</em>, <em>Guernica</em>, <em>Joyland</em>, <em>American Short Fiction</em>, <em>Best Debut Short Stories</em>, and <em>The Best American Short Stories</em>. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from Tin House, Kundiman, Kweli, the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She lives in New York.
             </div>
-
-    
 
             <div class="contact-box">
                 <div class="contact-row">
@@ -260,9 +212,7 @@
                 </div>
             </div>
         </div>
-
     </main>
 
-  
 </body>
 </html>
