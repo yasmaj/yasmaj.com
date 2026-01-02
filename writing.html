@@ -30,29 +30,31 @@
         /* Unified Header & Menu */
         nav { padding: 80px 20px 60px 20px; text-align: center; }
         
-        .site-title {
-            font-size: 1.8rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--text-color);
-            display: block;
-            margin-bottom: 25px;
-            font-weight: 700;
-        }
+     .site-title {
+    font-size: 1.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 25px;
+    font-weight: 700 !important; /* Added !important to force the boldest weight */
+    -webkit-font-smoothing: antialiased;
+}
 
-        .nav-links {
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 1rem;
-            font-weight: 700;
-        }
+.nav-links {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 1rem;
+    font-weight: 700 !important; /* Added !important to match the boldest weight */
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--accent);
-            margin: 0 20px;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: var(--accent);
+    margin: 0 20px;
+    transition: opacity 0.3s;
+}
 
         /* Content Layout */
         main { 
