@@ -30,10 +30,21 @@
         }
 
      /* Navigation */
-        nav {
-            padding: 80px 20px 60px 20px;
-            text-align: center;
-        }
+      nav { 
+    padding: 80px 20px 30px 20px; /* Reduced bottom padding from 60px to 30px */
+    text-align: center; 
+}
+
+        .section-header {
+    font-size: 1rem;
+    margin: 20px 0 20px 0; /* Reduced top margin from 60px to 20px */
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #444; 
+    border-bottom: 1px solid #e0dbca;
+    padding-bottom: 8px;
+}
 
         .site-title {
             font-family: var(--font-serif);
@@ -163,7 +174,17 @@
         }
 
         /* Responsive: Stacks on mobile */
-       @media (max-width: 768px) {
+
+        @media (max-width: 768px) {
+    nav {
+        padding: 50px 20px 20px 20px; /* Even tighter for mobile screens */
+    }
+    
+    .section-header {
+        margin: 15px 0 15px 0; /* Minimal gap for mobile */
+    }
+}
+     
     .site-title {
         font-size: 1.6rem;    /* Slightly smaller for mobile */
         letter-spacing: 0.1em; /* Reduced from 0.25em */
@@ -185,10 +206,7 @@
         margin-top: 10px; /* Brings text closer to the image caption */
         font-size: 1.2rem;
     }
-           .site-title {
-        font-size: 1.5rem;
-        letter-spacing: 0.1em;
-    }
+          
             .contact-row {
                 flex-direction: column;
                 margin-bottom: 15px;
