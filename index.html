@@ -237,6 +237,34 @@
             </div>
         </div>
     </main>
+<script>
+document.addEventListener('mousemove', function(e) {
+  const sparkle = document.createElement('span');
+  sparkle.innerHTML = '✧'; // You can change this to ౨ৎ or ✨
+  sparkle.style.position = 'absolute';
+  sparkle.style.left = e.pageX + 'px';
+  sparkle.style.top = e.pageY + 'px';
+  sparkle.style.color = '#B9D9EB'; // Your Baby Blue color
+  sparkle.style.pointerEvents = 'none';
+  sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
+  sparkle.style.zIndex = '9999';
+  
+  // Animation to make it float and fade
+  sparkle.animate([
+    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+    { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
+  ], {
+    duration: 1000,
+    easing: 'ease-out'
+  });
 
+  document.body.appendChild(sparkle);
+  
+  // Clean up the sparkle after animation
+  setTimeout(() => {
+    sparkle.remove();
+  }, 1000);
+});
+</script>
 </body>
 </html>
