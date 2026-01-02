@@ -10,6 +10,22 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
     <style>
+
+        .flower-sticker {
+    position: fixed;
+    font-size: 2rem;
+    cursor: grab;
+    user-select: none;
+    z-index: 2000;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+}
+
+.flower-sticker:active {
+    cursor: grabbing;
+    transform: scale(1.2) rotate(10deg);
+}
         :root {
             --bg-color: #FEF9E7; 
             --text-color: #1a1a1a;
@@ -236,7 +252,8 @@
                 </div>
             </div>
         </div>
-      
+      <div class="flower-sticker" draggable="true" style="bottom: 40px; right: 80px;">❀</div>
+<div class="flower-sticker" draggable="true" style="bottom: 40px; right: 130px;">❀</div>
     </main>
 <script>
 
@@ -269,6 +286,58 @@ document.addEventListener('mousemove', function(e) {
     sparkle.remove();
   }, 1000);
 });
+
+ 
+const stickers = document.querySelectorAll('.flower-sticker');
+
+stickers.forEach(sticker => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    sticker.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        // Calculate where the mouse is relative to the flower's corner
+        offsetX = e.clientX - sticker.getBoundingClientRect().left;
+        offsetY = e.clientY - sticker.getBoundingClientRect().top;
+        sticker.style.position = 'fixed';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        // Move the flower to the mouse position
+        sticker.style.left = (e.clientX - offsetX) + 'px';
+        sticker.style.top = (e.clientY - offsetY) + 'px';
+        sticker.style.bottom = 'auto'; // Disable the initial bottom positioning
+        sticker.style.right = 'auto';
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+    
+    // Touch support for mobile users
+    sticker.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        offsetX = touch.clientX - sticker.getBoundingClientRect().left;
+        offsetY = touch.clientY - sticker.getBoundingClientRect().top;
+        isDragging = true;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        sticker.style.left = (touch.clientX - offsetX) + 'px';
+        sticker.style.top = (touch.clientY - offsetY) + 'px';
+        sticker.style.bottom = 'auto';
+        sticker.style.right = 'auto';
+    });
+
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+});
+
 </script>
 </body>
 </html>
