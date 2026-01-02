@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writing — Yasmin Adele Majeed</title>
-    <meta name="description" content="Selected fiction and essays by Yasmin Adele Majeed.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
@@ -29,8 +28,9 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Unified Header & Menu */
         nav { padding: 80px 20px 60px 20px; text-align: center; }
-
+        
         .site-title {
             font-size: 1.8rem;
             letter-spacing: 0.25em;
@@ -53,10 +53,14 @@
             text-decoration: none;
             color: var(--accent);
             margin: 0 20px;
-            transition: opacity 0.3s;
         }
 
-        main { max-width: 700px; margin: 0 auto; padding: 0 25px 100px 25px; }
+        /* Content Layout */
+        main { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 0 25px 100px 25px; 
+        }
 
         .section-header {
             font-size: 1rem;
@@ -64,7 +68,7 @@
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #444; /* Bolder as requested */
+            color: #444; 
             border-bottom: 1px solid #e0dbca;
             padding-bottom: 8px;
         }
@@ -72,10 +76,18 @@
         .work-list { list-style: none; padding: 0; margin: 0; }
         .work-item { margin-bottom: 15px; font-size: 1.1rem; }
         
+        /* Hyperlinks */
         a { color: var(--accent); text-decoration: none; font-weight: 400; }
         a:hover { text-decoration: underline; }
 
-        footer { text-align: center; padding: 60px 0; font-size: 0.65rem; color: #bbb; letter-spacing: 0.2em; text-transform: uppercase; }
+        footer { 
+            text-align: center; 
+            padding: 60px 0; 
+            font-size: 0.65rem; 
+            color: #bbb; 
+            letter-spacing: 0.2em; 
+            text-transform: uppercase; 
+        }
 
         @media (max-width: 768px) {
             .site-title { font-size: 1.5rem; letter-spacing: 0.1em; }
@@ -91,7 +103,6 @@
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="writing.html">Writing</a>
-            <a href="events.html">Events</a>
         </div>
     </nav>
 
