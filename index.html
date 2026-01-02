@@ -189,38 +189,7 @@
                 margin-bottom: 4px;
             }
         }
-.sky-container {
-    text-align: center;
-    margin: 60px 0;
-}
 
-#cloud {
-    font-size: 3.5rem; /* Clouds look better a bit larger */
-    cursor: pointer;
-    display: inline-block;
-    filter: drop-shadow(0 5px 15px rgba(185, 217, 235, 0.4)); /* Subtle baby blue glow */
-    transition: transform 0.5s ease;
-}
-
-#cloud:hover {
-    transform: scale(1.1) translateY(-5px);
-}
-
-#sky-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #aaa;
-    margin-top: 15px;
-}
-
-.sky-flower {
-    position: fixed;
-    color: var(--accent);
-    font-size: 1.4rem;
-    pointer-events: none;
-    z-index: 1000;
-}
        
     </style>
 </head>
@@ -267,43 +236,11 @@
                 </div>
             </div>
         </div>
-        <div class="sky-container">
-    <div id="cloud" onclick="releaseStar()">☁️</div>
-    <div id="sky-label">Send a flower into the clouds</div>
-</div>
+      
     </main>
 <script>
 
-  <script>
-function releaseStar() {
-    const flower = document.createElement('div');
-    flower.className = 'sky-flower';
-    flower.innerHTML = '౨ৎ'; // Your signature flower
-    
-    // Start at the cloud's position
-    const rect = document.getElementById('cloud').getBoundingClientRect();
-    const startX = rect.left + (rect.width / 2);
-    const startY = rect.top + (rect.height / 2);
-    
-    flower.style.left = startX + 'px';
-    flower.style.top = startY + 'px';
-    
-    document.body.appendChild(flower);
-    
-    // Randomize drift direction and height
-    const driftX = (Math.random() - 0.5) * 500;
-    const driftY = -200 - (Math.random() * 200);
-    
-    flower.animate([
-        { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
-        { transform: `translate(${driftX}px, ${driftY}px) rotate(${driftX/2}deg)`, opacity: 0 }
-    ], {
-        duration: 3000,
-        easing: 'ease-out'
-    });
 
-    setTimeout(() => flower.remove(), 3000);
-}
     
 document.addEventListener('mousemove', function(e) {
   const sparkle = document.createElement('span');
