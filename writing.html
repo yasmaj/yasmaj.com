@@ -69,16 +69,26 @@
             padding: 0 25px 100px 25px; 
         }
 
-        .section-header {
-            font-size: 1rem;
-            margin: 60px 0 25px 0;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #444; 
-            border-bottom: 1px solid #e0dbca;
-            padding-bottom: 8px;
-        }
+       .section-header {
+    font-size: 1.2rem;       /* Increased from 1rem */
+    margin: 40px 0 25px 0;   /* Balanced spacing */
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-color); /* Darker for more authority */
+    border-bottom: 2px solid #e0dbca; /* Slightly thicker line */
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;               /* Space for the flower icon */
+}
+
+/* Optional: styling the little flower icon specifically */
+.section-header::before {
+    content: "౨ৎ";
+    color: var(--accent);
+    font-size: 1.4rem;
+}
 
         .work-list { list-style: none; padding: 0; margin: 0; }
         .work-item { margin-bottom: 20px; font-size: 1.1rem; }
