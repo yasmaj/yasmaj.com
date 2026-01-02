@@ -189,36 +189,37 @@
                 margin-bottom: 4px;
             }
         }
-.flower-jar-container {
+.sky-container {
     text-align: center;
-    margin-top: 40px;
-    font-family: var(--font-main);
+    margin: 60px 0;
 }
 
-#jar {
-    font-size: 2.5rem;
+#cloud {
+    font-size: 3.5rem; /* Clouds look better a bit larger */
     cursor: pointer;
     display: inline-block;
-    transition: transform 0.2s ease;
+    filter: drop-shadow(0 5px 15px rgba(185, 217, 235, 0.4)); /* Subtle baby blue glow */
+    transition: transform 0.5s ease;
 }
 
-#jar:active {
-    transform: scale(0.9) rotate(-10deg);
+#cloud:hover {
+    transform: scale(1.1) translateY(-5px);
 }
 
-#jar-label {
+#sky-label {
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #999;
-    margin-top: 5px;
+    letter-spacing: 0.2em;
+    color: #aaa;
+    margin-top: 15px;
 }
 
-#flower-count {
-    font-size: 0.8rem;
+.sky-flower {
+    position: fixed;
     color: var(--accent);
-    margin-top: 5px;
-    font-weight: 700;
+    font-size: 1.4rem;
+    pointer-events: none;
+    z-index: 1000;
 }
        
     </style>
@@ -266,43 +267,42 @@
                 </div>
             </div>
         </div>
-        <div class="flower-jar-container">
-    <div id="jar" onclick="addFlower()">🍯</div>
-    <div id="jar-label">Click to leave a flower</div>
-    <div id="flower-count">0 flowers collected</div>
+        <div class="sky-container">
+    <div id="cloud" onclick="releaseStar()">☁️</div>
+    <div id="sky-label">Send a flower into the clouds</div>
 </div>
     </main>
 <script>
 
-    let count = 0;
-function addFlower() {
-    count++;
-    document.getElementById('flower-count').innerText = count + " flowers collected";
+  <script>
+function releaseStar() {
+    const flower = document.createElement('div');
+    flower.className = 'sky-flower';
+    flower.innerHTML = '౨ৎ'; // Your signature flower
     
-    // Create the blooming flower
-    const bloom = document.createElement('div');
-    bloom.innerHTML = '౨ৎ';
-    bloom.style.position = 'fixed';
-    bloom.style.bottom = '100px'; 
-    bloom.style.left = '50%';
-    bloom.style.transform = 'translateX(-50%)';
-    bloom.style.color = '#d14c36';
-    bloom.style.fontSize = '2rem';
-    bloom.style.pointerEvents = 'none';
-    bloom.style.zIndex = '1000';
+    // Start at the cloud's position
+    const rect = document.getElementById('cloud').getBoundingClientRect();
+    const startX = rect.left + (rect.width / 2);
+    const startY = rect.top + (rect.height / 2);
     
-    document.body.appendChild(bloom);
+    flower.style.left = startX + 'px';
+    flower.style.top = startY + 'px';
     
-    // Animation: Fly up and fade out
-    bloom.animate([
-        { bottom: '100px', opacity: 1, transform: 'translateX(-50%) scale(1)' },
-        { bottom: '400px', opacity: 0, transform: `translateX(${(Math.random() - 0.5) * 200}px) scale(2) rotate(20deg)` }
+    document.body.appendChild(flower);
+    
+    // Randomize drift direction and height
+    const driftX = (Math.random() - 0.5) * 500;
+    const driftY = -200 - (Math.random() * 200);
+    
+    flower.animate([
+        { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+        { transform: `translate(${driftX}px, ${driftY}px) rotate(${driftX/2}deg)`, opacity: 0 }
     ], {
-        duration: 2000,
+        duration: 3000,
         easing: 'ease-out'
     });
 
-    setTimeout(() => bloom.remove(), 2000);
+    setTimeout(() => flower.remove(), 3000);
 }
     
 document.addEventListener('mousemove', function(e) {
