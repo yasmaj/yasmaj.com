@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Yasmin Adele Majeed</title>
+    <title>Contact</title>
     <meta name="description" content="Contact Yasmin Adele Majeed or her literary agent regarding her debut novel, Side Streams, and other inquiries.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
@@ -109,3 +109,176 @@
         .contact-box {
             padding-top: 10px;
             font-size: 1.05rem;
+        }
+
+        .contact-row {
+            display: flex;
+            margin-bottom: 30px; /* slightly more spaced out since it's a standalone page */
+        }
+
+        .contact-box strong {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            color: #444;
+            width: 180px;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Stickers */
+        .flower-sticker {
+            position: fixed;
+            font-size: 2rem;
+            cursor: grab;
+            user-select: none;
+            z-index: 2000;
+            color: var(--accent);
+            transition: transform 0.2s ease;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+        }
+
+        .flower-sticker:active {
+            cursor: grabbing;
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            nav {
+                padding: 50px 20px 20px 20px;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .content-wrapper {
+                padding: 0 25px 60px 25px;
+            }
+
+            .contact-row {
+                flex-direction: column;
+            }
+
+            .contact-box strong {
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="writing.html">Writing</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        <h1 class="page-heading">Contact</h1>
+
+        <div class="contact-box">
+            <div class="contact-row">
+                <strong>Direct Email</strong>
+                <div class="contact-info">
+                    <a href="mailto:yasminmajeed@gmail.com">yasminmajeed@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-row">
+                <strong>Literary Agent</strong>
+                <div class="contact-info">
+                    Danielle Bukowski<br>
+                    Sterling Lord Literistic<br>
+                    <a href="mailto:danielle@sll.com">danielle@sll.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flower-sticker" draggable="true" style="bottom: 40px; right: 80px;">❀</div>
+        <div class="flower-sticker" draggable="true" style="bottom: 40px; right: 130px;">❀</div>
+    </main>
+
+<script>
+// Sparkle Mouse Trail
+document.addEventListener('mousemove', function(e) {
+  const sparkle = document.createElement('span');
+  sparkle.innerHTML = '✧'; 
+  sparkle.style.position = 'absolute';
+  sparkle.style.left = e.pageX + 'px';
+  sparkle.style.top = e.pageY + 'px';
+  sparkle.style.color = '#B9D9EB'; 
+  sparkle.style.pointerEvents = 'none';
+  sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
+  sparkle.style.zIndex = '9999';
+  
+  sparkle.animate([
+    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+    { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
+  ], {
+    duration: 1000,
+    easing: 'ease-out'
+  });
+
+  document.body.appendChild(sparkle);
+  
+  setTimeout(() => {
+    sparkle.remove();
+  }, 1000);
+});
+
+// Draggable Stickers Script
+const stickers = document.querySelectorAll('.flower-sticker');
+
+stickers.forEach(sticker => {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    sticker.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - sticker.getBoundingClientRect().left;
+        offsetY = e.clientY - sticker.getBoundingClientRect().top;
+        sticker.style.position = 'fixed';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        sticker.style.left = (e.clientX - offsetX) + 'px';
+        sticker.style.top = (e.clientY - offsetY) + 'px';
+        sticker.style.bottom = 'auto'; 
+        sticker.style.right = 'auto';
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+    
+    // Mobile touch support
+    sticker.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        offsetX = touch.clientX - sticker.getBoundingClientRect().left;
+        offsetY = touch.clientY - sticker.getBoundingClientRect().top;
+        isDragging = true;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        sticker.style.left = (touch.clientX - offsetX) + 'px';
+        sticker.style.top = (touch.clientY - offsetY) + 'px';
+        sticker.style.bottom = 'auto';
+        sticker.style.right = 'auto';
+    });
+
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+});
+</script>
+</body>
+</html>
