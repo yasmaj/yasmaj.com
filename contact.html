@@ -70,21 +70,38 @@
 
         .nav-links a:hover { opacity: 0.6; }
 
-        /* Content Container */
+        /* Two-Column Structure */
         .content-wrapper {
-            max-width: 550px; /* Slightly narrower for a compact form layout */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 40px 100px 40px;
         }
 
         .page-heading {
             font-size: 1.25rem;
-            margin-bottom: 35px;
+            margin-bottom: 45px;
             font-weight: 400;
             line-height: 1.5;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--text-color);
+            text-align: center;
+        }
+
+        .split-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 80px;
+        }
+
+        .form-side {
+            flex: 1.2;
+        }
+
+        .info-side {
+            flex: 1;
+            position: sticky;
+            top: 40px;
         }
 
         a {
@@ -111,7 +128,6 @@
             display: flex;
             flex-direction: column;
             gap: 24px;
-            margin-bottom: 50px;
         }
 
         .form-group {
@@ -120,12 +136,14 @@
             gap: 6px;
         }
 
-        form label {
+        .section-label {
             text-transform: uppercase;
             letter-spacing: 0.12em;
             font-weight: 700;
             color: #444;
             font-size: 0.85rem;
+            margin-bottom: 4px;
+            display: block;
         }
 
         form input, form textarea {
@@ -146,7 +164,7 @@
 
         form textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 160px;
         }
 
         form button {
@@ -154,7 +172,7 @@
             background-color: var(--accent);
             color: #ffffff;
             border: none;
-            padding: 14px 20px;
+            padding: 14px 24px;
             font-size: 0.95rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -172,25 +190,33 @@
             transform: scale(0.98);
         }
 
-        /* Agent Info Footer Box */
-        .agent-box {
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            font-size: 1.05rem;
+        /* Right Panel Highlight Card */
+        .agent-card {
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
-        .agent-row {
-            display: flex;
+        .agent-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: var(--text-color);
         }
 
-        .agent-box strong {
+        .agent-agency {
+            font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-weight: 700;
-            color: #444;
-            width: 180px;
-            flex-shrink: 0;
-            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: #666;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .agent-details {
+            font-size: 1.05rem;
+            margin-bottom: 0;
         }
 
         /* Stickers */
@@ -225,16 +251,17 @@
                 padding: 0 25px 60px 25px;
             }
 
-            form button {
+            .split-layout {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .form-side, .info-side {
                 width: 100%;
             }
 
-            .agent-row {
-                flex-direction: column;
-            }
-
-            .agent-box strong {
-                margin-bottom: 4px;
+            form button {
+                width: 100%;
             }
         }
     </style>
@@ -253,35 +280,42 @@
     <main class="content-wrapper">
         <h1 class="page-heading">Contact</h1>
 
-        <!-- CONTACT FORM -->
-        <!-- Replace 'your_formspree_id' with your actual Formspree endpoint token -->
-        <form action="https://formspree.io/f/mvgrwdyd" method="POST">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required autocomplete="name">
+        <div class="split-layout">
+            <!-- LEFT COLUMN: FORM -->
+            <div class="form-side">
+                <span class="section-label">Direct Inquiry</span>
+                <!-- Replace 'your_formspree_id' with your actual Formspree endpoint token -->
+                <form action="https://formspree.io/f/your_formspree_id" method="POST">
+                    <div class="form-group">
+                        <label for="name" style="display:none;">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" style="display:none;">Email Address</label>
+                        <input type="email" id="email" name="_replyto" placeholder="Your Email Address" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" style="display:none;">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message..." required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="_replyto" required autocomplete="email">
-            </div>
-
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-
-            <button type="submit">Send Message</button>
-        </form>
-        
-        <!-- LITERARY AGENT INFO -->
-        <div class="agent-box">
-            <div class="agent-row">
-                <strong>Literary Agent</strong>
-                <div class="contact-info">
-                    Danielle Bukowski<br>
-                    Sterling Lord Literistic<br>
-                    <a href="mailto:danielle@sll.com">danielle@sll.com</a>
+            <!-- RIGHT COLUMN: LITERARY AGENT CARD -->
+            <div class="info-side">
+                <span class="section-label">Representation</span>
+                <div class="agent-card">
+                    <h2 class="agent-title">Danielle Bukowski</h2>
+                    <div class="agent-agency">Sterling Lord Literistic</div>
+                    <p class="agent-details">
+                        For rights, permissions, or professional literary queries regarding <em>Side Streams</em>, please write directly to:
+                        <br><br>
+                        <a href="mailto:danielle@sll.com">danielle@sll.com</a>
+                    </p>
                 </div>
             </div>
         </div>
