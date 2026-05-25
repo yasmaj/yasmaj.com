@@ -70,9 +70,9 @@
 
         .nav-links a:hover { opacity: 0.6; }
 
-        /* Two-Column Structure */
+        /* Narrower Two-Column Frame */
         .content-wrapper {
-            max-width: 1000px;
+            max-width: 850px; /* Narrowed layout frame */
             margin: 0 auto;
             padding: 40px 40px 100px 40px;
         }
@@ -91,7 +91,7 @@
         .split-layout {
             display: flex;
             align-items: flex-start;
-            gap: 80px;
+            gap: 50px; /* Closer gap for a compact desktop feel */
         }
 
         .form-side {
@@ -142,7 +142,7 @@
             font-weight: 700;
             color: #444;
             font-size: 0.85rem;
-            margin-bottom: 4px;
+            margin-bottom: 12px;
             display: block;
         }
 
@@ -156,6 +156,8 @@
             color: var(--text-color);
             outline: none;
             transition: border-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         form input:focus, form textarea:focus {
@@ -195,6 +197,7 @@
             border: 1px solid var(--border-color);
             padding: 30px;
             background-color: rgba(255, 255, 255, 0.15);
+            box-sizing: border-box;
         }
 
         .agent-title {
@@ -211,12 +214,7 @@
             letter-spacing: 0.05em;
             color: #666;
             font-weight: 400;
-            margin-bottom: 20px;
-        }
-
-        .agent-details {
-            font-size: 1.05rem;
-            margin-bottom: 0;
+            line-height: 1.6;
         }
 
         /* Stickers */
@@ -236,7 +234,7 @@
             transform: scale(1.2) rotate(10deg);
         }
 
-        /* Responsive Mobile Layout */
+        /* Responsive Breakpoints */
         @media (max-width: 768px) {
             nav {
                 padding: 50px 20px 20px 20px;
@@ -277,13 +275,13 @@
         </div>
     </nav>
 
- 
+    <main class="content-wrapper">
+        <h1 class="page-heading">Contact</h1>
 
         <div class="split-layout">
             <!-- LEFT COLUMN: FORM -->
             <div class="form-side">
                 <span class="section-label">Contact Form</span>
-                <!-- Replace 'your_formspree_id' with your actual Formspree endpoint token -->
                 <form action="https://formspree.io/f/mvgrwdyd" method="POST">
                     <div class="form-group">
                         <label for="name" style="display:none;">Name</label>
@@ -309,9 +307,10 @@
                 <span class="section-label">Literary Agent</span>
                 <div class="agent-card">
                     <h2 class="agent-title">Danielle Bukowski</h2>
-                    <div class="agent-agency">Sterling Lord Literistic<br>
-                       Email: <a href="mailto:danielle@sll.com">danielle@sll.com</a></div>
-                    </p>
+                    <div class="agent-agency">
+                        Sterling Lord Literistic<br>
+                        Email: <a href="mailto:danielle@sll.com">danielle@sll.com</a>
+                    </div>
                 </div>
             </div>
         </div>
