@@ -10,22 +10,6 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
     <style>
-
-        .flower-sticker {
-    position: fixed;
-    font-size: 2rem;
-    cursor: grab;
-    user-select: none;
-    z-index: 2000;
-    color: var(--accent);
-    transition: transform 0.2s ease;
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
-}
-
-.flower-sticker:active {
-    cursor: grabbing;
-    transform: scale(1.2) rotate(10deg);
-}
         :root {
             --bg-color: #FEF9E7; 
             --text-color: #1a1a1a;
@@ -42,16 +26,13 @@
             line-height: 1.8;
             font-weight: 300;
             -webkit-font-smoothing: antialiased;
+            animation: fadeIn 1.2s ease-in;
         }
 
-        body {
-    animation: fadeIn 1.2s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         /* Navigation */
         nav { 
@@ -60,7 +41,7 @@
         }
 
         .site-title {
-            font-size: 1.8rem; /* Synced with Writing page */
+            font-size: 1.8rem;
             letter-spacing: 0.25em;
             text-transform: uppercase;
             text-decoration: none !important;
@@ -96,6 +77,7 @@
             align-items: flex-start;
             gap: 60px;
             padding: 40px 40px 100px 40px;
+            position: relative; /* Sets anchor base for absolute stickers */
         }
 
         .photo-side {
@@ -142,18 +124,65 @@
         }
 
         a:hover { opacity: 0.7; text-decoration: underline; }
-/* Custom Highlight Color */
-::selection {
-    background-color: #b9d8e5; /* Dark Blue */
-    color: #1a1a1a;           /* Dark text for readability */
-}
 
-/* For Safari/Firefox support */
-::-moz-selection {
-    background-color: #b9d8e5;
-    color: #1a1a1a;
-}
-       
+        /* Custom Highlight Color */
+        ::selection {
+            background-color: #b9d8e5; 
+            color: #1a1a1a;           
+        }
+
+        ::-moz-selection {
+            background-color: #b9d8e5;
+            color: #1a1a1a;
+        }
+
+        /* Upgraded Magnetic Sticker Aesthetic */
+        .flower-sticker {
+            position: absolute; /* Document relative behavior */
+            font-size: 2.2rem;
+            cursor: grab;
+            user-select: none;
+            z-index: 2000;
+            color: var(--accent);
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+            filter: drop-shadow(1px 1px 1px rgba(209, 76, 54, 0.15));
+        }
+
+        /* Tactile Hover States */
+        .flower-sticker:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(4px 6px 4px rgba(0,0,0,0.08));
+            color: #e2634d;
+        }
+
+        .flower-sticker:active {
+            cursor: grabbing;
+            transform: scale(1.25) rotate(-8deg);
+            filter: drop-shadow(8px 12px 8px rgba(0,0,0,0.12));
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            nav {
+                padding: 50px 20px 20px 20px;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 25px 60px 25px;
+                gap: 30px;
+            }
+
+            .photo-side {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -181,29 +210,26 @@
             <div class="bio">
                 Her fiction appears in <em>Narrative</em>, <em>Guernica</em>, <em>Joyland</em>, <em>American Short Fiction</em>, <em>Best Debut Short Stories</em>, and <em>The Best American Short Stories</em>. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from Tin House, Kundiman, Kweli, the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She is a winner of the PEN/Robert J. Dau Short Story Prize and has taught creative writing at the University of Iowa. Raised in the Bay Area and New York City, she currently lives in Brooklyn.
             </div>
+        </div>
 
-            
-
-           
-      <div class="flower-sticker" draggable="true" style="bottom: 40px; right: 80px;">❀</div>
-<div class="flower-sticker" draggable="true" style="bottom: 40px; right: 130px;">❀</div>
+        <!-- Stable Absolute Positioned Magnets placed inside layout bounds -->
+        <div class="flower-sticker" style="top: 82%; left: 45%;">❀</div>
+        <div class="flower-sticker" style="top: 82%; left: 52%;">❀</div>
     </main>
+
 <script>
-
-
-    
+// Sparkle Mouse Trail
 document.addEventListener('mousemove', function(e) {
   const sparkle = document.createElement('span');
-  sparkle.innerHTML = '✧'; // You can change this to ౨ৎ or ✨
+  sparkle.innerHTML = '✧'; 
   sparkle.style.position = 'absolute';
   sparkle.style.left = e.pageX + 'px';
   sparkle.style.top = e.pageY + 'px';
-  sparkle.style.color = '#B9D9EB'; // Your Baby Blue color
+  sparkle.style.color = '#B9D9EB'; 
   sparkle.style.pointerEvents = 'none';
   sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
   sparkle.style.zIndex = '9999';
   
-  // Animation to make it float and fade
   sparkle.animate([
     { transform: 'translate(0, 0) scale(1)', opacity: 1 },
     { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
@@ -214,63 +240,66 @@ document.addEventListener('mousemove', function(e) {
 
   document.body.appendChild(sparkle);
   
-  // Clean up the sparkle after animation
   setTimeout(() => {
     sparkle.remove();
   }, 1000);
 });
 
- 
+// Upgraded Absolute Document Physics for Stickers
 const stickers = document.querySelectorAll('.flower-sticker');
 
 stickers.forEach(sticker => {
     let isDragging = false;
-    let offsetX, offsetY;
+    let startX, startY;
+    let initialLeft, initialTop;
 
-    sticker.addEventListener('mousedown', (e) => {
+    function getCoords(e) {
+        return e.touches ? e.touches[0] : e;
+    }
+
+    function startDrag(e) {
         isDragging = true;
-        // Calculate where the mouse is relative to the flower's corner
-        offsetX = e.clientX - sticker.getBoundingClientRect().left;
-        offsetY = e.clientY - sticker.getBoundingClientRect().top;
-        sticker.style.position = 'fixed';
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
+        const coords = getCoords(e);
         
-        // Move the flower to the mouse position
-        sticker.style.left = (e.clientX - offsetX) + 'px';
-        sticker.style.top = (e.clientY - offsetY) + 'px';
-        sticker.style.bottom = 'auto'; // Disable the initial bottom positioning
-        sticker.style.right = 'auto';
-    });
+        startX = coords.pageX;
+        startY = coords.pageY;
+        
+        initialLeft = sticker.offsetLeft;
+        initialTop = sticker.offsetTop;
+        
+        sticker.style.transition = 'none';
+        
+        // Prevent accidental touch scrolling on mobile devices while moving magnets
+        if (e.cancelable) e.preventDefault();
+    }
 
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-    
-    // Touch support for mobile users
-    sticker.addEventListener('touchstart', (e) => {
-        const touch = e.touches[0];
-        offsetX = touch.clientX - sticker.getBoundingClientRect().left;
-        offsetY = touch.clientY - sticker.getBoundingClientRect().top;
-        isDragging = true;
-    });
-
-    document.addEventListener('touchmove', (e) => {
+    function doDrag(e) {
         if (!isDragging) return;
-        const touch = e.touches[0];
-        sticker.style.left = (touch.clientX - offsetX) + 'px';
-        sticker.style.top = (touch.clientY - offsetY) + 'px';
-        sticker.style.bottom = 'auto';
+        const coords = getCoords(e);
+        
+        const dx = coords.pageX - startX;
+        const dy = coords.pageY - startY;
+        
+        sticker.style.left = (initialLeft + dx) + 'px';
+        sticker.style.top = (initialTop + dy) + 'px';
+        sticker.style.bottom = 'auto'; 
         sticker.style.right = 'auto';
-    });
+    }
 
-    document.addEventListener('touchend', () => {
+    function stopDrag() {
+        if (!isDragging) return;
         isDragging = false;
-    });
-});
+        sticker.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease';
+    }
 
+    sticker.addEventListener('mousedown', startDrag);
+    document.addEventListener('mousemove', doDrag);
+    document.addEventListener('mouseup', stopDrag);
+    
+    sticker.addEventListener('touchstart', startDrag, { passive: false });
+    document.addEventListener('touchmove', doDrag, { passive: false });
+    document.addEventListener('touchend', stopDrag);
+});
 </script>
 </body>
 </html>
