@@ -136,30 +136,7 @@
             color: #1a1a1a;
         }
 
-        /* Upgraded Magnetic Sticker Aesthetic */
-        .flower-sticker {
-            position: absolute; /* Document relative behavior */
-            font-size: 2.2rem;
-            cursor: grab;
-            user-select: none;
-            z-index: 2000;
-            color: var(--accent);
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
-            filter: drop-shadow(1px 1px 1px rgba(209, 76, 54, 0.15));
-        }
-
-        /* Tactile Hover States */
-        .flower-sticker:hover {
-            transform: scale(1.1) rotate(5deg);
-            filter: drop-shadow(4px 6px 4px rgba(0,0,0,0.08));
-            color: #e2634d;
-        }
-
-        .flower-sticker:active {
-            cursor: grabbing;
-            transform: scale(1.25) rotate(-8deg);
-            filter: drop-shadow(8px 12px 8px rgba(0,0,0,0.12));
-        }
+    
 
         /* Responsive Mobile Layout */
         @media (max-width: 768px) {
@@ -212,10 +189,7 @@
             </div>
         </div>
 
-        <!-- Stable Absolute Positioned Magnets with added bow emoji -->
-        <div class="flower-sticker" style="top: 82%; left: 43%;">❀</div>
-        <div class="flower-sticker" style="top: 81.5%; left: 49%; font-size: 2.4rem;">౨ৎ</div>
-        <div class="flower-sticker" style="top: 82%; left: 56%;">❀</div>
+        
     </main>
 
 <script>
@@ -246,60 +220,7 @@ document.addEventListener('mousemove', function(e) {
   }, 1000);
 });
 
-// Upgraded Absolute Document Physics for Stickers
-const stickers = document.querySelectorAll('.flower-sticker');
 
-stickers.forEach(sticker => {
-    let isDragging = false;
-    let startX, startY;
-    let initialLeft, initialTop;
-
-    function getCoords(e) {
-        return e.touches ? e.touches[0] : e;
-    }
-
-    function startDrag(e) {
-        isDragging = true;
-        const coords = getCoords(e);
-        
-        startX = coords.pageX;
-        startY = coords.pageY;
-        
-        initialLeft = sticker.offsetLeft;
-        initialTop = sticker.offsetTop;
-        
-        sticker.style.transition = 'none';
-        
-        if (e.cancelable) e.preventDefault();
-    }
-
-    function doDrag(e) {
-        if (!isDragging) return;
-        const coords = getCoords(e);
-        
-        const dx = coords.pageX - startX;
-        const dy = coords.pageY - startY;
-        
-        sticker.style.left = (initialLeft + dx) + 'px';
-        sticker.style.top = (initialTop + dy) + 'px';
-        sticker.style.bottom = 'auto'; 
-        sticker.style.right = 'auto';
-    }
-
-    function stopDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        sticker.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease';
-    }
-
-    sticker.addEventListener('mousedown', startDrag);
-    document.addEventListener('mousemove', doDrag);
-    document.addEventListener('mouseup', stopDrag);
-    
-    sticker.addEventListener('touchstart', startDrag, { passive: false });
-    document.addEventListener('touchmove', doDrag, { passive: false });
-    document.addEventListener('touchend', stopDrag);
-});
 </script>
 </body>
 </html>
