@@ -1,7 +1,3 @@
-
-
-           
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,13 +163,11 @@
             color: var(--accent);
         }
 
-        /* The selected tab highlight */
         .tab-button.active {
             color: var(--accent);
             position: relative;
         }
 
-        /* Tiny underline dot/dash below active tab */
         .tab-button.active::after {
             content: "";
             position: absolute;
@@ -186,12 +180,12 @@
 
         /* Dynamic Hidden Elements */
         .tab-content {
-            display: none; /* hidden by default */
+            display: none; 
             animation: tabFade 0.4s ease-out;
         }
 
         .tab-content.active {
-            display: block; /* shown when active */
+            display: block; 
         }
 
         @keyframes tabFade {
@@ -208,6 +202,10 @@
         .blurb-item {
             margin-bottom: 35px;
             font-size: 1.05rem;
+        }
+
+        .blurb-text {
+            margin-bottom: 8px;
         }
 
         .blurb-author {
@@ -240,20 +238,6 @@
 
         ::selection { background-color: #b9d8e5; color: #1a1a1a; }
         ::-moz-selection { background-color: #b9d8e5; color: #1a1a1a; }
-
-        /* Stickers Styling */
-        .flower-sticker {
-            position: absolute;
-            font-size: 2.2rem;
-            cursor: grab;
-            user-select: none;
-            z-index: 2000;
-            color: var(--accent);
-            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
-            filter: drop-shadow(1px 1px 1px rgba(209, 76, 54, 0.15));
-        }
-        .flower-sticker:hover { transform: scale(1.1) rotate(5deg); filter: drop-shadow(4px 6px 4px rgba(0,0,0,0.08)); color: #e2634d; }
-        .flower-sticker:active { cursor: grabbing; transform: scale(1.25) rotate(-8deg); filter: drop-shadow(8px 12px 8px rgba(0,0,0,0.12)); }
 
         @media (max-width: 768px) {
             nav { padding: 50px 20px 20px 20px; }
@@ -305,45 +289,45 @@
             <!-- TAB CONTAINER 1: DESCRIPTION -->
             <div id="description" class="tab-content active">
                 <div class="synopsis-text">
-Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drives them to her Filipino hometown to pick up a stranger—and Claudia, Isobel’s childhood friend, comes back to the Bay Area with them and moves in. Without explanation, Claudia becomes part of the fabric of their Filipino-Pakistani home, which includes picking Aliya up from school and dropping her off at her best friend Samir’s house. The two children have secrets too: Aliya likes girls, and Samir glances too long at beautiful boys in the masjid. But when the kids spy Claudia and Samir’s father, Ibrahim, sharing a covert kiss, the weight of the silence fractures the two families.<p>Decades later, a chance encounter reconnects Aliya and Samir. Confident in their queerness now, they slip easily back into friendship—but Aliya explodes their equilibrium by introducing Samir to Pilar, the child of Claudia and Ibrahim’s affair—and Samir’s half-sister. As Aliya’s gallery work leads her to search for the missing piece in artist Pilar Quintos’ mural, the namesake of Claudia’s daughter, she finds herself tracing her mother Isobel’s career footsteps. As Aliya, Samir, and Pilar grapple with the emotional impact of what’s been hidden from them, the mystery of the mural becomes an opportunity for reunification between Aliya and Isobel; but only if the older generation is willing to reckon with their silence.<p>A polyphonic, achingly beautiful novel, Side Streams heralds a new literary talent and is a testament to the power of reaching across generational lines and building a family—whether it be by bond or by blood.            </div>
-
-    
+                    Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drives them to her Filipino hometown to pick up a stranger—and Claudia, Isobel’s childhood friend, comes back to the Bay Area with them and moves in. Without explanation, Claudia becomes part of the fabric of their Filipino-Pakistani home, which includes picking Aliya up from school and dropping her off at her best friend Samir’s house. The two children have secrets too: Aliya likes girls, and Samir glances too long at beautiful boys in the masjid. But when the kids spy Claudia and Samir’s father, Ibrahim, sharing a covert kiss, the weight of the silence fractures the two families.
+                    <p>Decades later, a chance encounter reconnects Aliya and Samir. Confident in their queerness now, they slip easily back into friendship—but Aliya explodes their equilibrium by introducing Samir to Pilar, the child of Claudia and Ibrahim’s affair—and Samir’s half-sister. As Aliya’s gallery work leads her to search for the missing piece in artist Pilar Quintos’ mural, the namesake of Claudia’s daughter, she finds herself tracing her mother Isobel’s career footsteps. As Aliya, Samir, and Pilar grapple with the emotional impact of what’s been hidden from them, the mystery of the mural becomes an opportunity for reunification between Aliya and Isobel; but only if the older generation is willing to reckon with their silence.</p>
+                    <p>A polyphonic, achingly beautiful novel, <em>Side Streams</em> heralds a new literary talent and is a testament to the power of reaching across generational lines and building a family—whether it be by bond or by blood.</p>
+                </div>
             </div>
 
             <!-- TAB CONTAINER 2: PRAISE -->
             <div id="praise" class="tab-content">
-                <div class="blurb-text">
-                    "Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping. It is at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again."
+                <!-- Blurb 1 -->
+                <div class="blurb-item">
+                    <div class="blurb-text">
+                        "Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping. It is at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again."
+                    </div>
+                    <div class="blurb-author">— Eliana Ramage, <em>author of <span style="font-style: italic;">To the Moon and Back</span></em></div>
                 </div>
-                <div class="blurb-author">—  Eliana Ramage, <em>author of <span style="font-style: italic;">To the Moon and Back</span></em></div>
-            </div>
 
-            <!-- Blurb 2 -->
-            <div class="blurb-item">
-                <div class="blurb-text">
-                    "SIDE STREAMS knows the aftermath is where we live. It’s a gorgeously written novel about the families we inherit and the communities we build over time. Yasmin Adele Majeed weaves desire, art-making, and noticing itself into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years. To borrow the language of one of the characters, I found myself greedy for their love—for the chance to witness how they would love one another."
+                <!-- Blurb 2 -->
+                <div class="blurb-item">
+                    <div class="blurb-text">
+                        "SIDE STREAMS knows the aftermath is where we live. It’s a gorgeously written novel about the families we inherit and the communities we build over time. Yasmin Adele Majeed weaves desire, art-making, and noticing itself into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years. To borrow the language of one of the characters, I found myself greedy for their love—for the chance to witness how they would love one another."
+                    </div>
+                    <div class="blurb-author">— Nishanth Injam, <em>author of The Best Possible Experience</em></div>
                 </div>
-                <div class="blurb-author">—  Nishanth Injam, <em>author of The Best Possible Experience</em></div>
-            </div>
 
-            
-            <!-- Blurb 3 -->
-            <div class="blurb-item">
-                <div class="blurb-text">
-                    "“A radiant novel about the havoc time leaves on the human heart. I adored it. Yasmin Adele Majeed writes of friendship, parenthood, art, and identity with clear-eyed compassion for the ways we lose and find ourselves in one another. Only one book in and Majeed is already an essential voice."
+                <!-- Blurb 3 -->
+                <div class="blurb-item">
+                    <div class="blurb-text">
+                        "A radiant novel about the havoc time leaves on the human heart. I adored it. Yasmin Adele Majeed writes of friendship, parenthood, art, and identity with clear-eyed compassion for the ways we lose and find ourselves in one another. Only one book in and Majeed is already an essential voice."
+                    </div>
+                    <div class="blurb-author">— Anthony Marra, <em>author of Mercury Pictures Presents</em></div>
                 </div>
-                <div class="blurb-author">—  Anthony Marra, <em>author of Mercury Pictures Presents</em></div>
-            </div>
 
-                 <!-- Blurb 4 -->
-            <div class="blurb-item">
-                <div class="blurb-text">
-"A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more. In Side Streams, characters must reckon with their desire—known and unknown to themselves and others, desires deemed forbidden or improper. I was particularly drawn to the vibrant cast of young, queer characters reckoning with their understanding of self. Side Streams also boldly explores the Filipino and Pakistani diasporas, and the multicultural tapestry that is America. There were many passages of startling, quiet beauty.”
+                <!-- Blurb 4 -->
+                <div class="blurb-item">
+                    <div class="blurb-text">
+                        "A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more. In Side Streams, characters must reckon with their desire—known and unknown to themselves and others, desires deemed forbidden or improper. I was particularly drawn to the vibrant cast of young, queer characters reckoning with their understanding of self. Side Streams also boldly explores the Filipino and Pakistani diasporas, and the multicultural tapestry that is America. There were many passages of startling, quiet beauty.”
+                    </div>
+                    <div class="blurb-author">— Daphne Palasi Andreades, <em>author of Brown Girls and Lucid Dreams</em></div>
                 </div>
-                <div class="blurb-author">—  Daphne Palasi Andreades, <em>author of Brown Girls and Lucid Dreams</em></div>
-            </div>
-        </div>
-                
             </div>
 
             <!-- TAB CONTAINER 3: BUY LINKS -->
@@ -355,24 +339,17 @@ Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drive
                 </ul>
             </div>
         </div>
-
-   
+    </main>
 
 <script>
-// TAB SWITCHING FUNCTION ARCHITECTURE
 function switchTab(event, tabId) {
-    // Hide all tab content panes safely
     const contents = document.querySelectorAll('.tab-content');
     contents.forEach(content => content.classList.remove('active'));
 
-    // Clear active styling indicators from all navigation link buttons
     const buttons = document.querySelectorAll('.tab-button');
     buttons.forEach(button => button.classList.remove('active'));
 
-    // Reveal the targeted selected element container block
     document.getElementById(tabId).classList.add('active');
-
-    // Add active underline highlight indicator to the clicked node item
     event.currentTarget.classList.add('active');
 }
 
@@ -396,8 +373,6 @@ document.addEventListener('mousemove', function(e) {
   document.body.appendChild(sparkle);
   setTimeout(() => { sparkle.remove(); }, 1000);
 });
-
-
 </script>
 </body>
 </html>
