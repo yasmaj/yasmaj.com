@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing — Yasmin Adele Majeed</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #FEF9E7;
+            --text-color: #1a1a1a;
+            --accent: #d14c36;
+            --font-main: 'Barlow', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+    animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+        
+
+      /* Navigation */
+        nav { 
+            padding: 80px 20px 30px 20px; 
+            text-align: center; 
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            border: none !important;
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 25px;
+            font-weight: 700 !important;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 1rem;
+            font-weight: 700 !important;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            margin: 0 20px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 0.6; }
+
+        /* Content Layout */
+        main { 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 0 25px 100px 25px; 
+        }
+
+       .section-header {
+    font-size: 1.2rem;       /* Increased from 1rem */
+    margin: 40px 0 25px 0;   /* Balanced spacing */
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-color); /* Darker for more authority */
+    border-bottom: 2px solid #e0dbca; /* Slightly thicker line */
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;               /* Space for the flower icon */
+}
+
+/* Optional: styling the little flower icon specifically */
+.section-header::before {
+    content: "౨ৎ";
+    color: var(--accent);
+    font-size: 1.4rem;
+}
+/* Custom Highlight Color */
+::selection {
+    background-color: #b9d8e5; /* Baby Blue */
+    color: #1a1a1a;           /* Dark text for readability */
+}
+
+/* For Safari/Firefox support */
+::-moz-selection {
+    background-color: #b9d8e5;
+    color: #1a1a1a;
+}
+        /* Story Title Styling */
+.work-item strong {
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.work-item a:hover strong {
+    color: #7fb3d5; /* Subtle blue shift on hover to match highlight */
+}
+
+        .work-list { list-style: none; padding: 0; margin: 0; }
+        .work-item { margin-bottom: 20px; font-size: 1.1rem; }
+        
+        .award-note {
+            display: block;
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        
+        /* Hyperlinks */
+        a { color: var(--accent); text-decoration: none; font-weight: 400; }
+        a:hover { text-decoration: underline; }
+
+        footer { 
+            text-align: center; 
+            padding: 60px 0; 
+            font-size: 0.65rem; 
+            color: #bbb; 
+            letter-spacing: 0.2em; 
+            text-transform: uppercase; 
+        }
+
+        /* Unified Mobile Adjustments */
+        @media (max-width: 768px) {
+            .site-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+                font-weight: 700 !important;
+                margin-bottom: 20px;
+            }
+            .nav-links {
+                font-size: 0.95rem;
+                font-weight: 700 !important;
+            }
+            .nav-links a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+            main {
+                padding-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   <nav>
+        <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="writing.html">Writing</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="section-header">Side Streams</div>
+      Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drives them to her Filipino hometown to pick up a stranger—and Claudia, Isobel’s childhood friend, comes back to the Bay Area with them and moves in. Without explanation, Claudia becomes part of the fabric of their Filipino-Pakistani home, which includes picking Aliya up from school and dropping her off at her best friend Samir’s house. The two children have secrets too: Aliya likes girls, and Samir glances too long at beautiful boys in the masjid. But when the kids spy Claudia and Samir’s father, Ibrahim, sharing a covert kiss, the weight of the silence fractures the two families.Decades later, a chance encounter reconnects Aliya and Samir. Confident in their queerness now, they slip easily back into friendship—but Aliya explodes their equilibrium by introducing Samir to Pilar, the child of Claudia and Ibrahim’s affair—and Samir’s half-sister. As Aliya’s gallery work leads her to search for the missing piece in artist Pilar Quintos’ mural, the namesake of Claudia’s daughter, she finds herself tracing her mother Isobel’s career footsteps. As Aliya, Samir, and Pilar grapple with the emotional impact of what’s been hidden from them, the mystery of the mural becomes an opportunity for reunification between Aliya and Isobel; but only if the older generation is willing to reckon with their silence.A polyphonic, achingly beautiful novel, Side Streams heralds a new literary talent and is a testament to the power of reaching across generational lines and building a family—whether it be by bond or by blood.
+    <a href="#" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; text-decoration: none; font-size: 2rem;">౨ৎ</a>
+    </main>
+
+    <script>
+document.addEventListener('mousemove', function(e) {
+  const sparkle = document.createElement('span');
+  sparkle.innerHTML = '✧'; // You can change this to ౨ৎ or ✨
+  sparkle.style.position = 'absolute';
+  sparkle.style.left = e.pageX + 'px';
+  sparkle.style.top = e.pageY + 'px';
+  sparkle.style.color = '#B9D9EB'; // Your Baby Blue color
+  sparkle.style.pointerEvents = 'none';
+  sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
+  sparkle.style.zIndex = '9999';
+  
+  // Animation to make it float and fade
+  sparkle.animate([
+    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+    { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
+  ], {
+    duration: 1000,
+    easing: 'ease-out'
+  });
+
+  document.body.appendChild(sparkle);
+  
+  // Clean up the sparkle after animation
+  setTimeout(() => {
+    sparkle.remove();
+  }, 1000);
+});
+</script>
+
+</body>
+</html>
 
