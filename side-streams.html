@@ -300,7 +300,7 @@
 
             <div class="synopsis">
                 <!-- Replace with your actual novel description paragraph block -->
-Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drives them to her Filipino hometown to pick up a stranger—and Claudia, Isobel’s childhood friend, comes back to the Bay Area with them and moves in. Without explanation, Claudia becomes part of the fabric of their Filipino-Pakistani home, which includes picking Aliya up from school and dropping her off at her best friend Samir’s house. The two children have secrets too: Aliya likes girls, and Samir glances too long at beautiful boys in the masjid. But when the kids spy Claudia and Samir’s father, Ibrahim, sharing a covert kiss, the weight of the silence fractures the two families.<br>Decades later, a chance encounter reconnects Aliya and Samir. Confident in their queerness now, they slip easily back into friendship—but Aliya explodes their equilibrium by introducing Samir to Pilar, the child of Claudia and Ibrahim’s affair—and Samir’s half-sister. As Aliya’s gallery work leads her to search for the missing piece in artist Pilar Quintos’ mural, the namesake of Claudia’s daughter, she finds herself tracing her mother Isobel’s career footsteps. As Aliya, Samir, and Pilar grapple with the emotional impact of what’s been hidden from them, the mystery of the mural becomes an opportunity for reunification between Aliya and Isobel; but only if the older generation is willing to reckon with their silence.<br>A polyphonic, achingly beautiful novel, Side Streams heralds a new literary talent and is a testament to the power of reaching across generational lines and building a family—whether it be by bond or by blood.            </div>
+Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drives them to her Filipino hometown to pick up a stranger—and Claudia, Isobel’s childhood friend, comes back to the Bay Area with them and moves in. Without explanation, Claudia becomes part of the fabric of their Filipino-Pakistani home, which includes picking Aliya up from school and dropping her off at her best friend Samir’s house. The two children have secrets too: Aliya likes girls, and Samir glances too long at beautiful boys in the masjid. But when the kids spy Claudia and Samir’s father, Ibrahim, sharing a covert kiss, the weight of the silence fractures the two families.<p>Decades later, a chance encounter reconnects Aliya and Samir. Confident in their queerness now, they slip easily back into friendship—but Aliya explodes their equilibrium by introducing Samir to Pilar, the child of Claudia and Ibrahim’s affair—and Samir’s half-sister. As Aliya’s gallery work leads her to search for the missing piece in artist Pilar Quintos’ mural, the namesake of Claudia’s daughter, she finds herself tracing her mother Isobel’s career footsteps. As Aliya, Samir, and Pilar grapple with the emotional impact of what’s been hidden from them, the mystery of the mural becomes an opportunity for reunification between Aliya and Isobel; but only if the older generation is willing to reckon with their silence.<p>A polyphonic, achingly beautiful novel, Side Streams heralds a new literary talent and is a testament to the power of reaching across generational lines and building a family—whether it be by bond or by blood.            </div>
 
             <span class="section-label">Advance Praise</span>
 
@@ -338,12 +338,7 @@ Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drive
             </div>
         </div>
 
-        <!-- Stable Absolute Positioned Magnets elements -->
-        <div class="flower-sticker" style="top: 92%; left: 10%;">❀</div>
-        <div class="flower-sticker" style="top: 91.5%; left: 16%; font-size: 2.4rem;">91</div>
-        <div class="flower-sticker" style="top: 92%; left: 23%;">❀</div>
-    </main>
-
+    
 <script>
 // Sparkle Mouse Trail
 document.addEventListener('mousemove', function(e) {
@@ -372,58 +367,7 @@ document.addEventListener('mousemove', function(e) {
   }, 1000);
 });
 
-// Absolute Document Physics for Stickers
-const stickers = document.querySelectorAll('.flower-sticker');
 
-stickers.forEach(sticker => {
-    let isDragging = false;
-    let startX, startY;
-    let initialLeft, initialTop;
-
-    function getCoords(e) {
-        return e.touches ? e.touches[0] : e;
-    }
-
-    function startDrag(e) {
-        isDragging = true;
-        const coords = getCoords(e);
-        
-        startX = coords.pageX;
-        startY = coords.pageY;
-        
-        initialLeft = sticker.offsetLeft;
-        initialTop = sticker.offsetTop;
-        
-        sticker.style.transition = 'none';
-        if (e.cancelable) e.preventDefault();
-    }
-
-    function doDrag(e) {
-        if (!isDragging) return;
-        const coords = getCoords(e);
-        const dx = coords.pageX - startX;
-        const dy = coords.pageY - startY;
-        
-        sticker.style.left = (initialLeft + dx) + 'px';
-        sticker.style.top = (initialTop + dy) + 'px';
-        sticker.style.bottom = 'auto'; 
-        sticker.style.right = 'auto';
-    }
-
-    function stopDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        sticker.style.transition = 'transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease';
-    }
-
-    sticker.addEventListener('mousedown', startDrag);
-    document.addEventListener('mousemove', doDrag);
-    document.addEventListener('mouseup', stopDrag);
-    
-    sticker.addEventListener('touchstart', startDrag, { passive: false });
-    document.addEventListener('touchmove', doDrag, { passive: false });
-    document.addEventListener('touchend', stopDrag);
-});
 </script>
 </body>
 </html>
