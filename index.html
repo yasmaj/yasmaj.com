@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side Streams — Yasmin Adele Majeed</title>
-    <meta name="description" content="About Side Streams, a debut novel by Yasmin Adele Majeed, forthcoming from Little, Brown.">
+    <title>Yasmin Adele Majeed</title>
+    <meta name="description" content="Yasmin Adele Majeed is a writer based in New York. Her debut novel, Side Streams, is forthcoming from Little, Brown.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
     
@@ -15,7 +15,6 @@
             --text-color: #1a1a1a;
             --accent: #d14c36; 
             --font-main: 'Barlow', sans-serif;
-            --border-color: #e0dbca;
         }
 
         body {
@@ -70,166 +69,52 @@
 
         .nav-links a:hover { opacity: 0.6; }
 
-        /* Layout */
+        /* Side-by-Side Container */
         .content-wrapper {
-            max-width: 850px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             align-items: flex-start;
             gap: 60px;
             padding: 40px 40px 100px 40px;
-            position: relative;
+            position: relative; /* Sets anchor base for absolute stickers */
         }
 
-        .book-jacket-side {
+        .photo-side {
             flex: 1;
-            max-width: 320px;
-            position: sticky;
-            top: 40px;
+            max-width: 420px;
         }
 
-        .cover-placeholder {
+        .hero-image {
             width: 100%;
-            aspect-ratio: 2 / 3;
-            border: 1px dashed var(--border-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-size: 0.9rem;
-            font-weight: 400;
+            height: auto;
+            display: block;
         }
 
-        .publisher-credit {
+        .photo-credit {
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #666;
-            margin-top: 20px;
+            margin-top: 15px;
             display: block;
-            font-weight: 600;
+            font-weight: 500;
         }
 
-        .book-info-side {
-            flex: 1.4;
+        .text-side {
+            flex: 1.2;
         }
 
-        .book-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0;
-            margin-bottom: 5px;
-            line-height: 1.1;
-        }
-
-        .book-subtitle {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #555;
-            margin-bottom: 35px;
-            font-weight: 400;
-        }
-
-        /* Tab Architecture */
-        .tab-menu {
-            display: flex;
-            gap: 30px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
+        .announcement {
+            font-size: 1.25rem;
             margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.5;
         }
 
-        .tab-button {
-            background: none;
-            border: none;
-            font-family: var(--font-main);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-weight: 700;
-            color: #777;
-            cursor: pointer;
-            padding: 0;
-            transition: color 0.2s ease;
-        }
-
-        .tab-button:hover {
-            color: var(--accent);
-        }
-
-        .tab-button.active {
-            color: var(--accent);
-            position: relative;
-        }
-
-        .tab-button.active::after {
-            content: "";
-            position: absolute;
-            bottom: -11px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        /* Dynamic Hidden Elements */
-        .tab-content {
-            display: none; 
-            animation: tabFade 0.4s ease-out;
-        }
-
-        .tab-content.active {
-            display: block; 
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Inner Layout Content Typography */
-      /* Upgraded Description Text Properties */
-.synopsis-text {
-    font-size: 1.1rem;
-    text-align: justify;
-    font-weight: 400; /* Thicker, high-readability weight */
-    line-height: 1.6;  /* Closer, compact line spacing */
-}
-
-        .blurb-item {
-            margin-bottom: 35px;
+        .bio {
             font-size: 1.05rem;
-        }
-
-        .blurb-text {
-            margin-bottom: 8px;
-        }
-
-        .blurb-author {
-            display: block;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 700;
-            text-align: right;
-            margin-top: 5px;
-        }
-
-        .buy-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .buy-link-item {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            margin-bottom: 40px;
         }
 
         a {
@@ -237,18 +122,43 @@
             text-decoration: none;
             transition: opacity 0.2s;
         }
+
         a:hover { opacity: 0.7; text-decoration: underline; }
 
-        ::selection { background-color: #b9d8e5; color: #1a1a1a; }
-        ::-moz-selection { background-color: #b9d8e5; color: #1a1a1a; }
+        /* Custom Highlight Color */
+        ::selection {
+            background-color: #b9d8e5; 
+            color: #1a1a1a;           
+        }
 
+        ::-moz-selection {
+            background-color: #b9d8e5;
+            color: #1a1a1a;
+        }
+
+    
+
+        /* Responsive Mobile Layout */
         @media (max-width: 768px) {
-            nav { padding: 50px 20px 20px 20px; }
-            .site-title { font-size: 1.5rem; letter-spacing: 0.1em; }
-            .content-wrapper { flex-direction: column; align-items: center; padding: 0 25px 60px 25px; gap: 40px; }
-            .book-jacket-side { max-width: 100%; width: 100%; position: static; }
-            .synopsis-text { text-align: left; }
-            .tab-menu { gap: 20px; }
+            nav {
+                padding: 50px 20px 20px 20px;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 25px 60px 25px;
+                gap: 30px;
+            }
+
+            .photo-side {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -258,105 +168,32 @@
         <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+                        <a href="Novel.html">Novel</a>
             <a href="writing.html">Writing</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <main class="content-wrapper">
-        <!-- BOOK COVER ART COLUMN -->
-        <div class="book-jacket-side">
-            <div class="cover-placeholder">
-                <span style="font-size: 1.5rem; margin-bottom: 5px;">౨ৎ</span>
-                Cover Artwork
-                <span style="font-size: 0.7rem; opacity: 0.6; margin-top: 10px;">Forthcoming</span>
+        <div class="photo-side">
+            <img src="77670005.jpeg" alt="Yasmin Adele Majeed" class="hero-image">
+            <span class="photo-credit">Photo Credit: <a href="https://www.dayday.studio" target="_blank">Day</a></span>
+        </div>
+
+        <div class="text-side">
+            <div class="announcement">
+                Yasmin Adele Majeed’s debut novel, <em><a href="side-streams.html">Side Streams</a></em>, is forthcoming from Little, Brown.
             </div>
-            <div class="publisher-credit">
-                On Sale March 30, 2027 from<br>
-                <span style="color: var(--accent);"><a href="https://www.hachettebookgroup.com/titles/yasmin-adele-majeed/side-streams/9780316609975/" target=_blank">Little, Brown and Company</a></span>
+
+            <div class="bio">
+                Her fiction appears in <em>Narrative</em>, <em>Guernica</em>, <em>Joyland</em>, <em>American Short Fiction</em>, <em>Best Debut Short Stories</em>, and <em>The Best American Short Stories</em>. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from Tin House, Kundiman, Kweli, the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She is a winner of the PEN/Robert J. Dau Short Story Prize and has taught creative writing at the University of Iowa. Raised in the Bay Area and New York City, she currently lives in Brooklyn.
             </div>
         </div>
 
-        <!-- THE TAB MENU INTERFACE COLUMN -->
-        <div class="book-info-side">
-            <h1 class="book-title">Side Streams</h1>
-            <div class="book-subtitle">A Novel</div>
-
-            <!-- TAB MENU HEADERS -->
-            <div class="tab-menu">
-                <button class="tab-button active" onclick="switchTab(event, 'description')">Description</button>
-                <button class="tab-button" onclick="switchTab(event, 'praise')">Praise</button>
-                <button class="tab-button" onclick="switchTab(event, 'buy')">Pre-order</button>
-            </div>
-
-            <!-- TAB CONTAINER 1: DESCRIPTION -->
-            <div id="description" class="tab-content active">
-                <div class="synopsis-text">
-                    Aliya’s family prefers secrets. When she’s twelve, her mother, Isobel, drives them to her Filipino hometown to pick up a stranger—and Claudia, Isobel’s childhood friend, comes back to the Bay Area with them and moves in. Without explanation, Claudia becomes part of the fabric of their Filipino-Pakistani home, which includes picking Aliya up from school and dropping her off at her best friend Samir’s house. The two children have secrets too: Aliya likes girls, and Samir glances too long at beautiful boys in the masjid. But when the kids spy Claudia and Samir’s father, Ibrahim, sharing a covert kiss, the weight of the silence fractures the two families.
-                    <p>Decades later, a chance encounter reconnects Aliya and Samir. Confident in their queerness now, they slip easily back into friendship—but Aliya explodes their equilibrium by introducing Samir to Pilar, the child of Claudia and Ibrahim’s affair—and Samir’s half-sister. As Aliya’s gallery work leads her to search for the missing piece in artist Pilar Quintos’ mural, the namesake of Claudia’s daughter, she finds herself tracing her mother Isobel’s career footsteps. As Aliya, Samir, and Pilar grapple with the emotional impact of what’s been hidden from them, the mystery of the mural becomes an opportunity for reunification between Aliya and Isobel; but only if the older generation is willing to reckon with their silence.</p>
-                    <p>A polyphonic, achingly beautiful novel, <em>Side Streams</em> heralds a new literary talent and is a testament to the power of reaching across generational lines and building a family—whether it be by bond or by blood.</p>
-                </div>
-            </div>
-
-            <!-- TAB CONTAINER 2: PRAISE -->
-            <div id="praise" class="tab-content">
-                <!-- Blurb 1 -->
-                <div class="blurb-item">
-                    <div class="blurb-text">
-                        "Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping. It is at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again."
-                    </div>
-                    <div class="blurb-author">— Eliana Ramage, <em>author of <span style="font-style: italic;">To the Moon and Back</span></em></div>
-                </div>
-
-                <!-- Blurb 2 -->
-                <div class="blurb-item">
-                    <div class="blurb-text">
-                        "SIDE STREAMS knows the aftermath is where we live. It’s a gorgeously written novel about the families we inherit and the communities we build over time. Yasmin Adele Majeed weaves desire, art-making, and noticing itself into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years. To borrow the language of one of the characters, I found myself greedy for their love—for the chance to witness how they would love one another."
-                    </div>
-                    <div class="blurb-author">— Nishanth Injam, <em>author of The Best Possible Experience</em></div>
-                </div>
-
-                <!-- Blurb 3 -->
-                <div class="blurb-item">
-                    <div class="blurb-text">
-                        "A radiant novel about the havoc time leaves on the human heart. I adored it. Yasmin Adele Majeed writes of friendship, parenthood, art, and identity with clear-eyed compassion for the ways we lose and find ourselves in one another. Only one book in and Majeed is already an essential voice."
-                    </div>
-                    <div class="blurb-author">— Anthony Marra, <em>author of Mercury Pictures Presents</em></div>
-                </div>
-
-                <!-- Blurb 4 -->
-                <div class="blurb-item">
-                    <div class="blurb-text">
-                        "A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more. In Side Streams, characters must reckon with their desire—known and unknown to themselves and others, desires deemed forbidden or improper. I was particularly drawn to the vibrant cast of young, queer characters reckoning with their understanding of self. Side Streams also boldly explores the Filipino and Pakistani diasporas, and the multicultural tapestry that is America. There were many passages of startling, quiet beauty.”
-                    </div>
-                    <div class="blurb-author">— Daphne Palasi Andreades, <em>author of Brown Girls and Lucid Dreams</em></div>
-                </div>
-            </div>
-
-            <!-- TAB CONTAINER 3: BUY LINKS -->
-            <div id="buy" class="tab-content">
-                <ul class="buy-list">
-                    <li class="buy-link-item"><a href="https://bookshop.org/p/books/side-streams-a-novel-yasmin-adele-majeed/166d565cb89efb7e?ean=9780316609999" target="_blank">Bookshop</a></li>
-                    <li class="buy-link-item"><a href="https://www.amazon.com/gp/product/0316609978?tag=hacboogrosit-20" target="_blank">Amazon</a></li>
-                    <li class="buy-link-item"><a href="https://www.barnesandnoble.com/w/side-streams-yasmin-adele-majeed/1150526338?ean=9780316609975" target="_blank">Barnes & Noble</a></li>
-                </ul>
-            </div>
-        </div>
+        
     </main>
 
 <script>
-function switchTab(event, tabId) {
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(content => content.classList.remove('active'));
-
-    const buttons = document.querySelectorAll('.tab-button');
-    buttons.forEach(button => button.classList.remove('active'));
-
-    document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
-}
-
 // Sparkle Mouse Trail
 document.addEventListener('mousemove', function(e) {
   const sparkle = document.createElement('span');
@@ -372,11 +209,19 @@ document.addEventListener('mousemove', function(e) {
   sparkle.animate([
     { transform: 'translate(0, 0) scale(1)', opacity: 1 },
     { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
-  ], { duration: 1000, easing: 'ease-out' });
+  ], {
+    duration: 1000,
+    easing: 'ease-out'
+  });
 
   document.body.appendChild(sparkle);
-  setTimeout(() => { sparkle.remove(); }, 1000);
+  
+  setTimeout(() => {
+    sparkle.remove();
+  }, 1000);
 });
+
+
 </script>
 </body>
 </html>
