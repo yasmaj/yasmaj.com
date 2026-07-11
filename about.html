@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasmin Adele Majeed</title>
+    <meta name="description" content="Yasmin Adele Majeed is a writer based in New York. Her debut novel, Side Streams, is forthcoming from Little, Brown.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FEF9E7; 
+            --text-color: #1a1a1a;
+            --accent: #d14c36; 
+            --font-main: 'Barlow', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navigation */
+        nav { 
+            padding: 80px 20px 30px 20px; 
+            text-align: center; 
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            border: none !important;
+            color: var(--text-color);
+            display: block;
+            margin-bottom: 25px;
+            font-weight: 700 !important;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 1rem;
+            font-weight: 700 !important;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent);
+            margin: 0 20px;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 0.6; }
+
+        /* Side-by-Side Container */
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 60px;
+            padding: 40px 40px 100px 40px;
+            position: relative; /* Sets anchor base for absolute stickers */
+        }
+
+        .photo-side {
+            flex: 1;
+            max-width: 420px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-credit {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666;
+            margin-top: 15px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .text-side {
+            flex: 1.2;
+        }
+
+        .announcement {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .bio {
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover { opacity: 0.7; text-decoration: underline; }
+
+        /* Custom Highlight Color */
+        ::selection {
+            background-color: #b9d8e5; 
+            color: #1a1a1a;           
+        }
+
+        ::-moz-selection {
+            background-color: #b9d8e5;
+            color: #1a1a1a;
+        }
+
+    
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            nav {
+                padding: 50px 20px 20px 20px;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 25px 60px 25px;
+                gap: 30px;
+            }
+
+            .photo-side {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+                        <a href="side-streams.html">Side Streams</a>
+            <a href="writing.html">Writing</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        <div class="photo-side">
+            <img src="77670005.jpeg" alt="Yasmin Adele Majeed" class="hero-image">
+            <span class="photo-credit">Photo Credit: <a href="https://www.dayday.studio" target="_blank">Day</a></span>
+        </div>
+
+        <div class="text-side">
+            <div class="announcement">
+                Yasmin Adele Majeed’s debut novel, <em><a href="side-streams.html">Side Streams</a></em>, is forthcoming from Little, Brown.
+            </div>
+
+            <div class="bio">
+                Her fiction appears in <em>Narrative</em>, <em>Guernica</em>, <em>Joyland</em>, <em>American Short Fiction</em>, <em>Best Debut Short Stories</em>, and <em>The Best American Short Stories</em>. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from Tin House, Kundiman, Kweli, the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She is a winner of the PEN/Robert J. Dau Short Story Prize and has taught creative writing at the University of Iowa. Raised in the Bay Area and New York City, she currently lives in Brooklyn.
+            </div>
+        </div>
+
+        
+    </main>
+
+<script>
+// Sparkle Mouse Trail
+document.addEventListener('mousemove', function(e) {
+  const sparkle = document.createElement('span');
+  sparkle.innerHTML = '✧'; 
+  sparkle.style.position = 'absolute';
+  sparkle.style.left = e.pageX + 'px';
+  sparkle.style.top = e.pageY + 'px';
+  sparkle.style.color = '#B9D9EB'; 
+  sparkle.style.pointerEvents = 'none';
+  sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
+  sparkle.style.zIndex = '9999';
+  
+  sparkle.animate([
+    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+    { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
+  ], {
+    duration: 1000,
+    easing: 'ease-out'
+  });
+
+  document.body.appendChild(sparkle);
+  
+  setTimeout(() => {
+    sparkle.remove();
+  }, 1000);
+});
+
+
+</script>
+</body>
+</html>
