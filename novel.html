@@ -221,36 +221,51 @@
             margin-top: 5px;
         }
 
-        .buy-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+       /* Styled Preorder Buttons */
+.buy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between buttons */
+    max-width: 300px; /* Keeps the buttons a neat, elegant width */
+}
 
-        .buy-link-item {
-                        font-size: 1.1rem;
-          font-weight: 400; /* Thicker, high-readability weight */
-    line-height: 1.6;  /* Closer, compact line spacing */
-        }
+.buy-link-item a {
+    display: block;
+    text-align: center;
+    font-family: var(--font-main);
+    background-color: var(--accent);
+    color: #ffffff !important; /* Forces text to stay white */
+    border: none;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    text-decoration: none !important; /* Removes default underline */
+}
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        a:hover { opacity: 0.7; text-decoration: underline; }
+.buy-link-item a:hover {
+    opacity: 0.9;
+    text-decoration: none !important;
+}
 
-        ::selection { background-color: #b9d8e5; color: #1a1a1a; }
-        ::-moz-selection { background-color: #b9d8e5; color: #1a1a1a; }
+.buy-link-item a:active {
+    transform: scale(0.98);
+}
 
-        @media (max-width: 768px) {
-            nav { padding: 50px 20px 20px 20px; }
-            .site-title { font-size: 1.5rem; letter-spacing: 0.1em; }
-            .content-wrapper { flex-direction: column; align-items: center; padding: 0 25px 60px 25px; gap: 40px; }
-            .book-jacket-side { max-width: 100%; width: 100%; position: static; }
-            .synopsis-text { text-align: left; }
-            .tab-menu { gap: 20px; }
-        }
+/* Ensures layout stacks neatly on mobile views */
+@media (max-width: 768px) {
+    .buy-list {
+        max-width: 100%;
+    }
+}
+
+     
     </style>
 </head>
 <body>
@@ -335,14 +350,21 @@
             </div>
 
             <!-- TAB CONTAINER 3: BUY LINKS -->
-            <div id="buy" class="tab-content">
-                <ul class="buy-list">
-                    <li class="buy-link-item"><a href="https://bookshop.org/p/books/side-streams-yasmin-adele-majeed/9005d0f85c5e9940?ean=9780316609975&affiliate=2344" target="_blank">Bookshop</a></li>
-                    <li class="buy-link-item"><a href="https://www.amazon.com/gp/product/0316609978?tag=hacboogrosit-20" target="_blank">Amazon</a></li>
-                    <li class="buy-link-item"><a href="https://www.barnesandnoble.com/w/side-streams-yasmin-adele-majeed/1150526338?ean=9780316609975" target="_blank">Barnes & Noble</a></li>
-                </ul>
-            </div>
-        </div>
+            <!-- TAB CONTAINER 3: BUY LINKS -->
+<div id="buy" class="tab-content">
+    <ul class="buy-list">
+        <li class="buy-link-item">
+            <a href="https://bookshop.org/p/books/side-streams-yasmin-adele-majeed/9005d0f85c5e9940?ean=9780316609975&affiliate=2344" target="_blank">Bookshop</a>
+        </li>
+        <li class="buy-link-item">
+            <a href="https://www.barnesandnoble.com/w/side-streams-yasmin-adele-majeed/1150526338?cjdata=MXxOfDB8WXww&ean=9780316609975&st=AFF&SID=www.barnesandnoble.com&2sid=Hachette+Book+Group_8040641_NA&sourceId=AFFHachette+Book+Group&cjevent=5c7ee6cd811911f18343012d0a82b820&dpid=tekz25v83" target="_blank">Barnes &amp; Noble</a>
+        </li>
+        <li class="buy-link-item">
+            <a href="https://www.amazon.com/gp/product/0316609978?tag=hacboogrosit-20" target="_blank">Amazon</a>
+        </li>
+    </ul>
+</div>
+           
     </main>
 
 <script>
