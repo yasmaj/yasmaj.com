@@ -70,7 +70,7 @@
 
         .nav-links a:hover { opacity: 0.6; }
 
-        /* Layout */
+        /* Layout Container */
         .content-wrapper {
             max-width: 850px;
             margin: 0 auto;
@@ -104,18 +104,9 @@
             font-weight: 400;
         }
 
-        .publisher-credit {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #666;
-            margin-top: 20px;
-            display: block;
-            font-weight: 600;
-        }
-
         .book-info-side {
             flex: 1.4;
+            min-width: 0; 
         }
 
         .book-title {
@@ -132,7 +123,15 @@
             font-size: 1.2rem;
             color: #555;
             margin-bottom: 35px;
-            font-weight: 600;
+            font-weight: 400;
+        }
+        
+        .book-subtitle a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .book-subtitle a:hover {
+            text-decoration: underline;
         }
 
         /* Tab Architecture */
@@ -192,14 +191,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Inner Layout Content Typography */
-      /* Upgraded Description Text Properties */
-.synopsis-text {
-    font-size: 1.1rem;
-    text-align: justify;
-    font-weight: 400; /* Thicker, high-readability weight */
-    line-height: 1.6;  /* Closer, compact line spacing */
-}
+        /* Synopsis Text Properties */
+        .synopsis-text {
+            font-size: 1.1rem;
+            text-align: justify;
+            font-weight: 400; 
+            line-height: 1.6;  
+        }
+        
+        .synopsis-text p {
+            margin-top: 0;
+            margin-bottom: 1.5em;
+        }
+        
+        .synopsis-text p:last-child {
+            margin-bottom: 0;
+        }
 
         .blurb-item {
             margin-bottom: 35px;
@@ -207,8 +214,9 @@
         }
 
         .blurb-text {
-             font-weight: 400; /* Thicker, high-readability weight */
-    line-height: 1.6;  /* Closer, compact line spacing */
+            font-weight: 400; 
+            line-height: 1.6;  
+            margin-bottom: 8px;
         }
 
         .blurb-author {
@@ -221,51 +229,109 @@
             margin-top: 5px;
         }
 
-       /* Styled Preorder Buttons */
-.buy-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Spacing between buttons */
-    max-width: 300px; /* Keeps the buttons a neat, elegant width */
-}
+        /* Styled Preorder Buttons */
+        .buy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            max-width: 300px; 
+        }
 
-.buy-link-item a {
-    display: block;
-    text-align: center;
-    font-family: var(--font-main);
-    background-color: var(--accent);
-    color: #ffffff !important; /* Forces text to stay white */
-    border: none;
-    padding: 14px 24px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    cursor: pointer;
-    transition: opacity 0.2s ease, transform 0.1s ease;
-    text-decoration: none !important; /* Removes default underline */
-}
+        .buy-link-item a {
+            display: block;
+            text-align: center;
+            font-family: var(--font-main);
+            background-color: var(--accent);
+            color: #ffffff !important; 
+            border: none;
+            padding: 14px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+            text-decoration: none !important; 
+        }
 
-.buy-link-item a:hover {
-    opacity: 0.9;
-    text-decoration: none !important;
-}
+        .buy-link-item a:hover {
+            opacity: 0.9;
+            text-decoration: none !important;
+        }
 
-.buy-link-item a:active {
-    transform: scale(0.98);
-}
+        .buy-link-item a:active {
+            transform: scale(0.98);
+        }
 
-/* Ensures layout stacks neatly on mobile views */
-@media (max-width: 768px) {
-    .buy-list {
-        max-width: 100%;
-    }
-}
+        /* Custom Selection Colors */
+        ::selection { background-color: #b9d8e5; color: #1a1a1a; }
+        ::-moz-selection { background-color: #b9d8e5; color: #1a1a1a; }
 
-     
+        /* Responsive Mobile Breakpoints */
+        @media (max-width: 768px) {
+            nav { 
+                padding: 50px 20px 20px 20px; 
+            }
+            
+            .site-title { 
+                font-size: 1.5rem; 
+                letter-spacing: 0.1em; 
+            }
+
+            .nav-links a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+
+            .content-wrapper { 
+                flex-direction: column; 
+                align-items: center; 
+                padding: 0 25px 60px 25px; 
+                gap: 40px; 
+            }
+
+            .book-jacket-side { 
+                max-width: 280px; 
+                width: 100%; 
+                position: static; 
+                text-align: center;
+            }
+
+            .book-info-side {
+                width: 100%;
+            }
+
+            .book-title {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .book-subtitle {
+                text-align: center;
+                margin-bottom: 25px;
+            }
+
+            .tab-menu { 
+                gap: 15px; 
+                justify-content: center;
+            }
+
+            .tab-button {
+                font-size: 0.85rem;
+                letter-spacing: 0.08em;
+            }
+
+            .synopsis-text { 
+                text-align: left; 
+            }
+
+            .buy-list {
+                max-width: 100%; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -288,13 +354,12 @@
                 Cover Artwork
                 <span style="font-size: 0.7rem; opacity: 0.6; margin-top: 10px;">Forthcoming</span>
             </div>
-       
         </div>
 
         <!-- THE TAB MENU INTERFACE COLUMN -->
         <div class="book-info-side">
             <h1 class="book-title">Side Streams</h1>
-            <div class="book-subtitle">  On sale March 30, 2027 from <span style="color: var(--accent);"><a href="https://www.hachettebookgroup.com/titles/yasmin-adele-majeed/side-streams/9780316609975/" target=_blank">Little, Brown and Company</a></span></div>
+            <div class="book-subtitle">On sale March 30, 2027 from <span style="color: var(--accent);"><a href="https://www.hachettebookgroup.com/titles/yasmin-adele-majeed/side-streams/9780316609975/" target="_blank">Little, Brown and Company</a></span></div>
 
             <!-- TAB MENU HEADERS -->
             <div class="tab-menu">
@@ -306,11 +371,9 @@
             <!-- TAB CONTAINER 1: DESCRIPTION -->
             <div id="description" class="tab-content active">
                 <div class="synopsis-text">
-                   <p>Aliya Amjad has always felt left out of a secret. She doesn’t know why her mother left behind her Filipino American community for her father’s tight-knit Pakistani American neighborhood. She doesn’t know why a woman from her mother’s past has come to stay with them. And she can’t solve the puzzle of an art installation titled “Side Streams” that is currently taking up her mother’s work space. It’s dedicated to “E,” an unknown woman depicted in the façade: Who was this woman? Was she a muse or something more? When Aliya strikes up a friendship with a neighborhood boy named Samir, she finds she has her own secret to keep: Aliya likes girls, and Samir glances too long at the beautiful boys in the masjid. When they catch Samir’s father and Aliya’s new houseguest sharing a covert kiss, they choose to keep one more secret.</p>
-
-<p>Decades later, Aliya reconnects with Samir, the mystery of the mural still unsolved and perhaps a key to untangling the secrets of their parents’ generation. As the younger generation digs further into the past, the older generation must ask themselves: was silence the best path forward, or just the easiest?</p>
-
-<p>A polyphonic, achingly beautiful novel, <em>Side Streams</em> heralds a new literary talent and is a testament to the power of reaching across generational lines to build a family—whether it be by bond or by blood.</p>
+                    <p>Aliya Amjad has always felt left out of a secret. She doesn’t know why her mother left behind her Filipino American community for her father’s tight-knit Pakistani American neighborhood. She doesn’t know why a woman from her mother’s past has come to stay with them. And she can’t solve the puzzle of an art installation titled “Side Streams” that is currently taking up her mother’s work space. It’s dedicated to “E,” an unknown woman depicted in the façade: Who was this woman? Was she a muse or something more? When Aliya strikes up a friendship with a neighborhood boy named Samir, she finds she has her own secret to keep: Aliya likes girls, and Samir glances too long at the beautiful boys in the masjid. When they catch Samir’s father and Aliya’s new houseguest sharing a covert kiss, they choose to keep one more secret.</p>
+                    <p>Decades later, Aliya reconnects with Samir, the mystery of the mural still unsolved and perhaps a key to untangling the secrets of their parents’ generation. As the younger generation digs further into the past, the older generation must ask themselves: was silence the best path forward, or just the easiest?</p>
+                    <p>A polyphonic, achingly beautiful novel, <em>Side Streams</em> heralds a new literary talent and is a testament to the power of reaching across generational lines to build a family—whether it be by bond or by blood.</p>
                 </div>
             </div>
 
@@ -350,21 +413,20 @@
             </div>
 
             <!-- TAB CONTAINER 3: BUY LINKS -->
-            <!-- TAB CONTAINER 3: BUY LINKS -->
-<div id="buy" class="tab-content">
-    <ul class="buy-list">
-        <li class="buy-link-item">
-            <a href="https://bookshop.org/p/books/side-streams-yasmin-adele-majeed/9005d0f85c5e9940?ean=9780316609975&affiliate=2344" target="_blank">Bookshop</a>
-        </li>
-        <li class="buy-link-item">
-            <a href="https://www.barnesandnoble.com/w/side-streams-yasmin-adele-majeed/1150526338?cjdata=MXxOfDB8WXww&ean=9780316609975&st=AFF&SID=www.barnesandnoble.com&2sid=Hachette+Book+Group_8040641_NA&sourceId=AFFHachette+Book+Group&cjevent=5c7ee6cd811911f18343012d0a82b820&dpid=tekz25v83" target="_blank">Barnes &amp; Noble</a>
-        </li>
-        <li class="buy-link-item">
-            <a href="https://www.amazon.com/gp/product/0316609978?tag=hacboogrosit-20" target="_blank">Amazon</a>
-        </li>
-    </ul>
-</div>
-           
+            <div id="buy" class="tab-content">
+                <ul class="buy-list">
+                    <li class="buy-link-item">
+                        <a href="https://bookshop.org/p/books/side-streams-yasmin-adele-majeed/9005d0f85c5e9940?ean=9780316609975&affiliate=2344" target="_blank">Bookshop</a>
+                    </li>
+                    <li class="buy-link-item">
+                        <a href="https://www.barnesandnoble.com/w/side-streams-yasmin-adele-majeed/1150526338?cjdata=MXxOfDB8WXww&ean=9780316609975&st=AFF&SID=www.barnesandnoble.com&2sid=Hachette+Book+Group_8040641_NA&sourceId=AFFHachette+Book+Group&cjevent=5c7ee6cd811911f18343012d0a82b820&dpid=tekz25v83" target="_blank">Barnes &amp; Noble</a>
+                    </li>
+                    <li class="buy-link-item">
+                        <a href="https://www.amazon.com/gp/product/0316609978?tag=hacboogrosit-20" target="_blank">Amazon</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </main>
 
 <script>
