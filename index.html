@@ -184,6 +184,7 @@
             font-weight: 400;
             color: #1a1a1a;
             margin: 0 0 20px 0;
+            font-style: italic;
             position: relative;
         }
 
@@ -225,35 +226,17 @@
             color: var(--text-color);
         }
 
-        /* Slider Controls */
+        /* Slider Controls (Centered Dots Only) */
         .slider-controls {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 20px;
-        }
-
-        .nav-btn {
-            background: none;
-            border: none;
-            color: var(--accent);
-            font-family: var(--font-main);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            padding: 5px 0;
-            transition: opacity 0.2s;
-        }
-
-        .nav-btn:hover {
-            opacity: 0.6;
         }
 
         .dots-container {
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
 
         .dot {
@@ -262,7 +245,11 @@
             border-radius: 50%;
             background-color: rgba(209, 76, 54, 0.25);
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s ease;
+        }
+
+        .dot:hover {
+            transform: scale(1.2);
         }
 
         .dot.active {
@@ -274,6 +261,7 @@
             display: flex;
             gap: 15px;
             margin-top: 5px;
+            justify-content: center; /* Centers buttons horizontally on desktop */
             align-items: center;
         }
 
@@ -419,8 +407,12 @@
 
         <!-- BOOK DETAILS COLUMN -->
         <div class="text-side">
-            <div class="anticipation-badge">Forthcoming March 30, 2027 from Little, Brown</div>
+            <div class="anticipation-badge">Forthcoming March 30, 2027</div>
             <h1 class="book-title-heading">Side Streams</h1>
+
+            <div class="announcement">
+                Yasmin Adele Majeed’s debut novel, <em>Side Streams</em>, is forthcoming from Little, Brown.
+            </div>
 
             <!-- EDITORIAL SLIDING BLURBS -->
             <div class="blurbs-slider-wrapper">
@@ -433,24 +425,30 @@
 
                 <div class="blurb-slide">
                     <blockquote class="blurb-quote">
-                        Yasmin Adele Majeed weaves desire, art-making, and noticing itself into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years.
+                        Yasmin Adele Majeed weaves <strong>desire, art-making, and noticing itself</strong> into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years.
                     </blockquote>
                     <span class="blurb-author">— Nishanth Injam, author of <em>The Best Possible Experience</em></span>
                 </div>
 
                 <div class="blurb-slide">
                     <blockquote class="blurb-quote">
-                        Only one book in and Majeed is already an essential voice.
+                        Only one book in and Majeed is already an <strong>essential voice</strong>.
                     </blockquote>
                     <span class="blurb-author">— Anthony Marra, author of <em>Mercury Pictures Presents</em></span>
                 </div>
 
                 <div class="blurb-slide">
                     <blockquote class="blurb-quote">
-                        A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more.
+                        A <strong>sweeping yet intimate</strong> debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more.
                     </blockquote>
                     <span class="blurb-author">— Daphne Palasi Andreades, author of <em>Lucid Dreams</em> and <em>Brown Girls</em></span>
                 </div>
+
+                <!-- DOTS CONTROL ONLY -->
+                <div class="slider-controls">
+                    <div class="dots-container" id="dotsContainer"></div>
+                </div>
+            </div>
 
             <!-- ACTION BUTTONS BENEATH BLURBS -->
             <div class="action-buttons">
@@ -488,11 +486,6 @@
 
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
-        updateSlider();
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateSlider();
     }
 
