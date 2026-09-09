@@ -7,27 +7,27 @@
     <meta name="description" content="About Side Streams, a debut novel by Yasmin Adele Majeed, forthcoming from Little, Brown.">
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
-    
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">    
+    <style>
         :root {
-        --bg-color: #B7C6D3; 
+            --bg-color: #B7C6D3; 
             --text-color: #1a1a1a;
             --accent: #C85A32; 
             --font-main: 'Barlow', sans-serif;
             --border-color: #e0dbca;
         }
 
-       body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-main);
-    line-height: 1.8;
-    font-weight: 500; /* Changed from 300 to 500 for a thicker, clearer text */
-    -webkit-font-smoothing: antialiased;
-    animation: fadeIn 1.2s ease-in;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            animation: fadeIn 1.2s ease-in;
+        }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -80,32 +80,16 @@
             position: relative;
         }
 
+        /* Left Column: Cover & Preorder Buttons Below */
         .book-jacket-side {
             flex: 1;
             max-width: 320px;
+            width: 100%;
             position: sticky;
             top: 40px;
-        }
-
-       /* Cover Art Frame */
-        .book-jacket-side {
-            flex: 1;
-            max-width: 380px;
-            width: 100%;
-        }
-
-        .cover-frame {
-            background-color: #ffffff;
-            padding: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cover-frame:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.09);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
         .cover-placeholder {
@@ -123,8 +107,10 @@
             background-color: rgba(209, 76, 54, 0.02);
             text-align: center;
             padding: 20px;
+            box-sizing: border-box;
         }
 
+        /* Right Column: Book Details */
         .book-info-side {
             flex: 1.4;
             min-width: 0; 
@@ -146,11 +132,12 @@
             margin-bottom: 35px;
             font-weight: 400;
         }
-        
+
         .book-subtitle a {
             color: var(--accent);
             text-decoration: none;
         }
+
         .book-subtitle a:hover {
             text-decoration: underline;
         }
@@ -197,7 +184,7 @@
             background-color: var(--accent);
         }
 
-        /* Dynamic Hidden Elements */
+        /* Tab Content */
         .tab-content {
             display: none; 
             animation: tabFade 0.4s ease-out;
@@ -212,19 +199,19 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Synopsis Text Properties */
+        /* Synopsis Text */
         .synopsis-text {
             font-size: 1.1rem;
             text-align: justify;
             font-weight: 400; 
             line-height: 1.6;  
         }
-        
+
         .synopsis-text p {
             margin-top: 0;
             margin-bottom: 1.5em;
         }
-        
+
         .synopsis-text p:last-child {
             margin-bottom: 0;
         }
@@ -250,15 +237,28 @@
             margin-top: 5px;
         }
 
-        /* Styled Preorder Buttons */
+        /* Styled Preorder Section Below Image */
+        .preorder-section {
+            width: 100%;
+        }
+
+        .preorder-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
         .buy-list {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 15px; 
-            max-width: 300px; 
+            gap: 12px; 
+            width: 100%; 
         }
 
         .buy-link-item a {
@@ -268,8 +268,8 @@
             background-color: var(--accent);
             color: #ffffff !important; 
             border: none;
-            padding: 14px 24px;
-            font-size: 0.95rem;
+            padding: 12px 20px;
+            font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.15em;
@@ -280,32 +280,21 @@
 
         .buy-link-item a:hover {
             opacity: 0.9;
-            text-decoration: none !important;
         }
 
         .buy-link-item a:active {
             transform: scale(0.98);
         }
 
-        /* Custom Selection Colors */
+        /* Selection Colors */
         ::selection { background-color: #b9d8e5; color: #1a1a1a; }
         ::-moz-selection { background-color: #b9d8e5; color: #1a1a1a; }
 
-        /* Responsive Mobile Breakpoints */
+        /* Mobile Breakpoints */
         @media (max-width: 768px) {
-            nav { 
-                padding: 50px 20px 20px 20px; 
-            }
-            
-            .site-title { 
-                font-size: 1.5rem; 
-                letter-spacing: 0.1em; 
-            }
-
-            .nav-links a {
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
+            nav { padding: 50px 20px 20px 20px; }
+            .site-title { font-size: 1.5rem; letter-spacing: 0.1em; }
+            .nav-links a { margin: 0 10px; font-size: 0.9rem; }
 
             .content-wrapper { 
                 flex-direction: column; 
@@ -316,42 +305,14 @@
 
             .book-jacket-side { 
                 max-width: 280px; 
-                width: 100%; 
                 position: static; 
-                text-align: center;
             }
 
-            .book-info-side {
-                width: 100%;
-            }
-
-            .book-title {
-                font-size: 1.8rem;
-                text-align: center;
-            }
-
-            .book-subtitle {
-                text-align: center;
-                margin-bottom: 25px;
-            }
-
-            .tab-menu { 
-                gap: 15px; 
-                justify-content: center;
-            }
-
-            .tab-button {
-                font-size: 0.85rem;
-                letter-spacing: 0.08em;
-            }
-
-            .synopsis-text { 
-                text-align: left; 
-            }
-
-            .buy-list {
-                max-width: 100%; 
-            }
+            .book-info-side { width: 100%; }
+            .book-title { font-size: 1.8rem; text-align: center; }
+            .book-subtitle { text-align: center; margin-bottom: 25px; }
+            .tab-menu { gap: 20px; justify-content: center; }
+            .synopsis-text { text-align: left; }
         }
     </style>
 </head>
@@ -361,7 +322,7 @@
         <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-                                              <a href="about.html">About</a>
+            <a href="about.html">About</a>
             <a href="novel.html">Novel</a>
             <a href="writing.html">Writing</a>
             <a href="contact.html">Contact</a>
@@ -369,16 +330,28 @@
     </nav>
 
     <main class="content-wrapper">
-        <!-- BOOK COVER ART COLUMN -->
+        <!-- LEFT COLUMN: BOOK COVER & PRE-ORDER BUTTONS BELOW -->
         <div class="book-jacket-side">
             <div class="cover-placeholder">
                 <span style="font-size: 1.5rem; margin-bottom: 5px;">౨ৎ</span>
                 Cover Artwork
                 <span style="font-size: 0.7rem; opacity: 0.6; margin-top: 10px;">Forthcoming</span>
             </div>
+
+            <div class="preorder-section">
+                <div class="preorder-title">Pre-order Available At:</div>
+                <ul class="buy-list">
+                    <li class="buy-link-item">
+                        <a href="https://bookshop.org/p/books/side-streams-yasmin-adele-majeed/9005d0f85c5e9940?ean=9780316609975&affiliate=2344" target="_blank">Bookshop</a>
+                    </li>
+                    <li class="buy-link-item">
+                        <a href="https://www.barnesandnoble.com/w/side-streams-yasmin-adele-majeed/1150526338?cjdata=MXxOfDB8WXww&ean=9780316609975&st=AFF&SID=www.barnesandnoble.com&2sid=Hachette+Book+Group_8040641_NA&sourceId=AFFHachette+Book+Group&cjevent=5c7ee6cd811911f18343012d0a82b820&dpid=tekz25v83" target="_blank">Barnes &amp; Noble</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <!-- THE TAB MENU INTERFACE COLUMN -->
+        <!-- RIGHT COLUMN: DETAILS & TABS -->
         <div class="book-info-side">
             <h1 class="book-title">Side Streams</h1>
             <div class="book-subtitle">On sale March 30, 2027 from <span style="color: var(--accent);"><a href="https://www.hachettebookgroup.com/titles/yasmin-adele-majeed/side-streams/9780316609975/" target="_blank">Little, Brown and Company</a></span></div>
@@ -387,7 +360,6 @@
             <div class="tab-menu">
                 <button class="tab-button active" onclick="switchTab(event, 'description')">Description</button>
                 <button class="tab-button" onclick="switchTab(event, 'praise')">Praise</button>
-                <button class="tab-button" onclick="switchTab(event, 'buy')">Pre-order</button>
             </div>
 
             <!-- TAB CONTAINER 1: DESCRIPTION -->
@@ -401,59 +373,30 @@
 
             <!-- TAB CONTAINER 2: PRAISE -->
             <div id="praise" class="tab-content">
-                <!-- Blurb 1 -->
                 <div class="blurb-item">
-                    <div class="blurb-text">
-                        "Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping. It is at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again."
-                    </div>
-                    <div class="blurb-author">— Eliana Ramage, <em>author of <span style="font-style: italic;">To the Moon and Back</span></em></div>
+                    <div class="blurb-text">"Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping."</div>
+                    <div class="blurb-author">— Eliana Ramage, <em>author of To the Moon and Back</em></div>
                 </div>
-
-                <!-- Blurb 2 -->
                 <div class="blurb-item">
-                    <div class="blurb-text">
-                        "SIDE STREAMS knows the aftermath is where we live. It’s a gorgeously written novel about the families we inherit and the communities we build over time. Yasmin Adele Majeed weaves desire, art-making, and noticing itself into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years. To borrow the language of one of the characters, I found myself greedy for their love—for the chance to witness how they would love one another."
-                    </div>
+                    <div class="blurb-text">"SIDE STREAMS knows the aftermath is where we live. It’s a gorgeously written novel about the families we inherit and the communities we build over time."</div>
                     <div class="blurb-author">— Nishanth Injam, <em>author of The Best Possible Experience</em></div>
                 </div>
-
-                <!-- Blurb 3 -->
                 <div class="blurb-item">
-                    <div class="blurb-text">
-                        "A radiant novel about the havoc time leaves on the human heart. I adored it. Yasmin Adele Majeed writes of friendship, parenthood, art, and identity with clear-eyed compassion for the ways we lose and find ourselves in one another. Only one book in and Majeed is already an essential voice."
-                    </div>
+                    <div class="blurb-text">"A radiant novel about the havoc time leaves on the human heart. I adored it."</div>
                     <div class="blurb-author">— Anthony Marra, <em>author of Mercury Pictures Presents</em></div>
                 </div>
-
-                <!-- Blurb 4 -->
                 <div class="blurb-item">
-                    <div class="blurb-text">
-                        "A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more. In Side Streams, characters must reckon with their desire—known and unknown to themselves and others, desires deemed forbidden or improper. I was particularly drawn to the vibrant cast of young, queer characters reckoning with their understanding of self. Side Streams also boldly explores the Filipino and Pakistani diasporas, and the multicultural tapestry that is America. There were many passages of startling, quiet beauty.”
-                    </div>
-                    <div class="blurb-author">— Daphne Palasi Andreades, <em>author of Brown Girls</em> and <em>Lucid Dreams</em></div>
+                    <div class="blurb-text">"A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more."</div>
+                    <div class="blurb-author">— Daphne Palasi Andreades, <em>author of Brown Girls</em></div>
                 </div>
-
-             <!-- FIXED CODE -->
-                <div class="blurb-author">—Elaine Hsieh Chou, author of <em>Where Are You Really From</em> and <em>Disorientation</em></div>
-            </div> <!-- Closes .blurb-item -->
-        </div> <!-- Closes #praise -->
-
-
-          <!-- TAB CONTAINER 3: BUY LINKS -->
-            <div id="buy" class="tab-content">
-                <ul class="buy-list">
-                    <li class="buy-link-item">
-                        <a href="https://bookshop.org/p/books/side-streams-yasmin-adele-majeed/9005d0f85c5e9940?ean=9780316609975&affiliate=2344" target="_blank">Bookshop</a>
-                    </li>
-                    <li class="buy-link-item">
-                        <a href="https://www.barnesandnoble.com/w/side-streams-yasmin-adele-majeed/1150526338?cjdata=MXxOfDB8WXww&ean=9780316609975&st=AFF&SID=www.barnesandnoble.com&2sid=Hachette+Book+Group_8040641_NA&sourceId=AFFHachette+Book+Group&cjevent=5c7ee6cd811911f18343012d0a82b820&dpid=tekz25v83" target="_blank">Barnes &amp; Noble</a>
-                    </li>
-                </ul>
+                <div class="blurb-item">
+                    <div class="blurb-text">"Side Streams is a stunning and intimate exploration of the many threads that stitch together, and unravel, the self and the family."</div>
+                    <div class="blurb-author">— Elaine Hsieh Chou, <em>author of Disorientation</em></div>
+                </div>
             </div>
 
-        </div> <!-- Closes .book-info-side -->
+        </div>
     </main>
-                   
 
 <script>
 function switchTab(event, tabId) {
