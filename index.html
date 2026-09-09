@@ -169,47 +169,81 @@
             font-weight: 300;
         }
 
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+       /* Action Buttons Layout */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    align-items: center;
+}
 
-        .btn-primary {
-            display: inline-block;
-            text-align: center;
-            font-family: var(--font-main);
-            background-color: var(--accent);
-            color: #ffffff !important;
-            border: 1px solid var(--accent);
-            padding: 12px 28px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            cursor: pointer;
-            transition: opacity 0.2s ease, transform 0.1s ease, background-color 0.2s;
-            text-decoration: none !important;
-        }
+/* Primary Button (Pre-Order) */
+.btn-primary {
+    display: inline-block;
+    text-align: center;
+    font-family: var(--font-main);
+    background-color: var(--accent);
+    color: #ffffff !important;
+    border: 1px solid var(--accent);
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    text-decoration: none !important;
+}
 
-        .btn-primary:hover {
-            opacity: 0.9;
-            text-decoration: none !important;
-        }
+.btn-primary:hover {
+    opacity: 0.88;
+    text-decoration: none !important;
+}
 
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
+.btn-primary:active {
+    transform: scale(0.98);
+}
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
+/* Secondary Button (Read More) */
+.btn-secondary {
+    display: inline-block;
+    text-align: center;
+    font-family: var(--font-main);
+    background-color: transparent;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent);
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    text-decoration: none !important;
+}
 
-        a:hover { opacity: 0.7; text-decoration: underline; }
+.btn-secondary:hover {
+    background-color: var(--accent);
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.btn-secondary:active {
+    transform: scale(0.98);
+}
+
+/* Mobile Responsiveness for Buttons */
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+}
 
         /* Custom Highlight Color */
         ::selection {
@@ -290,7 +324,7 @@
             <!-- BLURBS -->
             <div class="blurbs-container">
                 <blockquote class="blurb-quote">
-                    “Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping. It is at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again.”
+                    “At once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again.”
                     <span class="blurb-author">— Eliana Ramage, author of <em>To the Moon and Back</em></span>
                 </blockquote>
 
@@ -310,11 +344,11 @@
                 </blockquote>
             </div>
 
-            <!-- CALL TO ACTION BUTTONS -->
-            <div class="action-buttons">
-                <a href="novel.html" class="btn-primary">Read More</a>
-            </div>
-        </div>
+            <!-- CALL TO ACTION BUTTONS BENEATH BLURBS -->
+<div class="action-buttons">
+    <a href="https://yasmaj.com/novel.html#preorder" class="btn-primary">Pre-Order</a>
+    <a href="novel.html" class="btn-secondary">Read More</a>
+</div>
     </main>
 
     <script>
