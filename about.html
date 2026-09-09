@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +9,13 @@
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
     
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #FEF9E7; 
             --text-color: #1a1a1a;
             --accent: #d14c36; 
             --font-main: 'Barlow', sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
         }
 
         body {
@@ -74,7 +70,7 @@
 
         .nav-links a:hover { opacity: 0.6; }
 
-        /* Layout Container */
+        /* Side-by-Side Container */
         .content-wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -82,205 +78,46 @@
             align-items: flex-start;
             gap: 60px;
             padding: 40px 40px 100px 40px;
-            position: relative;
+            position: relative; /* Sets anchor base for absolute stickers */
         }
 
-        /* Cover Art Frame */
-        .book-jacket-side {
+        .photo-side {
             flex: 1;
-            max-width: 380px;
+            max-width: 420px;
+        }
+
+        .hero-image {
             width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .cover-frame {
-            background-color: #ffffff;
-            padding: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cover-frame:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.09);
-        }
-
-        .cover-placeholder {
-            width: 100%;
-            aspect-ratio: 2 / 3;
-            border: 1.5px dashed var(--accent);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--accent);
-            font-weight: 600;
+        .photo-credit {
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            background-color: rgba(209, 76, 54, 0.02);
-            text-align: center;
-            padding: 20px;
+            color: #666;
+            margin-top: 15px;
+            display: block;
+            font-weight: 500;
         }
 
         .text-side {
-            flex: 1.4;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .anticipation-badge {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .book-title-heading {
-            font-size: 2.2rem;
-            line-height: 1.2;
-            margin: 0 0 15px 0;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            flex: 1.2;
         }
 
         .announcement {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        /* Interactive Blurb Slider */
-        .blurbs-slider-wrapper {
-            border-top: 1px solid rgba(26, 26, 26, 0.15);
-            border-bottom: 1px solid rgba(26, 26, 26, 0.15);
-            padding: 25px 0 20px 0;
+            font-size: 1.25rem;
             margin-bottom: 30px;
-            position: relative;
-            min-height: 200px;
-        }
-
-        .blurb-slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .blurb-slide.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .blurb-quote {
-            font-size: 1.15rem;
-            line-height: 1.7;
             font-weight: 400;
-            color: #1a1a1a;
-            margin: 0 0 15px 0;
-            font-style: italic;
+            line-height: 1.5;
         }
 
-        .blurb-quote strong {
-            font-weight: 600;
-            color: var(--accent);
-            font-style: normal;
-        }
-
-        .blurb-author {
-            display: block;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--text-color);
-            font-style: normal;
-        }
-
-        .blurb-author em {
-            font-weight: 400;
-            text-transform: none;
-            font-style: italic;
-        }
-
-        /* Slider Controls */
-        .slider-controls {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-
-        .nav-btn {
-            background: none;
-            border: none;
-            color: var(--accent);
-            font-family: var(--font-main);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            padding: 5px 0;
-            transition: opacity 0.2s;
-        }
-
-        .nav-btn:hover {
-            opacity: 0.6;
-        }
-
-        .dots-container {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(209, 76, 54, 0.25);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .dot.active {
-            background-color: var(--accent);
-        }
-
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 5px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            text-align: center;
-            font-family: var(--font-main);
-            background-color: var(--accent);
-            color: #ffffff !important;
-            border: 1px solid var(--accent);
-            padding: 12px 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            cursor: pointer;
-            transition: opacity 0.2s ease, transform 0.1s ease;
-            text-decoration: none !important;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            text-decoration: none !important;
-        }
-
-        .btn-primary:active {
-            transform: scale(0.98);
+        .bio {
+                font-size: 1.1rem;
+    text-align: justify;
+    font-weight: 400; /* Thicker, high-readability weight */
+    line-height: 1.6;  /* Closer, compact line spacing */
         }
 
         a {
@@ -294,13 +131,15 @@
         /* Custom Highlight Color */
         ::selection {
             background-color: #b9d8e5; 
-            color: #1a1a1a;            
+            color: #1a1a1a;           
         }
 
         ::-moz-selection {
             background-color: #b9d8e5;
             color: #1a1a1a;
         }
+
+    
 
         /* Responsive Mobile Layout */
         @media (max-width: 768px) {
@@ -317,15 +156,11 @@
                 flex-direction: column;
                 align-items: center;
                 padding: 0 25px 60px 25px;
-                gap: 40px;
+                gap: 30px;
             }
 
-            .book-jacket-side {
-                max-width: 280px;
-            }
-
-            .btn-primary {
-                width: 100%;
+            .photo-side {
+                max-width: 100%;
             }
         }
     </style>
@@ -336,147 +171,58 @@
         <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="novel.html">Novel</a>
+                                  <a href="about.html">About</a>
+                        <a href="novel.html">Novel</a>
             <a href="writing.html">Writing</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <main class="content-wrapper">
-        <!-- BOOK COVER COLUMN WITH FRAME -->
-        <div class="book-jacket-side">
-            <div class="cover-frame">
-                <div class="cover-placeholder">
-                    <span style="font-size: 1.5rem; margin-bottom: 5px;">౨ৎ</span>
-                    Cover Artwork
-                    <span style="font-size: 0.7rem; opacity: 0.6; margin-top: 10px;">Forthcoming</span>
-                </div>
+        <div class="photo-side">
+            <img src="77670005.jpeg" alt="Yasmin Adele Majeed" class="hero-image">
+            <span class="photo-credit">Photo Credit: <a href="https://www.dayday.studio" target="_blank">Day</a></span>
+        </div>
+
+        <div class="text-side">
+
+            <div class="bio">
+              Yasmin Adele Majeed's fiction appears in <em>Narrative</em>, <em>Guernica</em>, <em>Joyland</em>, <em>American Short Fiction</em>, <em>Best Debut Short Stories</em>, and <em>The Best American Short Stories</em>. A graduate of the Iowa Writers’ Workshop, she has received fellowships and support from Kundiman, McCormack Writing Center, Kweli, the Periplus Collective, the Virginia Center for the Creative Arts, and the Kimmel Harding Nelson Center. She is a winner of the PEN/Robert J. Dau Short Story Prize and has taught creative writing at the University of Iowa. Raised in the Bay Area and New York City, she currently lives in Brooklyn. <em>Side Streams</em> is her first novel.
             </div>
         </div>
 
-        <!-- BOOK DETAILS COLUMN -->
-        <div class="text-side">
-            <div class="anticipation-badge">Forthcoming March 30, 2027</div>
-            <h1 class="book-title-heading">Side Streams</h1>
+        
+    </main>
 
-            <div class="announcement">
-                Yasmin Adele Majeed’s debut novel, <em>Side Streams</em>, is forthcoming from Little, Brown.
-            </div>
+<script>
+// Sparkle Mouse Trail
+document.addEventListener('mousemove', function(e) {
+  const sparkle = document.createElement('span');
+  sparkle.innerHTML = '✧'; 
+  sparkle.style.position = 'absolute';
+  sparkle.style.left = e.pageX + 'px';
+  sparkle.style.top = e.pageY + 'px';
+  sparkle.style.color = '#B9D9EB'; 
+  sparkle.style.pointerEvents = 'none';
+  sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
+  sparkle.style.zIndex = '9999';
+  
+  sparkle.animate([
+    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+    { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
+  ], {
+    duration: 1000,
+    easing: 'ease-out'
+  });
 
-            <!-- SLIDING BLURBS -->
-            <div class="blurbs-slider-wrapper">
-                <div class="blurb-slide active">
-                    <blockquote class="blurb-quote">
-                        “<strong>at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again."
-                    </blockquote>
-                    <span class="blurb-author">— Eliana Ramage, author of <em>To the Moon and Back</em></span>
-                </div>
+  document.body.appendChild(sparkle);
+  
+  setTimeout(() => {
+    sparkle.remove();
+  }, 1000);
+});
 
-                <div class="blurb-slide">
-                    <blockquote class="blurb-quote">
-                        “Yasmin Adele Majeed weaves <strong>desire, art-making, and noticing itself</strong> into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years.”
-                    </blockquote>
-                    <span class="blurb-author">— Nishanth Injam, author of <em>The Best Possible Experience</em></span>
-                </div>
 
-                <div class="blurb-slide">
-                    <blockquote class="blurb-quote">
-                        “Only one book in and Majeed is already an <strong>essential voice</strong>.”
-                    </blockquote>
-                    <span class="blurb-author">— Anthony Marra, author of <em>Mercury Pictures Presents</em></span>
-                </div>
-
-                <div class="blurb-slide">
-                    <blockquote class="blurb-quote">
-                        “A <strong>sweeping yet intimate</strong> debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more.”
-                    </blockquote>
-                    <span class="blurb-author">— Daphne Palasi Andreades, author of <em>Lucid Dreams</em> and <em>Brown Girls</em></span>
-                </div>
-
-                <!-- CONTROLS -->
-                <div class="slider-controls">
-                    <button class="nav-btn" onclick="prevSlide()">‹ Prev</button>
-                    <div class="dots-container" id="dotsContainer"></div>
-                    <button class="nav-btn" onclick="nextSlide()">Next ›</button>
-                </div>
-            </div>
-
-           <!-- CALL TO ACTION BUTTONS BENEATH BLURBS -->
-<div class="action-buttons">
-    <a href="https://yasmaj.com/novel.html#preorder" class="btn-primary">Pre-Order</a>
-    <a href="novel.html" class="btn-secondary">Read More</a>
-</div>
-    <script>
-    // Blurb Slider Script
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.blurb-slide');
-    const dotsContainer = document.getElementById('dotsContainer');
-
-    // Create pagination dots
-    slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.dot');
-
-    function updateSlider() {
-        slides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            dots[index].classList.remove('active');
-        });
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateSlider();
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateSlider();
-    }
-
-    function goToSlide(index) {
-        currentSlide = index;
-        updateSlider();
-    }
-
-    // Optional: Auto-advance blurbs every 7 seconds
-    setInterval(nextSlide, 7000);
-
-    // Sparkle Mouse Trail
-    document.addEventListener('mousemove', function(e) {
-      const sparkle = document.createElement('span');
-      sparkle.innerHTML = '✧'; 
-      sparkle.style.position = 'absolute';
-      sparkle.style.left = e.pageX + 'px';
-      sparkle.style.top = e.pageY + 'px';
-      sparkle.style.color = '#B9D9EB'; 
-      sparkle.style.pointerEvents = 'none';
-      sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
-      sparkle.style.zIndex = '9999';
-      
-      sparkle.animate([
-        { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-        { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
-      ], {
-        duration: 1000,
-        easing: 'ease-out'
-      });
-
-      document.body.appendChild(sparkle);
-      
-      setTimeout(() => {
-        sparkle.remove();
-      }, 1000);
-    });
-    </script>
+</script>
 </body>
 </html>
