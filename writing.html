@@ -6,40 +6,34 @@
     <title>Writing — Yasmin Adele Majeed</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">    
     <style>
         :root {
-        --bg-color: #B7C6D3; 
+            --bg-color: #B7C6D3; 
             --text-color: #1a1a1a;
             --accent: #C85A32; 
             --font-main: 'Barlow', sans-serif;
             --border-color: #e0dbca;
         }
 
-     body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-main);
-    line-height: 1.8;
-    font-weight: 500; /* Changed from 300 to 500 for a thicker, clearer text */
-    -webkit-font-smoothing: antialiased;
-    animation: fadeIn 1.2s ease-in;
-}
-
         body {
-    animation: fadeIn 1.2s ease-in;
-}
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            font-weight: 500;
+            -webkit-font-smoothing: antialiased;
+            animation: fadeIn 1.2s ease-in;
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        
-
-      /* Navigation */
+        /* Navigation */
         nav { 
             padding: 80px 20px 30px 20px; 
             text-align: center; 
@@ -76,66 +70,94 @@
 
         /* Content Layout */
         main { 
-            max-width: 700px; 
+            max-width: 1200px; 
             margin: 0 auto; 
-            padding: 0 25px 100px 25px; 
+            padding: 0 40px 100px 40px; 
         }
 
-       .section-header {
-    font-size: 1.2rem;       /* Increased from 1rem */
-    margin: 40px 0 25px 0;   /* Balanced spacing */
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-color); /* Darker for more authority */
-    border-bottom: 2px solid #e0dbca; /* Slightly thicker line */
-    padding-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;               /* Space for the flower icon */
-}
+        /* Responsive 3-Column Grid */
+        .writing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            align-items: start;
+        }
 
-/* Optional: styling the little flower icon specifically */
-.section-header::before {
-    content: "౨ৎ";
-    color: var(--accent);
-    font-size: 1.4rem;
-}
-/* Custom Highlight Color */
-::selection {
-    background-color: #b9d8e5; /* Baby Blue */
-    color: #1a1a1a;           /* Dark text for readability */
-}
+        .genre-column {
+            min-width: 0; /* Prevents overflow inside grid items */
+        }
 
-/* For Safari/Firefox support */
-::-moz-selection {
-    background-color: #b9d8e5;
-    color: #1a1a1a;
-}
-        /* Story Title Styling */
-.work-item strong {
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
+        .section-header {
+            font-size: 1.2rem;
+            margin: 20px 0 25px 0;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-color);
+            border-bottom: 2px solid #e0dbca;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.work-item a:hover strong {
-    color: #7fb3d5; /* Subtle blue shift on hover to match highlight */
-}
+        .section-header::before {
+            content: "౨ৎ";
+            color: var(--accent);
+            font-size: 1.4rem;
+        }
 
-        .work-list { list-style: none; padding: 0; margin: 0; }
-        .work-item { margin-bottom: 20px; font-size: 1.1rem; }
-        
+        /* Custom Highlight Color */
+        ::selection {
+            background-color: #b9d8e5;
+            color: #1a1a1a;
+        }
+
+        ::-moz-selection {
+            background-color: #b9d8e5;
+            color: #1a1a1a;
+        }
+
+        /* Work Items & Links */
+        .work-list { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+        }
+
+        .work-item { 
+            margin-bottom: 20px; 
+            font-size: 1.05rem; 
+        }
+
+        .work-item strong {
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .work-item a:hover strong {
+            color: #7fb3d5;
+        }
+
         .award-note {
             display: block;
-            font-size: 0.95rem;
-            color: #666;
+            font-size: 0.9rem;
+            color: #4a5568;
             margin-top: 4px;
             font-style: italic;
+            line-height: 1.4;
         }
-        
+
         /* Hyperlinks */
-        a { color: var(--accent); text-decoration: none; font-weight: 400; }
-        a:hover { text-decoration: underline; }
+        a { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-weight: 400; 
+        }
+
+        a:hover { 
+            text-decoration: underline; 
+        }
 
         footer { 
             text-align: center; 
@@ -147,93 +169,114 @@
         }
 
         /* Unified Mobile Adjustments */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .writing-grid {
+                grid-template-columns: 1fr; /* Stacks vertically on smaller screens */
+                gap: 20px;
+            }
+
             .site-title {
                 font-size: 1.5rem;
                 letter-spacing: 0.1em;
                 font-weight: 700 !important;
                 margin-bottom: 20px;
             }
+
             .nav-links {
                 font-size: 0.95rem;
                 font-weight: 700 !important;
             }
+
             .nav-links a {
                 display: inline-block;
                 margin: 5px 10px;
             }
+
             main {
-                padding-bottom: 60px;
+                padding: 0 25px 60px 25px;
             }
         }
     </style>
 </head>
 <body>
 
-   <nav>
+    <nav>
         <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-                                              <a href="about.html">About</a>
-                        <a href="novel.html">Novel</a>
+            <a href="about.html">About</a>
+            <a href="novel.html">Novel</a>
             <a href="writing.html">Writing</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <main>
-        <div class="section-header">Fiction</div>
-        <ul class="work-list">
-            <li class="work-item">
-                <a href="https://www.guernicamag.com/chicken/" target="_blank"><strong>Chicken</strong></a>, <em>Guernica</em>
-            </li>
-            <li class="work-item">
-                <a href="https://www.narrativemagazine.com/issues/fall-2024/fiction/clean-out-yasmin-adele-majeed" target="_blank"><strong>The Clean-Out</strong></a>, <em>Narrative</em>
-                <span class="award-note">→ selected for <a href="https://www.harpercollins.com/products/the-best-american-short-stories-2025-celeste-ngnicole-a-lamy?variant=43710166532130" target="_blank">The Best American Short Stories 2025</a></span>
-            </li>
-            <li class="work-item"><a href="https://dirt.fyi/article/2024/10/maria-del-rosario-says-hello" target="_blank"><strong>Maria del Rosario Says Hello</strong></a>, <em>Dirt</em></li>
-            <li class="work-item"><a href="https://sites.lsa.umich.edu/mixtape/2024/06/22/reyaz/" target="_blank"><strong>Reyaz</strong></a>, <em>Michigan Quarterly Review Online</em></li>
-            <li class="work-item"><a href="https://joylandmagazine.com/fiction/audition/" target="_blank"><strong>Audition</strong></a>, <em>Joyland</em></li>
-            <li class="work-item"><a href="https://joylandmagazine.com/fiction/tunnels/" target="_blank"><strong>Tunnels</strong></a>, <em>Joyland</em></li>
-            <li class="work-item">
-                <a href="https://americanshortfiction.org/issue-78/" target="_blank"><strong>Tombs</strong></a>, <em>American Short Fiction</em>
-                <span class="award-note">→ winner of the <a href="https://americanshortfiction.org/the-2023-american-shorter-fiction-prize-winners/" target="_blank">American Short(er) Fiction Prize 2023</a></span>
-            </li>
-            <li class="work-item">
-                <a href="https://www.aalrmag.org/shop/p/vol11" target="_blank"><strong>A Wedding in Multan, 1978</strong></a>, <em>The Asian American Literary Review</em>
-                <span class="award-note">→ selected for <a href="https://books.catapult.co/books/best-debut-short-stories-2022/" target="_blank">Best Debut Short Stories 2022</a></span>
-            </li>
-        </ul>
+        <div class="writing-grid">
+            
+            <!-- COLUMN 1: FICTION -->
+            <div class="genre-column">
+                <div class="section-header">Fiction</div>
+                <ul class="work-list">
+                    <li class="work-item">
+                        <a href="https://www.guernicamag.com/chicken/" target="_blank"><strong>Chicken</strong></a>, <em>Guernica</em>
+                    </li>
+                    <li class="work-item">
+                        <a href="https://www.narrativemagazine.com/issues/fall-2024/fiction/clean-out-yasmin-adele-majeed" target="_blank"><strong>The Clean-Out</strong></a>, <em>Narrative</em>
+                        <span class="award-note">→ selected for <a href="https://www.harpercollins.com/products/the-best-american-short-stories-2025-celeste-ngnicole-a-lamy?variant=43710166532130" target="_blank">The Best American Short Stories 2025</a></span>
+                    </li>
+                    <li class="work-item"><a href="https://dirt.fyi/article/2024/10/maria-del-rosario-says-hello" target="_blank"><strong>Maria del Rosario Says Hello</strong></a>, <em>Dirt</em></li>
+                    <li class="work-item"><a href="https://sites.lsa.umich.edu/mixtape/2024/06/22/reyaz/" target="_blank"><strong>Reyaz</strong></a>, <em>Michigan Quarterly Review Online</em></li>
+                    <li class="work-item"><a href="https://joylandmagazine.com/fiction/audition/" target="_blank"><strong>Audition</strong></a>, <em>Joyland</em></li>
+                    <li class="work-item"><a href="https://joylandmagazine.com/fiction/tunnels/" target="_blank"><strong>Tunnels</strong></a>, <em>Joyland</em></li>
+                    <li class="work-item">
+                        <a href="https://americanshortfiction.org/issue-78/" target="_blank"><strong>Tombs</strong></a>, <em>American Short Fiction</em>
+                        <span class="award-note">→ winner of the <a href="https://americanshortfiction.org/the-2023-american-shorter-fiction-prize-winners/" target="_blank">American Short(er) Fiction Prize 2023</a></span>
+                    </li>
+                    <li class="work-item">
+                        <a href="https://www.aalrmag.org/shop/p/vol11" target="_blank"><strong>A Wedding in Multan, 1978</strong></a>, <em>The Asian American Literary Review</em>
+                        <span class="award-note">→ selected for <a href="https://books.catapult.co/books/best-debut-short-stories-2022/" target="_blank">Best Debut Short Stories 2022</a></span>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="section-header">Nonfiction</div>
-        <ul class="work-list">
-            <li class="work-item"><a href="https://dirt.fyi/article/2025/03/laddermania" target="_blank"><strong>Laddermania</strong></a>, <em>Dirt</em></li>
-            <li class="work-item"><a href="https://electricliterature.com/el-author/yasmin-adele-majeed/" target="_blank"><strong>Author Interviews</strong></a>, <em>Electric Literature</em></li>
-            <li class="work-item"><a href="https://www.nybooks.com/online/2020/06/17/ghosts-of-sugar-land-a-journey-of-loss/" target="_blank"><strong>Ghosts of Sugarland</strong></a>, <em>The New York Review of Books Online</em></li>
-            <li class="work-item"><a href="https://unbag.net/reverie/the-encounter/" target="_blank"><strong>The Encounter</strong></a>, <em>Unbag</em>
-        </ul>
+            <!-- COLUMN 2: NONFICTION -->
+            <div class="genre-column">
+                <div class="section-header">Nonfiction</div>
+                <ul class="work-list">
+                    <li class="work-item"><a href="https://dirt.fyi/article/2025/03/laddermania" target="_blank"><strong>Laddermania</strong></a>, <em>Dirt</em></li>
+                    <li class="work-item"><a href="https://electricliterature.com/el-author/yasmin-adele-majeed/" target="_blank"><strong>Author Interviews</strong></a>, <em>Electric Literature</em></li>
+                    <li class="work-item"><a href="https://www.nybooks.com/online/2020/06/17/ghosts-of-sugar-land-a-journey-of-loss/" target="_blank"><strong>Ghosts of Sugarland</strong></a>, <em>The New York Review of Books Online</em></li>
+                    <li class="work-item"><a href="https://unbag.net/reverie/the-encounter/" target="_blank"><strong>The Encounter</strong></a>, <em>Unbag</em></li>
+                </ul>
+            </div>
 
-        <div class="section-header">Interviews</div>
-        <ul class="work-list">
-            <li class="work-item"><a href="https://pen.org/an-interview-with-pen-robert-j-dau-prize-winner-yasmin-majeed/" target="_blank"><strong>PEN America</strong></a></li>
-            <li class="work-item"><a href="https://debutiful.net/2022/09/27/meet-7-writers-collected-in-the-pen-america-best-debut-short-story-collection-2022-anthology/" target="_blank"><strong>Debutiful</strong></a></li>
-        </ul>
-    <a href="#" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; text-decoration: none; font-size: 2rem;">౨ৎ</a>
+            <!-- COLUMN 3: INTERVIEWS -->
+            <div class="genre-column">
+                <div class="section-header">Interviews</div>
+                <ul class="work-list">
+                    <li class="work-item"><a href="https://pen.org/an-interview-with-pen-robert-j-dau-prize-winner-yasmin-majeed/" target="_blank"><strong>PEN America</strong></a></li>
+                    <li class="work-item"><a href="https://debutiful.net/2022/09/27/meet-7-writers-collected-in-the-pen-america-best-debut-short-story-collection-2022-anthology/" target="_blank"><strong>Debutiful</strong></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <a href="#" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; text-decoration: none; font-size: 2rem;">౨ৎ</a>
     </main>
 
-    <script>
+<script>
 document.addEventListener('mousemove', function(e) {
   const sparkle = document.createElement('span');
-  sparkle.innerHTML = '✧'; // You can change this to ౨ৎ or ✨
+  sparkle.innerHTML = '✧';
   sparkle.style.position = 'absolute';
   sparkle.style.left = e.pageX + 'px';
   sparkle.style.top = e.pageY + 'px';
-  sparkle.style.color = '#B9D9EB'; // Your Baby Blue color
+  sparkle.style.color = '#B9D9EB';
   sparkle.style.pointerEvents = 'none';
   sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
   sparkle.style.zIndex = '9999';
   
-  // Animation to make it float and fade
   sparkle.animate([
     { transform: 'translate(0, 0) scale(1)', opacity: 1 },
     { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
@@ -244,7 +287,6 @@ document.addEventListener('mousemove', function(e) {
 
   document.body.appendChild(sparkle);
   
-  // Clean up the sparkle after animation
   setTimeout(() => {
     sparkle.remove();
   }, 1000);
