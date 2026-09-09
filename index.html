@@ -8,13 +8,18 @@
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
     
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-color: #FEF9E7; 
             --text-color: #1a1a1a;
             --accent: #d14c36; 
             --font-main: 'Barlow', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -69,7 +74,7 @@
 
         .nav-links a:hover { opacity: 0.6; }
 
-        /* Side-by-Side Container */
+        /* Side-by-Side Book Feature Layout */
         .content-wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -77,46 +82,125 @@
             align-items: flex-start;
             gap: 60px;
             padding: 40px 40px 100px 40px;
-            position: relative; /* Sets anchor base for absolute stickers */
+            position: relative;
         }
 
-        .photo-side {
+        .book-jacket-side {
             flex: 1;
-            max-width: 420px;
-        }
-
-        .hero-image {
+            max-width: 380px;
             width: 100%;
-            height: auto;
-            display: block;
         }
 
-        .photo-credit {
-            font-size: 0.8rem;
+        .cover-placeholder {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            border: 2px dashed var(--accent);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent);
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #666;
-            margin-top: 15px;
-            display: block;
-            font-weight: 500;
+            background-color: rgba(209, 76, 54, 0.03);
+            text-align: center;
+            padding: 20px;
         }
 
         .text-side {
-            flex: 1.2;
+            flex: 1.4;
+        }
+
+        .anticipation-badge {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .book-title-heading {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .announcement {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             margin-bottom: 30px;
             font-weight: 400;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        .bio {
-                font-size: 1.1rem;
-    text-align: justify;
-    font-weight: 400; /* Thicker, high-readability weight */
-    line-height: 1.6;  /* Closer, compact line spacing */
+        /* Blurbs Section */
+        .blurbs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 25px;
+            margin-bottom: 35px;
+            border-top: 1px solid rgba(26, 26, 26, 0.15);
+            padding-top: 25px;
+        }
+
+        .blurb-quote {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 300;
+            margin: 0;
+            position: relative;
+        }
+
+        .blurb-author {
+            display: block;
+            margin-top: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            color: var(--text-color);
+        }
+
+        .blurb-author em {
+            font-weight: 300;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            text-align: center;
+            font-family: var(--font-main);
+            background-color: var(--accent);
+            color: #ffffff !important;
+            border: 1px solid var(--accent);
+            padding: 12px 28px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.1s ease, background-color 0.2s;
+            text-decoration: none !important;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            text-decoration: none !important;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
         }
 
         a {
@@ -130,50 +214,12 @@
         /* Custom Highlight Color */
         ::selection {
             background-color: #b9d8e5; 
-            color: #1a1a1a;           
+            color: #1a1a1a;            
         }
 
         ::-moz-selection {
             background-color: #b9d8e5;
             color: #1a1a1a;
-        }
-
-    
-  /* Styled Preorder Buttons */
-        .buy-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 15px; 
-            max-width: 300px; 
-        }
-
-        .read-more-item a {
-            display: block;
-            text-align: center;
-            font-family: var(--font-main);
-            background-color: var(--accent);
-            color: #ffffff !important; 
-            border: none;
-            padding: 14px 24px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            cursor: pointer;
-            transition: opacity 0.2s ease, transform 0.1s ease;
-            text-decoration: none !important; 
-        }
-
-        .read-more-item a:hover {
-            opacity: 0.9;
-            text-decoration: none !important;
-        }
-
-        .read-more-item a:active {
-            transform: scale(0.98);
         }
 
         /* Responsive Mobile Layout */
@@ -191,11 +237,20 @@
                 flex-direction: column;
                 align-items: center;
                 padding: 0 25px 60px 25px;
-                gap: 30px;
+                gap: 40px;
             }
 
-            .photo-side {
-                max-width: 100%;
+            .book-jacket-side {
+                max-width: 280px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary {
+                width: 100%;
             }
         }
     </style>
@@ -206,14 +261,14 @@
         <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-                        <a href="novel.html">Novel</a>
+            <a href="novel.html">Novel</a>
             <a href="writing.html">Writing</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <main class="content-wrapper">
-    <!-- BOOK COVER ART COLUMN -->
+        <!-- BOOK COVER COLUMN -->
         <div class="book-jacket-side">
             <div class="cover-placeholder">
                 <span style="font-size: 1.5rem; margin-bottom: 5px;">౨ৎ</span>
@@ -222,57 +277,72 @@
             </div>
         </div>
 
+        <!-- BOOK DETAILS COLUMN -->
         <div class="text-side">
+            <div class="anticipation-badge">Forthcoming March 30, 2027</div>
+            <h1 class="book-title-heading">Side Streams</h1>
+
             <div class="announcement">
-                Yasmin Adele Majeed’s debut novel, <em><a href="novel.html">Side Streams</a></em>, is forthcoming from Little, Brown on March 30, 2027.
+                Yasmin Adele Majeed’s debut novel, <em>Side Streams</em>, is forthcoming from Little, Brown.
             </div>
 
-            <div class="description">
-""Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping. It is at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again."
-<br>— Eliana Ramage, author of <em>To the Moon and Back</em><br>
-            "Yasmin Adele Majeed weaves desire, art-making, and noticing itself into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years." <br>-Nishanth Injam, author of <em>The Best Possible Experience</em>
-            <br>Only one book in and Majeed is already an essential voice." - Anthony Marra, author of <em>Mercury Pictures Presents</em><br>
-                "A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more." - Daphne Palasi Andreades, author of Lucid Dreams and Brown Girls
+            <!-- BLURBS -->
+            <div class="blurbs-container">
+                <blockquote class="blurb-quote">
+                    “Powerful and surprising, carrying us through the secrets and ruptures of childhood and the rebuilding of a family in a new light. Across decades and continents, love and loss, this story is both intimate and sweeping. It is at once a queer coming-of-age story, an exploration of art and friendship across decades, and a poignant consideration of diaspora, return, and what it might take to start again.”
+                    <span class="blurb-author">— Eliana Ramage, author of <em>To the Moon and Back</em></span>
+                </blockquote>
+
+                <blockquote class="blurb-quote">
+                    “Yasmin Adele Majeed weaves desire, art-making, and noticing itself into this Bay Area immigrant community in prose so tender I felt as though I’d known these characters for years.”
+                    <span class="blurb-author">— Nishanth Injam, author of <em>The Best Possible Experience</em></span>
+                </blockquote>
+
+                <blockquote class="blurb-quote">
+                    “Only one book in and Majeed is already an essential voice.”
+                    <span class="blurb-author">— Anthony Marra, author of <em>Mercury Pictures Presents</em></span>
+                </blockquote>
+
+                <blockquote class="blurb-quote">
+                    “A sweeping yet intimate debut novel that explores family secrets, the bonds of friendship, art’s power to impact communities, and more.”
+                    <span class="blurb-author">— Daphne Palasi Andreades, author of <em>Lucid Dreams</em> and <em>Brown Girls</em></span>
+                </blockquote>
+            </div>
+
+            <!-- CALL TO ACTION BUTTONS -->
+            <div class="action-buttons">
+                <a href="novel.html" class="btn-primary">Read More</a>
             </div>
         </div>
-
-        <!-- TAB CONTAINER 3: BUY LINKS -->
-            <div id="read-more" class="tab-content">
-                <ul class="read-more">
-                    <li class="read-more-item">
-                        <a href="https://yasmaj.com/novel.html">Read More</a>
-                    </li>
     </main>
 
-<script>
-// Sparkle Mouse Trail
-document.addEventListener('mousemove', function(e) {
-  const sparkle = document.createElement('span');
-  sparkle.innerHTML = '✧'; 
-  sparkle.style.position = 'absolute';
-  sparkle.style.left = e.pageX + 'px';
-  sparkle.style.top = e.pageY + 'px';
-  sparkle.style.color = '#B9D9EB'; 
-  sparkle.style.pointerEvents = 'none';
-  sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
-  sparkle.style.zIndex = '9999';
-  
-  sparkle.animate([
-    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-    { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
-  ], {
-    duration: 1000,
-    easing: 'ease-out'
-  });
+    <script>
+    // Sparkle Mouse Trail
+    document.addEventListener('mousemove', function(e) {
+      const sparkle = document.createElement('span');
+      sparkle.innerHTML = '✧'; 
+      sparkle.style.position = 'absolute';
+      sparkle.style.left = e.pageX + 'px';
+      sparkle.style.top = e.pageY + 'px';
+      sparkle.style.color = '#B9D9EB'; 
+      sparkle.style.pointerEvents = 'none';
+      sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
+      sparkle.style.zIndex = '9999';
+      
+      sparkle.animate([
+        { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+        { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
+      ], {
+        duration: 1000,
+        easing: 'ease-out'
+      });
 
-  document.body.appendChild(sparkle);
-  
-  setTimeout(() => {
-    sparkle.remove();
-  }, 1000);
-});
-
-
-</script>
+      document.body.appendChild(sparkle);
+      
+      setTimeout(() => {
+        sparkle.remove();
+      }, 1000);
+    });
+    </script>
 </body>
 </html>
