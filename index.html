@@ -139,6 +139,42 @@
         }
 
     
+  /* Styled Preorder Buttons */
+        .buy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            max-width: 300px; 
+        }
+
+        .read-more-item a {
+            display: block;
+            text-align: center;
+            font-family: var(--font-main);
+            background-color: var(--accent);
+            color: #ffffff !important; 
+            border: none;
+            padding: 14px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+            text-decoration: none !important; 
+        }
+
+        .read-more-item a:hover {
+            opacity: 0.9;
+            text-decoration: none !important;
+        }
+
+        .read-more-item a:active {
+            transform: scale(0.98);
+        }
 
         /* Responsive Mobile Layout */
         @media (max-width: 768px) {
