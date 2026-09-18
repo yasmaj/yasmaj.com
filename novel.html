@@ -92,33 +92,17 @@
             gap: 25px;
         }
 
-        .cover-placeholder {
+        .book-jacket-side img {
             width: 100%;
-            aspect-ratio: 2 / 3;
-            border: 1.5px dashed var(--accent);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--accent);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            background-color: rgba(209, 76, 54, 0.02);
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
+            height: auto;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
         /* Right Column: Book Details */
         .book-info-side {
             flex: 1.4;
             min-width: 0; 
-        }
-
-        .photo-side {
-            flex: 1;
-            max-width: 420px;
         }
 
         .book-title {
@@ -247,15 +231,6 @@
             width: 100%;
         }
 
-        .preorder-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-weight: 700;
-            color: #555;
-            margin-bottom: 12px;
-        }
-
         .buy-list {
             list-style: none;
             padding: 0;
@@ -337,22 +312,16 @@
     <main class="content-wrapper">
         <!-- LEFT COLUMN: BOOK COVER & PRE-ORDER BUTTONS BELOW -->
         <div class="book-jacket-side">
-                <main class="content-wrapper">
-        <div class="photo-side">
-            <img src="SideStreamsCover.jpeg" alt="The book cover for Side Streams." class="hero-image">
-        </div>
-            </div>
+            <img src="SideStreamsCover.jpg" alt="The book cover for Side Streams">
 
             <div class="preorder-section">
-        
                 <ul class="buy-list">
                     <li class="buy-link-item">
-                        <a href="https://www.hachettebookgroup.com/titles/yasmin-adele-majeed/side-streams/9780316609975/?lens=little-brown" target="_blank">Pre-Order</a></li>
-                                                     <li class="buy-link-item">
-                  <a href="https://bookculture.com/blog/featured-author-yasmin-adele-majeed" target="_blank">Pre-Order Signed Copy</a>
-
+                        <a href="https://www.hachettebookgroup.com/titles/yasmin-adele-majeed/side-streams/9780316609975/?lens=little-brown" target="_blank">Pre-Order</a>
                     </li>
-                  
+                    <li class="buy-link-item">
+                        <a href="https://bookculture.com/blog/featured-author-yasmin-adele-majeed" target="_blank">Pre-Order Signed Copy</a>
+                    </li>
                 </ul>
             </div>
         </div>
