@@ -85,6 +85,8 @@
 
         .form-side {
             flex: 1.2;
+            display: flex;
+            flex-direction: column;
         }
 
         .info-side {
@@ -131,8 +133,8 @@
         .section-label {
             text-transform: uppercase;
             letter-spacing: 0.12em;
-            font-weight: 700;
-            color: #444;
+            font-weight: 800; /* Made thicker */
+            color: #2a2a2a;    /* Made darker to match site styling */
             font-size: 0.85rem;
             margin-bottom: 12px;
             display: block;
@@ -184,10 +186,25 @@
             transform: scale(0.98);
         }
 
+        /* Left Column Social Link */
+        .left-social-container {
+            margin-top: 36px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-link-text {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
         /* Right Panel Cards with Reduced Vertical Padding */
         .agent-card {
             border: 1px solid var(--border-color);
-            padding: 20px 30px; /* Reduced top/bottom padding from 30px to 20px */
+            padding: 20px 30px;
             background-color: rgba(255, 255, 255, 0.15);
             box-sizing: border-box;
         }
@@ -213,17 +230,6 @@
             margin: 14px 0;
             border: none;
             border-top: 1px solid var(--border-color);
-        }
-
-        .instagram-inline {
-            margin-top: 14px;
-            padding-top: 12px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 400;
-            color: #666;
         }
       
         /* Responsive Breakpoints */
@@ -271,7 +277,7 @@
 
     <main class="content-wrapper">
         <div class="split-layout">
-            <!-- LEFT COLUMN: FORM -->
+            <!-- LEFT COLUMN: FORM & INSTAGRAM -->
             <div class="form-side">
                 <span class="section-label">Contact Form</span>
                 <form action="https://formspree.io/f/mvgrwdyd" method="POST">
@@ -292,6 +298,13 @@
 
                     <button type="submit">Send Message</button>
                 </form>
+
+                <!-- Instagram link in left column -->
+                <div class="left-social-container">
+                    <div class="social-link-text">
+                        Instagram: <a href="https://www.instagram.com/yasminadelemajeed">@yasminadelemajeed</a>
+                    </div>
+                </div>
             </div>
 
             <!-- RIGHT COLUMN: LITERARY AGENT & PUBLICITY -->
@@ -322,11 +335,6 @@
                         <div class="agent-agency">
                             Little, Brown and Company<br>
                             Email: <a href="mailto:darcy.glastonbury@hbgusa.com">darcy.glastonbury@hbgusa.com</a>
-                        </div>
-
-                        <!-- Integrated compact Instagram link -->
-                        <div class="instagram-inline">
-                            Instagram: <a href="https://www.instagram.com/yasminadelemajeed">@yasminadelemajeed</a>
                         </div>
                     </div>
                 </div>
