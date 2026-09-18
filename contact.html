@@ -24,7 +24,7 @@
     color: var(--text-color);
     font-family: var(--font-main);
     line-height: 1.8;
-    font-weight: 500; /* Changed from 300 to 500 for a thicker, clearer text */
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     animation: fadeIn 1.2s ease-in;
 }
@@ -71,27 +71,16 @@
 
         /* Narrower Two-Column Frame */
         .content-wrapper {
-            max-width: 850px; /* Narrowed layout frame */
+            max-width: 850px;
             margin: 0 auto;
             padding: 40px 40px 100px 40px;
-            position: relative; /* Sets anchor base for absolute stickers */
-        }
-
-        .page-heading {
-            font-size: 1.25rem;
-            margin-bottom: 45px;
-            font-weight: 400;
-            line-height: 1.5;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-color);
-            text-align: center;
+            position: relative;
         }
 
         .split-layout {
             display: flex;
             align-items: flex-start;
-            gap: 50px; /* Closer gap for a compact desktop feel */
+            gap: 50px;
         }
 
         .form-side {
@@ -102,6 +91,9 @@
             flex: 1;
             position: sticky;
             top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         a {
@@ -144,10 +136,6 @@
             font-size: 0.85rem;
             margin-bottom: 12px;
             display: block;
-        }
-
-        .social-section {
-            margin-top: 30px;
         }
 
         form input, form textarea {
@@ -196,10 +184,10 @@
             transform: scale(0.98);
         }
 
-        /* Right Panel Highlight Card */
+        /* Right Panel Cards with Reduced Vertical Padding */
         .agent-card {
             border: 1px solid var(--border-color);
-            padding: 30px;
+            padding: 20px 30px; /* Reduced top/bottom padding from 30px to 20px */
             background-color: rgba(255, 255, 255, 0.15);
             box-sizing: border-box;
         }
@@ -208,7 +196,7 @@
             font-size: 1.15rem;
             font-weight: 600;
             margin-top: 0;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             color: var(--text-color);
         }
 
@@ -219,6 +207,23 @@
             color: #666;
             font-weight: 400;
             line-height: 1.6;
+        }
+
+        .contact-divider {
+            margin: 14px 0;
+            border: none;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .instagram-inline {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 400;
+            color: #666;
         }
       
         /* Responsive Breakpoints */
@@ -257,8 +262,8 @@
         <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-                                    <a href="about.html">About</a>
-                                <a href="novel.html">Novel</a>
+            <a href="about.html">About</a>
+            <a href="novel.html">Novel</a>
             <a href="writing.html">Writing</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -289,36 +294,40 @@
                 </form>
             </div>
 
-            <!-- RIGHT COLUMN: LITERARY AGENT, PUBLICITY & INSTAGRAM -->
+            <!-- RIGHT COLUMN: LITERARY AGENT & PUBLICITY -->
             <div class="info-side">
-                <span class="section-label">Literary Agent</span>
-                <div class="agent-card">
-                    <h2 class="agent-title">Danielle Bukowski</h2>
-                    <div class="agent-agency">
-                        Sterling Lord Literistic<br>
-                        Email: <a href="mailto:danielle@sll.com">danielle@sll.com</a>
+                <div>
+                    <span class="section-label">Literary Agent</span>
+                    <div class="agent-card">
+                        <h2 class="agent-title">Danielle Bukowski</h2>
+                        <div class="agent-agency">
+                            Sterling Lord Literistic<br>
+                            Email: <a href="mailto:danielle@sll.com">danielle@sll.com</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="social-section">
+                <div>
                     <span class="section-label">Publicity</span>
                     <div class="agent-card">
-                        <h2 class="agent-title" style="font-size: 1.05rem; margin-bottom: 6px;">Alyssa Persons</h2>
-                        <div class="agent-agency" style="margin-bottom: 16px;">
+                        <h2 class="agent-title" style="font-size: 1.05rem; margin-bottom: 2px;">Alyssa Persons</h2>
+                        <div class="agent-agency">
                             Little, Brown and Company<br>
                             Email: <a href="mailto:alyssa.persons@hbgusa.com">alyssa.persons@hbgusa.com</a>
                         </div>
-                        <h2 class="agent-title" style="font-size: 1.05rem; margin-bottom: 6px;">Darcy Glastonbury</h2>
+                        
+                        <hr class="contact-divider">
+
+                        <h2 class="agent-title" style="font-size: 1.05rem; margin-bottom: 2px;">Darcy Glastonbury</h2>
                         <div class="agent-agency">
                             Little, Brown and Company<br>
                             Email: <a href="mailto:darcy.glastonbury@hbgusa.com">darcy.glastonbury@hbgusa.com</a>
                         </div>
-                    </div>
-                </div>
 
-                <div class="social-section">
-                    <div class="agent-card">
-                        <h2 class="agent-agency">Instagram: <a href="https://www.instagram.com/yasminadelemajeed">@yasminadelemajeed</a></h2>
+                        <!-- Integrated compact Instagram link -->
+                        <div class="instagram-inline">
+                            Instagram: <a href="https://www.instagram.com/yasminadelemajeed">@yasminadelemajeed</a>
+                        </div>
                     </div>
                 </div>
             </div>
