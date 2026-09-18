@@ -1,356 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Yasmin Adele Majeed</title>
-    <meta name="description" content="Contact page.">
+<section id="contact" class="contact-section">
+    <h2>Contact</h2>
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22 fill=%22%23d14c36%22>౨ৎ</text></svg>">
-    
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">    <style>
-        :root {
-            --bg-color: #B7C6D3; 
-            --text-color: #1a1a1a;
-            --accent: #C85A32; 
-            --font-main: 'Barlow', sans-serif;
-            --border-color: #e0dbca;
-        }
+    <div class="contact-grid">
+        <!-- Literary Representation -->
+        <div class="contact-category">
+            <h3>Literary Representation</h3>
+            <p><strong>Danielle Bukowski</strong></p>
+            <p>Sterling Lord Literistic</p>
+            <p><a href="mailto:danielle@sll.com">danielle@sll.com</a></p>
+        </div>
 
-      body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-main);
-    line-height: 1.8;
-    font-weight: 500; /* Changed from 300 to 500 for a thicker, clearer text */
-    -webkit-font-smoothing: antialiased;
-    animation: fadeIn 1.2s ease-in;
-}
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Navigation */
-        nav { 
-            padding: 80px 20px 30px 20px; 
-            text-align: center; 
-        }
-
-        .site-title {
-            font-size: 1.8rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            text-decoration: none !important;
-            border: none !important;
-            color: var(--text-color);
-            display: block;
-            margin-bottom: 25px;
-            font-weight: 700 !important;
-            line-height: 1.2;
-        }
-
-        .nav-links {
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 1rem;
-            font-weight: 700 !important;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--accent);
-            margin: 0 20px;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover { opacity: 0.6; }
-
-        /* Narrower Two-Column Frame */
-        .content-wrapper {
-            max-width: 850px; /* Narrowed layout frame */
-            margin: 0 auto;
-            padding: 40px 40px 100px 40px;
-            position: relative; /* Sets anchor base for absolute stickers */
-        }
-
-        .page-heading {
-            font-size: 1.25rem;
-            margin-bottom: 45px;
-            font-weight: 400;
-            line-height: 1.5;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-color);
-            text-align: center;
-        }
-
-        .split-layout {
-            display: flex;
-            align-items: flex-start;
-            gap: 50px; /* Closer gap for a compact desktop feel */
-        }
-
-        .form-side {
-            flex: 1.2;
-        }
-
-        .info-side {
-            flex: 1;
-            position: sticky;
-            top: 40px;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        a:hover { opacity: 0.7; text-decoration: underline; }
-
-        /* Custom Highlight Color */
-        ::selection {
-            background-color: #b9d8e5; 
-            color: #1a1a1a;           
-        }
-
-        ::-moz-selection {
-            background-color: #b9d8e5;
-            color: #1a1a1a;
-        }
-
-        /* Form Styling */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .section-label {
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            font-weight: 700;
-            color: #444;
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .social-section {
-            margin-top: 30px;
-        }
-
-        form input, form textarea {
-            font-family: var(--font-main);
-            font-size: 1.05rem;
-            font-weight: 300;
-            padding: 12px;
-            background-color: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            outline: none;
-            transition: border-color 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        form input:focus, form textarea:focus {
-            border-color: var(--accent);
-        }
-
-        form textarea {
-            resize: vertical;
-            min-height: 160px;
-        }
-
-        form button {
-            font-family: var(--font-main);
-            background-color: var(--accent);
-            color: #ffffff;
-            border: none;
-            padding: 14px 24px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            cursor: pointer;
-            transition: opacity 0.2s ease, transform 0.1s ease;
-            align-self: flex-start;
-        }
-
-        form button:hover {
-            opacity: 0.9;
-        }
-        
-        form button:active {
-            transform: scale(0.98);
-        }
-
-        /* Right Panel Highlight Card */
-        .agent-card {
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.15);
-            box-sizing: border-box;
-        }
-
-        .agent-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-top: 0;
-            margin-bottom: 8px;
-            color: var(--text-color);
-        }
-
-        .agent-agency {
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #666;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-      
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            nav {
-                padding: 50px 20px 20px 20px;
-            }
+        <!-- Publicity -->
+        <div class="contact-category">
+            <h3>Publicity</h3>
+            <p><strong>Alyssa Persons</strong></p>
+            <p>Little, Brown and Company</p>
+            <p><a href="mailto:alyssa.persons@hbgusa.com">alyssa.persons@hbgusa.com</a></p>
             
-            .site-title {
-                font-size: 1.5rem;
-                letter-spacing: 0.1em;
-            }
-
-            .content-wrapper {
-                padding: 0 25px 60px 25px;
-            }
-
-            .split-layout {
-                flex-direction: column;
-                gap: 50px;
-            }
-
-            .form-side, .info-side {
-                width: 100%;
-            }
-
-            form button {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="index.html" class="site-title">Yasmin Adele Majeed</a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-                                              <a href="about.html">About</a>
-                        <a href="novel.html">Novel</a>
-            <a href="writing.html">Writing</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-
-    <main class="content-wrapper">
-        <div class="split-layout">
-            <!-- LEFT COLUMN: FORM -->
-            <div class="form-side">
-                <span class="section-label">Contact Form</span>
-                <form action="https://formspree.io/f/mvgrwdyd" method="POST">
-                    <div class="form-group">
-                        <label for="name" style="display:none;">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" style="display:none;">Email Address</label>
-                        <input type="email" id="email" name="_replyto" placeholder="Your Email Address" required autocomplete="email">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" style="display:none;">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message..." required></textarea>
-                    </div>
-
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-
-            <!-- RIGHT COLUMN: LITERARY AGENT CARD & INSTAGRAM CARD -->
-            <div class="info-side">
-                <span class="section-label">Literary Agent</span>
-                <div class="agent-card">
-                    <h2 class="agent-title">Danielle Bukowski</h2>
-                    <div class="agent-agency">
-                        Sterling Lord Literistic<br>
-                        Email: <a href="mailto:danielle@sll.com">danielle@sll.com</a>
-                    </div>
-                </div>
-
-                <div class="social-section">
-                    <div class="agent-card">
-                        <h2 class="agent-agency"> Instagram: <a href="https://www.instagram.com/yasminadelemajeed">@yasminadelemajeed</a></h2>
-                    
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p style="margin-top: 1rem;"><strong>Darcy Glastonbury</strong></p>
+            <p>Little, Brown and Company</p>
+            <p><a href="mailto:darcy.glastonbury@hbgusa.com">darcy.glastonbury@hbgusa.com</a></p>
         </div>
 
-      
-    </main>
-
-<script>
-// Sparkle Mouse Trail
-document.addEventListener('mousemove', function(e) {
-  const sparkle = document.createElement('span');
-  sparkle.innerHTML = '✧'; 
-  sparkle.style.position = 'absolute';
-  sparkle.style.left = e.pageX + 'px';
-  sparkle.style.top = e.pageY + 'px';
-  sparkle.style.color = '#B9D9EB'; 
-  sparkle.style.pointerEvents = 'none';
-  sparkle.style.fontSize = Math.random() * (20 - 10) + 10 + 'px';
-  sparkle.style.zIndex = '9999';
-  
-  sparkle.animate([
-    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-    { transform: `translate(${(Math.random() - 0.5) * 40}px, -40px) scale(0)`, opacity: 0 }
-  ], {
-    duration: 1000,
-    easing: 'ease-out'
-  });
-
-  document.body.appendChild(sparkle);
-  
-  setTimeout(() => {
-    sparkle.remove();
-  }, 1000);
-});
-
-
-</script>
-
-    <script>
-      window.onbeforeunload = () => {  
-        for(const form of document.getElementsByTagName('form')) {    
-          form.reset();  
-        }
-      }
-    </script>
-  </body>
-</html>
+        <!-- Direct Contact / Form -->
+        <div class="contact-category">
+            <h3>Get in Touch</h3>
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="contact-button">Send Message</button>
+            </form>
+            <div id="form-status" style="margin-top: 0.5rem; font-size: 0.9rem;"></div>
+        </div>
+    </div>
+</section>
